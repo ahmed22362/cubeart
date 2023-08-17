@@ -1,11 +1,19 @@
 "use client"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
+
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+
 import './globals.css'
+
 import React,{ useEffect } from "react";
-import Navbar from './components/navbars/navbar';
-import MinNav from './components/navbars/minNav';
+
+import { MinNav, Navbar } from '@/components';
+
 export default function RootLayout({ children }) {
 
   useEffect(() => {
@@ -18,7 +26,6 @@ export default function RootLayout({ children }) {
         <Navbar />
         <MinNav />
         {children}
-
         </body>
     </html>
   )

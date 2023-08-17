@@ -77,3 +77,33 @@ ul .nav-link:hover {
 .carosuel-img {
     filter: brightness(70%);
 }
+.upper-body {
+    display: flex;
+    justify-content: space-between;
+}
+.discount {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.add-btn {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #429ECA;
+    color: #fff;
+}
+.add-btn:hover {
+    background-color: #429fca9f;
+    color: #fff;
+}
+.card {
+    border: 0;
+}
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
