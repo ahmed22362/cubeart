@@ -1,0 +1,10 @@
+.myOwnStyle {
+    font-size: 40px !important;
+}
+.myOwnStyle::before {
+    content: "\F135";
+    font-family: "Bootstrap-icons";
+    color: #247ba3;
+    font-size: 66px;
+    font-weight: bold;
+}
