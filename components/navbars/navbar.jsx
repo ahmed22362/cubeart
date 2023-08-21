@@ -6,7 +6,7 @@ export default function Navbar() {
       <div className="container">
         <div className="logo-div">
           <Link className="navbar-brand" href="/">
-            <img src="logo.png" alt="" />
+            <img src="logo.png" alt="logo" />
           </Link>
           <h2
             style={{

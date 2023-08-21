@@ -1,5 +1,6 @@
-import './page.module.css'
 import { MyCarsouel, ProductSlider } from '@/components'
+import './page.module.css'
+// import { MyCarsouel, ProductSlider } from '@/components'
 
 export default function Home() {
   return (
