@@ -3,7 +3,9 @@
     src: url('../public/Poppins/Poppins-Medium.ttf');
     src: url('../public/Poppins/Poppins-SemiBold.ttf');
 }
-
+html {
+    scroll-behavior: smooth !important;
+}
 body {
     font-family: 'Poppins', sans-serif;
 }

@@ -15,14 +15,15 @@
     text-align: center;
     margin: 5px;
     position: relative;
-    height: 280px;
+    width: 229px;
+    height: 291px;
 }
 .serviceBox:hover .overlay {
     opacity: 1;
 }
 .overlay {
     position: absolute;
-    top: 139px;
+    top: 144px;
     left: 0;
     width: 100%;
     height: 50%;
@@ -49,26 +50,33 @@
     background: linear-gradient(360deg, #96C9E2 0.13%, #3D8AAD 100%);
     padding: 25px;
     border-radius: 50%;
-    width: 90px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     color: white;
     margin: auto;
 }
 .serviceIcon i {
     text-align: center;
-    font-size: 25px;
+    font-size: 35px;
 }
-.serviceContent {
-    padding-top: 10px;
-    width: 230px;
-}
+
 .serviceBox h3 {
     color: #292D32;
     font-size: 20px;
-    margin: auto;
+    margin: 0 auto;
+    height: 100%;
+    margin-top: 15px;
+}
+.serviceContent {
+    padding-top: 10px;
+    width: 100%;
 }
 .serviceContent p {
     color: #717171;
     font-size: 18px;
     text-align: left;
+}
+.linkList {
+    flex: .6;
+    margin: 18px 0px -23px 0px;
 }
