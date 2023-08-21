@@ -10,6 +10,8 @@ export default function Home() {
           
           <ProductSlider title="Offers Up to 50%" />
 
+        </div>
+        <div className='px-2'>
           <OurService />
         </div>
     </>
