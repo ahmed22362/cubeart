@@ -11,9 +11,13 @@ body {
 .logo-div {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 240px;
 }
+.logo-div h2 {
+    margin: auto 11px;
+}
+
 .end-of-nav {
     justify-content: space-around;
     align-items: center;
@@ -106,4 +110,11 @@ ul .nav-link:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.section-title h3 {
+    font-size: 36px;
+}
+.px10 {
+    padding-right: 5rem!important;
+    padding-left: 5rem!important;
 }

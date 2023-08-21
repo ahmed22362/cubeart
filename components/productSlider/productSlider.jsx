@@ -9,7 +9,7 @@ function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
       <div
-        className={className + " " + styles.myOwnStyle}
+        className={className + " " + styles.myOwnStyleRight}
         style={
             { ...style, display: "block"}
         }
@@ -22,8 +22,8 @@ function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
       <div
-        className={className}
-        style={{ ...style, display: "block", background: "black" }}
+        className={className + " " + styles.myOwnStyleLeft}
+        style={{ ...style, display: "block"}}
         onClick={onClick}
       />
     );
@@ -73,7 +73,7 @@ export default class ProductSlider extends Component {
           <div className="my-5">
 
             <div className="section-title">
-                <h3>Our Produts</h3>
+                <h3>{this.props.title}</h3>
                 <a href="" style={{color: "black"}}>View All</a>
             </div>
 

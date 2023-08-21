@@ -1,12 +1,16 @@
 import './page.module.css'
-import { MyCarsouel, ProductSlider } from '@/components'
+import { MyCarsouel, OurService, ProductDiscSlider, ProductSlider } from '@/components'
 
 export default function Home() {
   return (
     <>
       <MyCarsouel />
-        <div className='container'>
-          <ProductSlider />
+        <div className='px10'>
+          <ProductSlider title="Our Products" /> <br />
+          
+          <ProductSlider title="Offers Up to 50%" />
+
+          <OurService />
         </div>
     </>
   ) 

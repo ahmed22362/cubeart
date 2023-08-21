@@ -18,7 +18,7 @@ export default function Navbar() {
               lineHeight: "normal",
             }}
           >
-            <Link className="navbar-brand" href="/">
+            <Link className="navbar-brand" style={{fontSize: "32px"}} href="/">
               CuBuild
             </Link>
           </h2>

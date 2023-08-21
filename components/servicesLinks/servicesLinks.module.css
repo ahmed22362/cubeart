@@ -1,0 +1,8 @@
+.ulList {
+    display: flex;
+    justify-content: space-between;
+    width: 150%;
+    list-style: none;
+    font-size: 20px;
+    cursor: pointer;
+}
