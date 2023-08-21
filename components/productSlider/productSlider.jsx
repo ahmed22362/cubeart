@@ -2,14 +2,17 @@
 
 import React, { Component } from "react";
 import Slider from "react-slick";
+import styles from './productSlide.module.css'
 
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
       <div
-        className={className}
-        style={{ ...style, display: "block", background: "black" }}
+        className={className + " " + styles.myOwnStyleRight}
+        style={
+            { ...style, display: "block"}
+        }
         onClick={onClick}
       />
     );
@@ -19,8 +22,8 @@ function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return (
       <div
-        className={className}
-        style={{ ...style, display: "block", background: "black" }}
+        className={className + " " + styles.myOwnStyleLeft}
+        style={{ ...style, display: "block"}}
         onClick={onClick}
       />
     );
@@ -70,25 +73,25 @@ export default class ProductSlider extends Component {
           <div className="my-5">
 
             <div className="section-title">
-                <h3>Our Produts</h3>
+                <h3>{this.props.title}</h3>
                 <a href="" style={{color: "black"}}>View All</a>
             </div>
 
             <Slider {...settings}>
 
-            <div class="card">
-                <img src="Items/item.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Hunting Cat 3D Printable</h5>
+            <div className="card">
+                <img src="Items/item.png" className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
                     <div className="upper-body">
                         <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p class="card-text">25 EGP</p>
+                        <p className="card-text">25 EGP</p>
 
                     </div>
                     <div className="price-section">
                         <div className="discount">
-                            <p class="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p class="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
+                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
+                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
                         </div>
                     </div>
                     <button className="btn add-btn">
@@ -98,19 +101,19 @@ export default class ProductSlider extends Component {
                 </div>
             </div>
             {/* ============== Repeat Card =================== */}
-            <div class="card">
-                <img src="Items/item.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Hunting Cat 3D Printable</h5>
+            <div className="card">
+                <img src="Items/item.png" className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">Hunting Cat 3D Printable</h5>
                     <div className="upper-body">
                         <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p class="card-text">25 EGP</p>
+                        <p className="card-text">25 EGP</p>
 
                     </div>
                     <div className="price-section">
                         <div className="discount">
-                            <p class="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p class="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
+                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
+                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
                         </div>
                     </div>
                     <button className="btn add-btn">
@@ -119,19 +122,19 @@ export default class ProductSlider extends Component {
                     </button>
                 </div>
             </div>
-            <div class="card">
-                <img src="Items/item.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Hunting Cat 3D Printable</h5>
+            <div className="card">
+                <img src="Items/item.png" className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">Hunting Cat 3D Printable</h5>
                     <div className="upper-body">
                         <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p class="card-text">25 EGP</p>
+                        <p className="card-text">25 EGP</p>
 
                     </div>
                     <div className="price-section">
                         <div className="discount">
-                            <p class="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p class="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
+                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
+                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
                         </div>
                     </div>
                     <button className="btn add-btn">
@@ -140,19 +143,19 @@ export default class ProductSlider extends Component {
                     </button>
                 </div>
             </div>
-            <div class="card">
-                <img src="Items/item.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Hunting Cat 3D Printable</h5>
+            <div className="card">
+                <img src="Items/item.png" className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">Hunting Cat 3D Printable</h5>
                     <div className="upper-body">
                         <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p class="card-text">25 EGP</p>
+                        <p className="card-text">25 EGP</p>
 
                     </div>
                     <div className="price-section">
                         <div className="discount">
-                            <p class="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p class="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
+                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
+                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
                         </div>
                     </div>
                     <button className="btn add-btn">
@@ -161,19 +164,19 @@ export default class ProductSlider extends Component {
                     </button>
                 </div>
             </div>
-            <div class="card">
-                <img src="Items/item.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Hunting Cat 3D Printable</h5>
+            <div className="card">
+                <img src="Items/item.png" className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">Hunting Cat 3D Printable</h5>
                     <div className="upper-body">
                         <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p class="card-text">25 EGP</p>
+                        <p className="card-text">25 EGP</p>
 
                     </div>
                     <div className="price-section">
                         <div className="discount">
-                            <p class="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p class="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
+                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
+                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
                         </div>
                     </div>
                     <button className="btn add-btn">
@@ -182,19 +185,19 @@ export default class ProductSlider extends Component {
                     </button>
                 </div>
             </div>
-            <div class="card">
-                <img src="Items/item.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Hunting Cat 3D Printable</h5>
+            <div className="card">
+                <img src="Items/item.png" className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">Hunting Cat 3D Printable</h5>
                     <div className="upper-body">
                         <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p class="card-text">25 EGP</p>
+                        <p className="card-text">25 EGP</p>
 
                     </div>
                     <div className="price-section">
                         <div className="discount">
-                            <p class="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p class="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
+                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
+                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
                         </div>
                     </div>
                     <button className="btn add-btn">
@@ -203,19 +206,19 @@ export default class ProductSlider extends Component {
                     </button>
                 </div>
             </div>
-            <div class="card">
-                <img src="Items/item.png" class="card-img-top" alt="..." />
-                <div class="card-body">
-                    <h5 class="card-title">Hunting Cat 3D Printable</h5>
+            <div className="card">
+                <img src="Items/item.png" className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">Hunting Cat 3D Printable</h5>
                     <div className="upper-body">
                         <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p class="card-text">25 EGP</p>
+                        <p className="card-text">25 EGP</p>
 
                     </div>
                     <div className="price-section">
                         <div className="discount">
-                            <p class="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p class="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
+                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
+                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
                         </div>
                     </div>
                     <button className="btn add-btn">

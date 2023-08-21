@@ -1,0 +1,23 @@
+.myOwnStyleRight::before {
+    content: "\F231";
+    font-family: "Bootstrap-icons";
+    color: #247ba3;
+    font-size: 66px;
+    font-weight: bold;
+}
+
+.myOwnStyleLeft {
+    left: -55px;
+}
+
+.myOwnStyleLeft::before {
+    content: "\F22D";
+    font-family: "Bootstrap-icons";
+    color: #247ba3;
+    font-size: 66px;
+    font-weight: bold;
+}
+
+.myOwnStyleRight {
+    right: -10px;
+}
