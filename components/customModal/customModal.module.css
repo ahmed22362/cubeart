@@ -1,0 +1,11 @@
+.modalBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 14px;
+    padding: 20px;
+}
+.modalBody p {
+    width: 420px;
+}
