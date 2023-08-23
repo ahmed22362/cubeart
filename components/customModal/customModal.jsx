@@ -1,10 +1,13 @@
-import Image from "next/image";
+"use client"
 
-export default function customModal() {
+import Image from "next/image";
+import styles from './customModal.module.css'
+
+export default function CustomModal({img, alt, paragraph}) {
   return (
-    <div className="">
-      <Image src="" width="200" height="200" />
-      <p></p>
+    <div className={styles.modalBody}>
+      <Image src={img} alt={alt} width="285" height="229" />
+      <p>{paragraph}</p>
     </div>
   )
 }

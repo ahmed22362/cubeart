@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./navbar.module.css"
 
 export default function Navbar() {
   return (
@@ -77,8 +78,27 @@ export default function Navbar() {
               <span>arabic</span>
             </div>
             <div>
-              <i className="bi bi-person"></i>
-              <i className="bi bi-arrow-down-short"></i>
+              <div className="dropdown">
+                <i className="bi bi-person dropdown-toggle" style={{cursor: "pointer"}} role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+
+                <ul className="dropdown-menu" style={{right: "0", padding: "10px"}}>
+                  <li className={styles.dropDownLink}>
+                      <i className="bi bi-person-gear"></i>
+                      <Link className="dropdown-item" href="#">Edit Profile</Link>
+                    </li>
+                  <li className={styles.dropDownLink}>
+                    <i className="bi bi-heart"></i>
+                    <Link className="dropdown-item" href="#">Wishlist</Link>
+                  </li>
+                  <li className={styles.dropDownLink}>
+                    <i className="bi bi-cart3"></i>
+                    <Link className="dropdown-item" href="#">Cart</Link>
+                  </li>
+                  <li className={styles.buttonLi}>
+                    <button className="btn btn-danger shadow-sm">Logout</button>
+                  </li>
+                </ul>
+              </div>
             </div>
           </ul>
         </div>
