@@ -1,0 +1,30 @@
+.ourFormStyle {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.ourFormStyle p {
+    color: #676767;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.formSection {
+    display: flex;
+    justify-content: space-around;
+}
+.fromHalfSection {
+    width: 50%;
+}
+.item {
+    padding: 16px 25px !important;
+    border-radius: 8px !important;
+    border: 0 !important;
+    margin: 5px !important;
+    background: #F5F5F5 !important;
+    color: #676767 !important;
+    font-size: 15px !important;
+}

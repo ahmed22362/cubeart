@@ -8,6 +8,7 @@ html {
 }
 body {
     font-family: 'Poppins', sans-serif;
+    height: 800vh;
 }
 
 .logo-div {
@@ -119,4 +120,11 @@ ul .nav-link:hover {
 .px10 {
     padding-right: 5rem!important;
     padding-left: 5rem!important;
+}
+.aboutSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #ECF5FA;
+    padding: 40px;
 }
