@@ -1,5 +1,5 @@
 import './page.module.css'
-import { MyCarsouel, OurService, ProductDiscSlider, ProductSlider } from '@/components'
+import { AboutUs, MyCarsouel, OurService, ProductDiscSlider, ProductSlider } from '@/components'
 
 export default function Home() {
   return (
@@ -13,6 +13,9 @@ export default function Home() {
         </div>
         <div className='px-2'>
           <OurService />
+        </div>
+        <div className='px10'>
+          <AboutUs />
         </div>
     </>
   ) 
