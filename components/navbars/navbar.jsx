@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="container">
         <div className="logo-div">
           <Link className="navbar-brand" href="/">
-            <img src="logo.png" alt="" />
+            <img src="/logo.png" alt="" />
           </Link>
           <h2
             style={{
@@ -52,7 +52,7 @@ export default function Navbar() {
                     border: "0"
                   }}
                 >
-                  <img src="search-normal.svg" alt="" />
+                  <img src="/search-normal.svg" alt="" />
                 </span>
                 <input
                   type="text"
@@ -75,7 +75,7 @@ export default function Navbar() {
             </div>
             <div className="lang-section">
               <i className="bi bi-globe2"></i>
-              <span>arabic</span>
+              <span>Arabic</span>
             </div>
             <div>
               <div className="dropdown">

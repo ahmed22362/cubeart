@@ -4,6 +4,7 @@ import MyCarsouel from "./Carsouel/myCarsouel";
 import ProductSlider from "./productSlider/productSlider";
 import OurService from './OurServies/ourServices';
 import ServiceCard from "./ServiceCard/serviceCard";
+import NavLinks from "./navLink/breadcurmbs";
 
 export {
     Navbar,
@@ -12,4 +13,5 @@ export {
     ProductSlider,
     OurService,
     ServiceCard,
+    NavLinks
 }
