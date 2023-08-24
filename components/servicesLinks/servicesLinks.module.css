@@ -49,3 +49,19 @@
     background-color: #3D89AD;
     transition: 0.5s;
 }
+@media (max-width: 992px) {
+    .ulList {
+        flex-direction: column;
+    }
+    .active::before {
+        top: 30px;
+    }
+    .ulList li:hover::before {
+        display: none;
+    }
+}
+/* @media (max-width: 768px) {
+    .ulList {
+        flex-direction: column;
+    }
+} */

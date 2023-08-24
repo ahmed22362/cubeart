@@ -78,6 +78,22 @@
     background-color: #3D89AD;
     transition: 0.5s;
 }
+@media (max-width: 992px) {
+    .servicesLinks_ulList__TDC2o {
+        flex-direction: column;
+    }
+    .servicesLinks_active__FNVP8::before {
+        top: 30px;
+    }
+    .servicesLinks_ulList__TDC2o li:hover::before {
+        display: none;
+    }
+}
+/* @media (max-width: 768px) {
+    .ulList {
+        flex-direction: column;
+    }
+} */
 /*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/customModal/customModal.module.css ***!
   \***************************************************************************************************************************************************************************************************************************************************************************************/
@@ -88,9 +104,16 @@
     width: 100%;
     font-size: 14px;
     padding: 20px;
+    flex-wrap: wrap;
+}
+
+.customModal_modalBody__C7wJI img {
+    display: flex;
+    margin: auto;
 }
 .customModal_modalBody__C7wJI p {
     width: 420px;
+    padding: 10px;
 }
 /*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/OurServies/ourServices.module.css ***!
@@ -177,6 +200,7 @@
     flex: .6 1;
     margin: 18px 0px -23px 0px;
 }
+
 /*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/Aboutus/aboutUs.module.css ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************/
