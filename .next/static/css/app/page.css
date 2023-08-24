@@ -230,7 +230,26 @@
     color: #676767 !important;
     font-size: 15px !important;
 }
+.quickQuote_item__zrwnT:focus {
+    outline: #969696 solid 2px;
+    border: 4px solid #454545;
+    transition: 0.1s;
+}
 
+.quickQuote_addButton__s7kle {
+    border-radius: var(--radius-lg, 16px);
+    background: linear-gradient(180deg, #91C7E0 0%, #429ECA 100%);
+    width: 172px;
+    padding: 12px 57px 12px 56px;
+    border: none;
+    margin-left: auto;
+    display: flex;
+    color: #fff;
+}
+.quickQuote_addButton__s7kle:hover {
+    background: linear-gradient(180deg, #91C7E0 0%, #429fca76 100%);
+    transition: 1s;
+}
 /*!*************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./app/page.module.css ***!
   \*************************************************************************************************************************************************************************************************************************************************************/
