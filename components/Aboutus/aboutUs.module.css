@@ -1,0 +1,17 @@
+.aboutUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 500px;
+}
+.aboutUs h2
+ {
+    font-weight: 600;
+    font-size: 40px;
+    color: #292D32;
+}
+.aboutUs p {
+    color: #292D32;
+    font-size: 24px;
+}

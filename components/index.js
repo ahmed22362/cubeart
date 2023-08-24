@@ -6,6 +6,7 @@ import OurService from './OurServies/ourServices';
 import ServiceCard from "./ServiceCard/serviceCard";
 import NavLinks from "./navLink/breadcurmbs";
 import AboutUs from "./Aboutus/AboutUs";
+import QuickQuote from './quickQuote/quickQuote';
 
 
 
@@ -17,5 +18,6 @@ export {
     OurService,
     ServiceCard,
     NavLinks,
-    AboutUs
+    AboutUs,
+    QuickQuote
 }
