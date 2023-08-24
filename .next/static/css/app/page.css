@@ -217,6 +217,7 @@
 .quickQuote_formSection__WVFi0 {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .quickQuote_fromHalfSection___o3AL {
     width: 50%;

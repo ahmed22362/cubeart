@@ -127,4 +127,5 @@ ul .nav-link:hover {
     justify-content: space-around;
     background: #ECF5FA;
     padding: 40px;
+    flex-wrap: wrap;
 }

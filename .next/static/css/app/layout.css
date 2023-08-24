@@ -470,6 +470,7 @@ ul .nav-link:hover {
     justify-content: space-around;
     background: #ECF5FA;
     padding: 40px;
+    flex-wrap: wrap;
 }
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/navbars/navbar.module.css ***!
@@ -722,6 +723,7 @@ ul .nav-link:hover {
 .quickQuote_formSection__WVFi0 {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .quickQuote_fromHalfSection___o3AL {
     width: 50%;
