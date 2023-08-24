@@ -28,13 +28,7 @@ export default function QuickQuote() {
                     </div>
                 </div>
                 </div>
-                <button type="submit" className="btn btn-primary mb-4" style={{
-                    borderRadius: "var(--radius-lg, 16px)",
-                    background: "linear-gradient(180deg, #91C7E0 0%, #429ECA 100%)",
-                    width: "172px",
-                    padding: "12px 57px 12px 56px",
-                    border: "none"
-                }}>Submit</button>
+                <button type="submit" className={styles.addButton} style={{}}>Submit</button>
             </form>
         </div>
     )
