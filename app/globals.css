@@ -123,7 +123,7 @@ ul .nav-link:hover {
 }
 .aboutSection {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     background: #ECF5FA;
     padding: 40px;

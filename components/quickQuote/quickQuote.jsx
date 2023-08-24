@@ -1,4 +1,5 @@
 "use client"
+import { MainButton } from '..'
 import styles from './quickQuote.module.css'
 
 export default function QuickQuote() {
@@ -24,11 +25,12 @@ export default function QuickQuote() {
                         <input type="text" id="form3Example4" className={styles.item} placeholder="Subject"/>
                     </div>
                     <div className="form-outline mb-4">
-                        <textarea className={styles.item + " textArea"} style={{resize: "none", height: "120px", width: "250px"}} id="form4Example5" placeholder="Your Message"></textarea>
+                        <textarea className={styles.item + " textArea"} style={{resize: "none", height: "120px"}} id="form4Example5" placeholder="Your Message"></textarea>
                     </div>
                 </div>
                 </div>
-                <button type="submit" className={styles.addButton} style={{}}>Submit</button>
+                <MainButton text="sumbit" />
+                {/* <button type="submit" className={styles.addButton} style={{}}>Submit</button> */}
             </form>
         </div>
     )
