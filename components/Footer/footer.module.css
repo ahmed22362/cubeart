@@ -1,0 +1,14 @@
+.footerSection {
+    background-color: #429ECA;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footerContent {
+    display: flex;
+    flex-direction: column;
+}
+.leftSection {
+    display: block;
+}

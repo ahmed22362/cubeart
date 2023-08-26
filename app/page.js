@@ -1,5 +1,5 @@
 import './page.module.css'
-import { AboutUs, MyCarsouel, OurService, ProductDiscSlider, ProductSlider, QuickQuote } from '@/components'
+import { AboutUs, Footer, MyCarsouel, OurService, ProductDiscSlider, ProductSlider, QuickQuote } from '@/components'
 
 export default function Home() {
   return (
@@ -18,6 +18,7 @@ export default function Home() {
           <AboutUs />
           <QuickQuote />
         </section>
+        <Footer className="px-2 py-2 footerSection" />
     </>
   ) 
 }

@@ -8,6 +8,7 @@ import NavLinks from "./navLink/breadcurmbs";
 import AboutUs from "./Aboutus/AboutUs";
 import QuickQuote from './quickQuote/quickQuote';
 import MainButton from './Button/button';
+import Footer from "./Footer/Footer";
 
 export {
     Navbar,
@@ -19,5 +20,6 @@ export {
     NavLinks,
     AboutUs,
     QuickQuote,
-    MainButton
+    MainButton,
+    Footer
 }
