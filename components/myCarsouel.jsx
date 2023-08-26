@@ -1,5 +1,8 @@
+import {Image} from 'next/image';
+
 export default function MyCarsouel() {
-    return(
+    
+return(
         <div id="carouselExampleAutoplaying" className="carousel slide my-5" data-bs-ride="carousel">
         <div className="carousel-inner">
             <div className="carousel-item active">
@@ -14,7 +17,8 @@ export default function MyCarsouel() {
                 }}>Get in touch</button>
                 </div>
             </div>
-            <img src="Carsouel-images/carsouel-1.png" className="d-block w-100 carosuel-img" alt="..." />
+            {/* <Image src="Carsouel-images/carsouel-1.png" className="d-block w-100 carosuel-img" alt="..." /> */}
+            <Image src="Carsouel-images/carsouel-1.png" width="100" height="100" alt="carsuoel" />
             </div>
             <div className="carousel-item">
             <div className="carousel-caption d-none d-md-block" style={{top: "8rem", zIndex: "100"}}>
@@ -28,7 +32,7 @@ export default function MyCarsouel() {
                 }}>Get in touch</button>
                 </div>
             </div>
-            <img src="Carsouel-images/carsouel-2.png" className="d-block w-100 carosuel-img" alt="..." />
+            <Image src="Carsouel-images/carsouel-2.png" className="d-block w-100 carosuel-img" alt="carsouel2" />
             </div>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
