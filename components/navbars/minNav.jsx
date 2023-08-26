@@ -15,7 +15,7 @@ export default function MinNav() {
                 <Link href={'#'} className="nav-link">Products</Link> 
               </li>
               <li className="nav-item">
-                <Link href={'#'} className="nav-link">Portfolio</Link> 
+                <Link href={'/projects'} className="nav-link">Projects</Link> 
               </li>
             </ul>
           </div>

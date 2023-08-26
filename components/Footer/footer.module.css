@@ -8,7 +8,21 @@
 .footerContent {
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 .leftSection {
-    display: block;
+    display: flex;
+    justify-content: space-evenly;
+}
+.contentBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.contactus {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 205px;
 }
