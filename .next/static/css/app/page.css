@@ -24,6 +24,30 @@
 .productSlide_myOwnStyleRight__sY45X {
     right: -10px;
 }
+.productSlide_upperBody__h0gJ_ {
+    display: flex;
+    justify-content: space-between;
+}
+.productSlide_discount__mHro_ {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.productSlide_addBtn__40eiq {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+    align-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #429ECA;
+    color: #fff;
+}
+.productSlide_add-btn__7sMiA:hover {
+    background-color: #429fca9f;
+    color: #fff;
+}
+
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/servicesLinks/servicesLinks.module.css ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************************/
@@ -286,9 +310,23 @@
 .footer_footerContent__myr0K {
     display: flex;
     flex-direction: column;
+    flex: 1 1;
 }
 .footer_leftSection__c_bsw {
-    display: block;
+    display: flex;
+    justify-content: space-evenly;
+}
+.footer_contentBox__ZUpyd {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.footer_contactus__F7vRy {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 205px;
 }
 /*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/quickQuote/quickQuote.module.css ***!

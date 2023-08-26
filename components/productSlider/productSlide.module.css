@@ -21,3 +21,26 @@
 .myOwnStyleRight {
     right: -10px;
 }
+.upperBody {
+    display: flex;
+    justify-content: space-between;
+}
+.discount {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.addBtn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+    align-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #429ECA;
+    color: #fff;
+}
+.add-btn:hover {
+    background-color: #429fca9f;
+    color: #fff;
+}

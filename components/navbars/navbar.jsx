@@ -81,7 +81,7 @@ export default function Navbar() {
               <div className="dropdown">
                 <i className="bi bi-person dropdown-toggle" style={{cursor: "pointer"}} role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
 
-                <ul className="dropdown-menu" style={{right: "0", padding: "10px"}}>
+                <ul className="dropdown-menu" style={{right: "0", padding: "10px", left: "-310%"}}>
                   <li className={styles.dropDownLink}>
                       <i className="bi bi-person-gear"></i>
                       <Link className="dropdown-item" href="#">Edit Profile</Link>
