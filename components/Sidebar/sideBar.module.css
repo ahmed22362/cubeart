@@ -1,0 +1,77 @@
+.slide_background{
+    background: #ECF5FA;
+
+}
+.sideBar_container{
+    width: 140px;
+    transition: .4s;
+}
+.sideBar{
+  
+    transition:all .3s;
+}
+.sideBarNx{
+    width: 85px;
+    transition:all .3s;
+}
+.nav_link{
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    margin-right: 5px;
+    color: #292D32 !important;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 8px;
+}
+.collapse{
+    background: #669fbc;
+    border-radius: 50%;
+    height: 45px;
+    width: 50px;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: -20%;
+    border: 3px solid white;
+    margin-top: 5px;
+}
+ .span{
+display: block;
+width: 30px;
+height: 3px;
+background: rgb(246, 244, 244);
+margin-top: 5px;
+border-radius: 15px;
+transition: .4s;
+}
+.collapse_in:hover .span_1{
+    width: 20px;
+    transform: translate(-3px ,8px)  rotate(30deg);
+}
+.collapse_in:hover .span_2{
+    display: none;
+}
+.collapse_in:hover .span_3{
+    width: 20px;
+    transform: translate(-3px,-8px)  rotate(-30deg);
+}
+
+
+.collapse_out:hover .span_1{
+    width: 20px;
+    transform: translate(8px ,-3px)  rotate(30deg);
+}
+.collapse_out:hover .span_2{
+    display: none;
+}
+.collapse_out:hover .span_3{
+    width: 20px;
+    transform: translate(8px,-3px)  rotate(-30deg);
+}

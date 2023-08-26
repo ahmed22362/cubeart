@@ -14,6 +14,14 @@ import React,{ useEffect } from "react";
 
 import { MinNav, Navbar } from '@/components';
 
+//theme
+import "primereact/resources/themes/lara-light-indigo/theme.css";     
+    
+//core
+import "primereact/resources/primereact.min.css";                                       
+        
+import 'primeicons/primeicons.css';
+        
 export default function RootLayout({ children }) {
 
   useEffect(() => {

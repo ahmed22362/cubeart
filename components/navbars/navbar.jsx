@@ -41,6 +41,7 @@ export default function Navbar() {
                 className="input-group"
                 style={{
                   borderRadius: "8px",
+                  padding:'0px'
                 }}
               >
                 <span
@@ -48,7 +49,8 @@ export default function Navbar() {
                   id="basic-addon1"
                   style={{
                     backgroundColor: "#ECF5FA",
-                    border: "0"
+                    border: "0",
+                    padding:'0p'
                   }}
                 >
                   <img src="search-normal.svg" alt="" />
@@ -58,6 +60,7 @@ export default function Navbar() {
                   style={{
                     border: "0",
                     backgroundColor: "#ECF5FA",
+                    padding: '0px'
                   }}
                   className="form-control"
                   placeholder="Search"
