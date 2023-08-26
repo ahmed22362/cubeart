@@ -17,6 +17,18 @@
       "static/chunks/main-app.js",
       "static/css/app/editprofile/page.css",
       "static/chunks/app/editprofile/page.js"
+    ],
+    "/projects/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/projects/page.css",
+      "static/chunks/app/projects/page.js"
+    ],
+    "/projects/[detailes]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/projects/[detailes]/page.css",
+      "static/chunks/app/projects/[detailes]/page.js"
     ]
   }
 }
