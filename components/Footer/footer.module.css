@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .footerContent {
     display: flex;
@@ -13,6 +14,7 @@
 .leftSection {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .contentBox {
     display: flex;
@@ -23,6 +25,23 @@
 .contactus {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    padding-left: 205px;
+    align-items: flex-start;
+    padding-left: 127px;
+    padding-top: 40px;
+}
+@media (max-width: 768px) {
+    .footerContent {
+        gap: 30px;
+    }
+    .footerSection {
+        gap: 30px;
+    }
+    .leftSection {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .contactus {
+        padding: 0px;
+    }
 }
