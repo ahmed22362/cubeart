@@ -14,7 +14,7 @@ export default function Home() {
         <section className='px-2'>
           <OurService />
         </section>
-        <section className='px-2 aboutSection'>
+        <section className='px-2 my-5 aboutSection'>
           <AboutUs />
           <QuickQuote />
         </section>

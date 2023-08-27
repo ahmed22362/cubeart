@@ -306,6 +306,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .footer_footerContent__myr0K {
     display: flex;
@@ -315,6 +316,7 @@
 .footer_leftSection__c_bsw {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 .footer_contentBox__ZUpyd {
     display: flex;
@@ -325,8 +327,25 @@
 .footer_contactus__F7vRy {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    padding-left: 205px;
+    align-items: flex-start;
+    padding-left: 127px;
+    padding-top: 40px;
+}
+@media (max-width: 768px) {
+    .footer_footerContent__myr0K {
+        gap: 30px;
+    }
+    .footer_footerSection__T4LZ_ {
+        gap: 30px;
+    }
+    .footer_leftSection__c_bsw {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .footer_contactus__F7vRy {
+        padding: 0px;
+    }
 }
 /*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/quickQuote/quickQuote.module.css ***!
