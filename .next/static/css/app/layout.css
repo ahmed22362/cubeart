@@ -493,57 +493,76 @@ ul .nav-link:hover {
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/sliderCarsouel/sliderCarsouel.module.css ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************/
-/* .carsouelItem {
-    width: 100%;
-    height: 100%;
-} */
-/* .carosuelImg {
-    position: absolute;;
-    width: 100%;
-    height: 100%;
-} */
+.sliderCarsouel_header1__ijemO {
+    font-size: 2rem;
+}
 
-/* .carsouleBtns {
+.sliderCarsouel_carosuelP__BeSN9 {
+    text-align: left;
+    font-size: 1.1rem;
+    margin: 0;
+    width: 491px;
+}
+.sliderCarsouel_carosuelBtns__ytVXn {
+    position: absolute;
+    bottom: -70px;
     display: flex;
-    justify-content: center;
-    margin-top: 10rem;
-} */
-/* .carsouleBtns .btn {
-    margin: 10px;
-    padding: 12px 30px;
-} */
-/* .carsouleBtns .btn:nth-child(2):hover {
-    background-color: #eeeeee5b;
+    justify-content: space-evenly;
+    gap: 40px;
 }
-.btnPurple {
-    color: #FFF;
-    background-color: #fb65fe;
+.sliderCarsouel_carosuelBtns__ytVXn button {
+    border: 0;
+    padding: 10px;
+    width: 200px;
+    border-radius: 8px;
 }
-.btnPurple:hover {
-    background-color: #fb65fe9d;
-} */
-/* .carosuelImg {
+.sliderCarsouel_carosuelBtns__ytVXn button:hover {
+    transition: 0.5s;
+}
+
+.sliderCarsouel_carosuelBtns__ytVXn .sliderCarsouel_white__66K_H {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: 1px solid #ffffff
+} 
+.sliderCarsouel_carosuelBtns__ytVXn .sliderCarsouel_white__66K_H:hover {
+    background-color: rgba(255, 255, 255, 0.73);
+    color: #000;
+} 
+.sliderCarsouel_carosuelBtns__ytVXn .sliderCarsouel_yellow__6mriz {
+    background-color: #FFC636;
+    color: #ffffff;
+} 
+.sliderCarsouel_carosuelBtns__ytVXn .sliderCarsouel_yellow__6mriz:hover {
+    background-color: #f7b816c6;
+    color: #ffffff;
+} 
+.sliderCarsouel_carosuelImg__w4Qgd {
     filter: brightness(70%);
-} */
+}
 
 
 @media (max-width: 768px) {
-    .sliderCarsouel_carouselCaption__xgx1Q {
-        display: block;
-        top: 0px;
+    .sliderCarsouel_header1__ijemO {
+        font-size: 1.3rem;
+        line-height: 30px;
     }
-    .sliderCarsouel_carouselCaption__xgx1Q h1 {
-        font-size: 24px;
+    .sliderCarsouel_carosuelP__BeSN9 {
+        text-align: left;
+        font-size: 0.8em;
+        margin: 0;
+        width: 261px;
     }
-    .sliderCarsouel_carouselCaption__xgx1Q .sliderCarsouel_carsouelBtns__tu8_B {
-        margin-top: none;
+    .sliderCarsouel_carosuelBtns__ytVXn {
+        gap: 20px;
     }
-    .sliderCarsouel_carouselCaption__xgx1Q .sliderCarsouel_carsouelBtns__tu8_B button {
-        margin: none;
-        padding: none;
-        width: 150px;
-        height: 40px;
-        font-size: 12px;
+    .sliderCarsouel_carosuelBtns__ytVXn button {
+        font-size: 14px;
+        padding: 10px;
+        width: 155px;
+    }
+    .sliderCarsouel_carosuelImg__w4Qgd {
+        height: 300px !important;
     }
 }
 /*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
