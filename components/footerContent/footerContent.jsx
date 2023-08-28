@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image'
 import styles from '../Footer/footer.module.css'
 
 export default function FooterContent() {
@@ -18,8 +19,8 @@ export default function FooterContent() {
                 </div>
                 <div className={"follow" + styles.contentBox}>
                     <h3>Follow</h3>
-                    <img src="/SocialIcons/facebook.svg" alt="" />
-                    <img src="/SocialIcons/instagram.svg" alt="" />
+                    <Image src="/SocialIcons/facebook.svg" width={"47"} height={"47"} blurDataURL={"/SocialIcons/facebook.svg"} alt="social" />
+                    <Image src="/SocialIcons/instagram.svg" width={"47"} height={"47"} blurDataURL={"/SocialIcons/instagram.svg"} alt="social" />
                 </div>
             </div>
             <div className={styles.contactus}>

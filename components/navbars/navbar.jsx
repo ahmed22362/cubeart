@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./navbar.module.css"
+import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -7,7 +8,7 @@ export default function Navbar() {
       <div className={"container " + styles.containerSm}>
         <div className="logo-div">
           <Link className="navbar-brand" href="/">
-            <img src="/logo.png" alt="" />
+            <Image src={"/logo.png"} width={"48"} height={"48"} blurDataURL={'/logo.png'} alt={"logo"} />
           </Link>
           <h2
             style={{
@@ -52,7 +53,7 @@ export default function Navbar() {
                     border: "0"
                   }}
                 >
-                  <img src="/search-normal.svg" alt="" />
+                  <Image src={"/search-normal.svg"} width={"24"} height={"24"} alt={"search"} blurDataURL={'/search-normal.svg'} />
                 </span>
                 <input
                   type="text"
