@@ -1,53 +1,72 @@
-/* .carsouelItem {
-    width: 100%;
-    height: 100%;
-} */
-/* .carosuelImg {
-    position: absolute;;
-    width: 100%;
-    height: 100%;
-} */
+.header1 {
+    font-size: 2rem;
+}
 
-/* .carsouleBtns {
+.carosuelP {
+    text-align: left;
+    font-size: 1.1rem;
+    margin: 0;
+    width: 491px;
+}
+.carosuelBtns {
+    position: absolute;
+    bottom: -70px;
     display: flex;
-    justify-content: center;
-    margin-top: 10rem;
-} */
-/* .carsouleBtns .btn {
-    margin: 10px;
-    padding: 12px 30px;
-} */
-/* .carsouleBtns .btn:nth-child(2):hover {
-    background-color: #eeeeee5b;
+    justify-content: space-evenly;
+    gap: 40px;
 }
-.btnPurple {
-    color: #FFF;
-    background-color: #fb65fe;
+.carosuelBtns button {
+    border: 0;
+    padding: 10px;
+    width: 200px;
+    border-radius: 8px;
 }
-.btnPurple:hover {
-    background-color: #fb65fe9d;
-} */
-/* .carosuelImg {
+.carosuelBtns button:hover {
+    transition: 0.5s;
+}
+
+.carosuelBtns .white {
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: 1px solid #ffffff
+} 
+.carosuelBtns .white:hover {
+    background-color: rgba(255, 255, 255, 0.73);
+    color: #000;
+} 
+.carosuelBtns .yellow {
+    background-color: #FFC636;
+    color: #ffffff;
+} 
+.carosuelBtns .yellow:hover {
+    background-color: #f7b816c6;
+    color: #ffffff;
+} 
+.carosuelImg {
     filter: brightness(70%);
-} */
+}
 
 
 @media (max-width: 768px) {
-    .carouselCaption {
-        display: block;
-        top: 0px;
+    .header1 {
+        font-size: 1.3rem;
+        line-height: 30px;
     }
-    .carouselCaption h1 {
-        font-size: 24px;
+    .carosuelP {
+        text-align: left;
+        font-size: 0.8em;
+        margin: 0;
+        width: 261px;
     }
-    .carouselCaption .carsouelBtns {
-        margin-top: none;
+    .carosuelBtns {
+        gap: 20px;
     }
-    .carouselCaption .carsouelBtns button {
-        margin: none;
-        padding: none;
-        width: 150px;
-        height: 40px;
-        font-size: 12px;
+    .carosuelBtns button {
+        font-size: 14px;
+        padding: 10px;
+        width: 155px;
+    }
+    .carosuelImg {
+        height: 300px !important;
     }
 }
