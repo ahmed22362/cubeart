@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import styles from './productSlide.module.css'
+import Image from "next/image";
 
 
 function SampleNextArrow(props) {
@@ -80,8 +81,8 @@ export default class ProductSlider extends Component {
 
             <Slider {...settings}>
 
-            <div className="card">
-                <img src="Items/item.png" className="card-img-top" alt="..." />
+            <div className="card h-100">
+                <Image src="/Items/item.png" className="card-img-top" sizes="100vh" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
                 <div className="card-body">
                     <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
                     <div className={styles.upperBody}>
@@ -101,8 +102,8 @@ export default class ProductSlider extends Component {
                 </div>
             </div>
             {/* ============== Repeat Card =================== */}
-            <div className="card">
-                <img src="Items/item.png" className="card-img-top" alt="..." />
+            <div className="card h-100">
+                <Image src="/Items/item2.png" className="card-img-top" sizes="100vw" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
                 <div className="card-body">
                     <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
                     <div className={styles.upperBody}>
@@ -121,8 +122,8 @@ export default class ProductSlider extends Component {
                     </button>
                 </div>
             </div>
-            <div className="card">
-                <img src="Items/item.png" className="card-img-top" alt="..." />
+            <div className="card h-100">
+                <Image src="/Items/item3.png" className="card-img-top" sizes="100vw" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
                 <div className="card-body">
                     <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
                     <div className={styles.upperBody}>
@@ -141,8 +142,8 @@ export default class ProductSlider extends Component {
                     </button>
                 </div>
             </div>
-            <div className="card">
-                <img src="Items/item.png" className="card-img-top" alt="..." />
+            <div className="card h-100">
+                <Image src="/Items/item4.png" className="card-img-top" sizes="100vw" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
                 <div className="card-body">
                     <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
                     <div className={styles.upperBody}>
@@ -161,8 +162,8 @@ export default class ProductSlider extends Component {
                     </button>
                 </div>
             </div>
-            <div className="card">
-                <img src="Items/item.png" className="card-img-top" alt="..." />
+            <div className="card h-100">
+                <Image src="/Items/item5.png" className="card-img-top" sizes="100vw" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
                 <div className="card-body">
                     <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
                     <div className={styles.upperBody}>
@@ -181,8 +182,8 @@ export default class ProductSlider extends Component {
                     </button>
                 </div>
             </div>
-            <div className="card">
-                <img src="Items/item.png" className="card-img-top" alt="..." />
+            <div className="card h-100">
+                <Image src="/Items/item6.png" className="card-img-top" sizes="100vw" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
                 <div className="card-body">
                     <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
                     <div className={styles.upperBody}>
