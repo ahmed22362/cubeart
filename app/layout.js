@@ -11,7 +11,6 @@ import "slick-carousel/slick/slick-theme.css";
 import './globals.css'
 
 import React,{ useEffect } from "react";
-
 import { MinNav, Navbar } from '@/components';
 
 export default function RootLayout({ children }) {
@@ -22,6 +21,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <title>Cubeart</title>
       <body>
         <Navbar />
         <MinNav />
