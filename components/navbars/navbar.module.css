@@ -1,3 +1,4 @@
+
 .dropDownLink{
     display: flex;
     justify-content: right;
@@ -26,4 +27,28 @@
     align-items: center;
     border-radius: 16px;
     background: #EE485C;
+}
+@media (max-width: 991px) {
+    .rightSection {
+        flex-direction: row;
+    }
+    .rightSection .dropUl {
+        position: absolute !important;
+    }
+    .containerSm {
+        gap: 10px !important;
+    }
+    .collapseStyles {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .ulMinLinks {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .ulMinLinks a {
+        font-size: 1.1rem;
+    }
 }

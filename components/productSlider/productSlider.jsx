@@ -34,6 +34,7 @@ export default class ProductSlider extends Component {
         const settings = {
           dots: true,
           infinite: true,
+          lazyLoad: true,
           slidesToShow: 5,
           slidesToScroll: 1,
           slidesToScroll: 1,

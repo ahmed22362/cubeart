@@ -61,28 +61,7 @@ ul .nav-link:hover {
     justify-content: space-between;
     width: 45%;
 }
-.carsoule-btns {
-    display: flex;
-    justify-content: center;
-    margin-top: 10rem;
-}
-.carsoule-btns .btn {
-    margin: 10px;
-    padding: 12px 30px;
-}
-.carsoule-btns .btn:nth-child(2):hover {
-    background-color: #eeeeee5b;
-}
-.btn-purple {
-    color: #FFF;
-    background-color: #fb65fe;
-}
-.btn-purple:hover {
-    background-color: #fb65fe9d;
-}
-.carosuel-img {
-    filter: brightness(70%);
-}
+
 .card {
     border: 0;
 }
