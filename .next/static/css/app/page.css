@@ -430,39 +430,49 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 30px 30px !important
 }
+
 .footer_footerContent__myr0K {
     display: flex;
     flex-direction: column;
     flex: 1 1;
+    align-items: flex-start;
+    gap: 50px;
 }
 .footer_leftSection__c_bsw {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    gap: 100px;
 }
 .footer_contentBox__ZUpyd {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 10px;
 }
 
 .footer_contactus__F7vRy {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 127px;
-    padding-top: 40px;
+}
+@media (max-width: 825px) {
+    .footer_footerSection__T4LZ_ {
+        flex-direction: column;
+    }
 }
 @media (max-width: 768px) {
-    .footer_footerContent__myr0K {
+    /* .footerContent {
         gap: 30px;
-    }
+    } */
     .footer_footerSection__T4LZ_ {
+        flex-direction: row;
         gap: 30px;
     }
     .footer_leftSection__c_bsw {
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-wrap: wrap;
         gap: 30px;
     }
@@ -470,6 +480,7 @@
         padding: 0px;
     }
 }
+
 /*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/quickQuote/quickQuote.module.css ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************/
