@@ -4,7 +4,7 @@ import styles from "./navbar.module.css"
 export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-white">
-      <div className="container">
+      <div className={"container " + styles.containerSm}>
         <div className="logo-div">
           <Link className="navbar-brand" href="/">
             <img src="/logo.png" alt="" />
@@ -35,9 +35,9 @@ export default function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className={"collapse navbar-collapse " + styles.collapseStyles} id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100">
-            <form>
+            <form className="w-100">
               <div
                 className="input-group"
                 style={{
@@ -68,7 +68,7 @@ export default function Navbar() {
               </div>
             </form>
           </ul>
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 end-of-nav">
+          <ul className={"navbar-nav me-auto mb-2 mb-lg-0 end-of-nav " + styles.rightSection}>
             <button className="nav-btn">Print your design</button>
             <div>
                 <i className="bi bi-cart3"></i>
@@ -81,7 +81,7 @@ export default function Navbar() {
               <div className="dropdown">
                 <i className="bi bi-person dropdown-toggle" style={{cursor: "pointer"}} role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
 
-                <ul className="dropdown-menu" style={{right: "0", padding: "10px", left: "-310%"}}>
+                <ul className={"dropdown-menu " + styles.dropUl} style={{right: "0", padding: "10px", left: "-310%"}}>
                   <li className={styles.dropDownLink}>
                       <i className="bi bi-person-gear"></i>
                       <Link className="dropdown-item" href="#">Edit Profile</Link>

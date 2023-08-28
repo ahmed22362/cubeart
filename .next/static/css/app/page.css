@@ -1,3 +1,59 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/sliderCarsouel/sliderCarsouel.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+/* .carsouelItem {
+    width: 100%;
+    height: 100%;
+} */
+/* .carosuelImg {
+    position: absolute;;
+    width: 100%;
+    height: 100%;
+} */
+
+/* .carsouleBtns {
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+} */
+/* .carsouleBtns .btn {
+    margin: 10px;
+    padding: 12px 30px;
+} */
+/* .carsouleBtns .btn:nth-child(2):hover {
+    background-color: #eeeeee5b;
+}
+.btnPurple {
+    color: #FFF;
+    background-color: #fb65fe;
+}
+.btnPurple:hover {
+    background-color: #fb65fe9d;
+} */
+/* .carosuelImg {
+    filter: brightness(70%);
+} */
+
+
+@media (max-width: 768px) {
+    .sliderCarsouel_carouselCaption__xgx1Q {
+        display: block;
+        top: 0px;
+    }
+    .sliderCarsouel_carouselCaption__xgx1Q h1 {
+        font-size: 24px;
+    }
+    .sliderCarsouel_carouselCaption__xgx1Q .sliderCarsouel_carsouelBtns__tu8_B {
+        margin-top: none;
+    }
+    .sliderCarsouel_carouselCaption__xgx1Q .sliderCarsouel_carsouelBtns__tu8_B button {
+        margin: none;
+        padding: none;
+        width: 150px;
+        height: 40px;
+        font-size: 12px;
+    }
+}
 /*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/productSlider/productSlide.module.css ***!
   \******************************************************************************************************************************************************************************************************************************************************************************************/
@@ -249,6 +305,7 @@
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/navbars/navbar.module.css ***!
   \******************************************************************************************************************************************************************************************************************************************************************************/
+
 .navbar_dropDownLink__B_hcx{
     display: flex;
     justify-content: right;
@@ -277,6 +334,30 @@
     align-items: center;
     border-radius: 16px;
     background: #EE485C;
+}
+@media (max-width: 991px) {
+    .navbar_rightSection__P9dxa {
+        flex-direction: row;
+    }
+    .navbar_rightSection__P9dxa .navbar_dropUl___RoYy {
+        position: absolute !important;
+    }
+    .navbar_containerSm__U3YVt {
+        gap: 10px !important;
+    }
+    .navbar_collapseStyles__jcQsp {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navbar_ulMinLinks__lyEF0 {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+    .navbar_ulMinLinks__lyEF0 a {
+        font-size: 1.1rem;
+    }
 }
 /*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/Button/button.module.css ***!

@@ -1,0 +1,53 @@
+/* .carsouelItem {
+    width: 100%;
+    height: 100%;
+} */
+/* .carosuelImg {
+    position: absolute;;
+    width: 100%;
+    height: 100%;
+} */
+
+/* .carsouleBtns {
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+} */
+/* .carsouleBtns .btn {
+    margin: 10px;
+    padding: 12px 30px;
+} */
+/* .carsouleBtns .btn:nth-child(2):hover {
+    background-color: #eeeeee5b;
+}
+.btnPurple {
+    color: #FFF;
+    background-color: #fb65fe;
+}
+.btnPurple:hover {
+    background-color: #fb65fe9d;
+} */
+/* .carosuelImg {
+    filter: brightness(70%);
+} */
+
+
+@media (max-width: 768px) {
+    .carouselCaption {
+        display: block;
+        top: 0px;
+    }
+    .carouselCaption h1 {
+        font-size: 24px;
+    }
+    .carouselCaption .carsouelBtns {
+        margin-top: none;
+    }
+    .carouselCaption .carsouelBtns button {
+        margin: none;
+        padding: none;
+        width: 150px;
+        height: 40px;
+        font-size: 12px;
+    }
+}

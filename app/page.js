@@ -1,10 +1,10 @@
 import './page.module.css'
-import { AboutUs, Footer, MyCarsouel, OurService, ProductDiscSlider, ProductSlider, QuickQuote } from '@/components'
+import { AboutUs, CarsouelSlider, Footer, OurService, ProductSlider, QuickQuote } from '@/components'
 
 export default function Home() {
   return (
     <>
-      <MyCarsouel />
+      <CarsouelSlider />
         <section className='px10'>
           <ProductSlider title="Our Products" /> <br />
           

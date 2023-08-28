@@ -1,6 +1,8 @@
+
 import Navbar from "./navbars/navbar";
 import MinNav from "./navbars/minNav";
-import MyCarsouel from "./Carsouel/myCarsouel";
+import CarsouelSlider from "./sliderCarsouel/myCarsouel";
+import CarsouleItemSlider from "./sliderCarsouel/carsouleItem";
 import ProductSlider from "./productSlider/productSlider";
 import OurService from './OurServies/ourServices';
 import ServiceCard from "./ServiceCard/serviceCard";
@@ -13,7 +15,8 @@ import Footer from "./Footer/Footer";
 export {
     Navbar,
     MinNav,
-    MyCarsouel,
+    CarsouelSlider,
+    CarsouleItemSlider,
     ProductSlider,
     OurService,
     ServiceCard,
