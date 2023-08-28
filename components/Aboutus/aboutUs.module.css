@@ -16,3 +16,17 @@
     color: #292D32;
     font-size: 24px;
 }
+@media (max-width: 768px) {
+    /* For mobile phones: */
+    .aboutUs {
+        gap: 25px;
+        padding-top: 20px;
+    }
+    .aboutUs h2 {
+        margin: auto;
+    }
+    .aboutUs p {
+        font-size: 20px;
+        text-align: center;
+    }
+}

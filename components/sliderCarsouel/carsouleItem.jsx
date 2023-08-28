@@ -4,9 +4,9 @@ import Image from "next/image"
 
 import styles from './sliderCarsouel.module.css'
 
-export default function CarsouleItemSlider({headerText, carsouelText, firstBtn, secBtn, img, alt}) {
+export default function CarsouleItemSlider({headerText, carsouelText, firstBtn, secBtn, btnColor, img, alt, active}) {
     return(
-        <div className={"carousel-item active " + styles.carsouelItem}>
+        <div className={`carousel-item ${active} ${styles.carsouelItem}`}>
         <div className={"carousel-caption"} style={
             {
                 zIndex: "1",
@@ -26,7 +26,7 @@ export default function CarsouleItemSlider({headerText, carsouelText, firstBtn, 
             <h1 className={styles.header1}>{headerText}</h1>
             <p className={styles.carosuelP}>{carsouelText}</p>
             <div className={styles.carosuelBtns}>
-                <button className={styles.yellow}>{firstBtn}</button>
+                <button className={btnColor}>{firstBtn}</button>
                 <button className={styles.white}>{secBtn}</button>
             </div>
         </div>

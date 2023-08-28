@@ -41,7 +41,16 @@
 .carosuelBtns .yellow:hover {
     background-color: #f7b816c6;
     color: #ffffff;
+}
+.carosuelBtns .purple {
+    background-color: #FB65FE;
+    color: #ffffff;
 } 
+.carosuelBtns .purple:hover {
+    background-color: #f72bfabf;
+    color: #ffffff;
+}
+
 .carosuelImg {
     filter: brightness(70%);
 }
@@ -62,11 +71,11 @@
         gap: 20px;
     }
     .carosuelBtns button {
-        font-size: 14px;
+        font-size: 13px;
         padding: 10px;
-        width: 155px;
+        width: 136px;
     }
     .carosuelImg {
-        height: 300px !important;
+        height: 400px !important;
     }
 }

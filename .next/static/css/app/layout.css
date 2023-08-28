@@ -428,6 +428,11 @@ ul .nav-link:hover {
     padding: 40px;
     flex-wrap: wrap;
 }
+@media (max-width: 767px) {
+    .aboutSection {
+        gap: 30px
+    }
+}
 .btn-close {
     position: absolute !important;
     right: 17px !important;
@@ -536,7 +541,16 @@ ul .nav-link:hover {
 .sliderCarsouel_carosuelBtns__ytVXn .sliderCarsouel_yellow__6mriz:hover {
     background-color: #f7b816c6;
     color: #ffffff;
+}
+.sliderCarsouel_carosuelBtns__ytVXn .sliderCarsouel_purple__8yEOU {
+    background-color: #FB65FE;
+    color: #ffffff;
 } 
+.sliderCarsouel_carosuelBtns__ytVXn .sliderCarsouel_purple__8yEOU:hover {
+    background-color: #f72bfabf;
+    color: #ffffff;
+}
+
 .sliderCarsouel_carosuelImg__w4Qgd {
     filter: brightness(70%);
 }
@@ -557,12 +571,12 @@ ul .nav-link:hover {
         gap: 20px;
     }
     .sliderCarsouel_carosuelBtns__ytVXn button {
-        font-size: 14px;
+        font-size: 13px;
         padding: 10px;
-        width: 155px;
+        width: 136px;
     }
     .sliderCarsouel_carosuelImg__w4Qgd {
-        height: 300px !important;
+        height: 400px !important;
     }
 }
 /*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
@@ -812,6 +826,20 @@ ul .nav-link:hover {
 .aboutUs_aboutUs__dNUEU p {
     color: #292D32;
     font-size: 24px;
+}
+@media (max-width: 768px) {
+    /* For mobile phones: */
+    .aboutUs_aboutUs__dNUEU {
+        gap: 25px;
+        padding-top: 20px;
+    }
+    .aboutUs_aboutUs__dNUEU h2 {
+        margin: auto;
+    }
+    .aboutUs_aboutUs__dNUEU p {
+        font-size: 20px;
+        text-align: center;
+    }
 }
 /*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/quickQuote/quickQuote.module.css ***!
