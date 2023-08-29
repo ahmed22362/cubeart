@@ -4,7 +4,7 @@ import { AboutUs, CarsouelSlider, Footer, OurService, ProductSlider, QuickQuote 
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <Head>
         <title>Home</title>
       </Head>
@@ -23,6 +23,6 @@ export default function Home() {
           <QuickQuote />
         </section>
         <Footer className="px-2 py-2 footerSection" />
-    </div>
+    </main>
   ) 
 }
