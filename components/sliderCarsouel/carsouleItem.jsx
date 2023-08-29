@@ -35,11 +35,14 @@ export default function CarsouleItemSlider({headerText, carsouelText, firstBtn, 
             width: '100%',
             height: 'auto',
             }}
-            width={500}
+            width={400}
             height={300}
             alt={alt}
-            placeholder="blur"
-            blurDataURL={`/Carsouel-images/${img}`} />
+            quality={"75"}
+            placeholder={"blur"}
+            blurDataURL={`/Carsouel-images/${img}`}
+            loading={"lazy"}
+            />
         </div>
     )
 };

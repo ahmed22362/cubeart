@@ -1,17 +1,13 @@
 "use client"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
-
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-
-
 import './globals.css'
-
 import React,{ useEffect } from "react";
 import { MinNav, Navbar } from '@/components';
+
 
 export default function RootLayout({ children }) {
 
@@ -20,13 +16,18 @@ export default function RootLayout({ children }) {
   }, []);
 
   return (
+    <>
     <html lang="en">
-      <title>Cubeart</title>
+      <head>
+        <title>Cubuild</title>
+        <meta aria-description='cubuild' content='cubuild' />
+      </head>
       <body>
         <Navbar />
         <MinNav />
         {children}
         </body>
     </html>
+    </>
   )
 }

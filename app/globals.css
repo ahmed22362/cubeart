@@ -2,6 +2,9 @@
     font-family: 'Poppins';
     src: url('../public/Poppins/Poppins-Medium.ttf');
     src: url('../public/Poppins/Poppins-SemiBold.ttf');
+    src: url('../public/Poppins/Poppins-Regular.ttf');
+    src: url('../public/Poppins/Poppins-ExtraLight.ttf');
+    font-display: swap;
 }
 html {
     scroll-behavior: smooth !important;
@@ -99,4 +102,12 @@ ul .nav-link:hover {
     position: absolute !important;
     right: 17px !important;
     top: 20px !important;
+}
+.slick-dots li button:before {
+    color: #2E6F8D;
+    font-size: 10px
+}
+.slick-dots li.slick-active button:before {
+    color: #2E6F8D;
+    font-size: 10px;
 }

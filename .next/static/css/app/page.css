@@ -86,28 +86,27 @@
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/productSlider/productSlide.module.css ***!
   \******************************************************************************************************************************************************************************************************************************************************************************************/
 .productSlide_myOwnStyleRight__sY45X::before {
-    content: "\F231";
+    content: "\F285";
     font-family: "Bootstrap-icons";
-    color: #247ba3;
-    font-size: 66px;
-    font-weight: bold;
+    color: #000000;
+    font-size: 35px;
 }
 
 .productSlide_myOwnStyleLeft__5OF7o {
-    left: -55px;
+    left: -50px;
 }
 
 .productSlide_myOwnStyleLeft__5OF7o::before {
-    content: "\F22D";
+    content: "\F284 ";
     font-family: "Bootstrap-icons";
-    color: #247ba3;
-    font-size: 66px;
-    font-weight: bold;
+    color: #000000;
+    font-size: 35px;
 }
 
 .productSlide_myOwnStyleRight__sY45X {
-    right: -10px;
+    right: -30px;
 }
+
 .productSlide_upperBody__h0gJ_ {
     display: flex;
     justify-content: space-between;
@@ -487,6 +486,7 @@
 @font-face {
     font-family: 'Poppins';
     src: url(/_next/static/media/Poppins-Regular.4b4ebe20.ttf);
+    font-display: swap;
 }
 
 .quickQuote_ourFormStyle__MrvuZ {

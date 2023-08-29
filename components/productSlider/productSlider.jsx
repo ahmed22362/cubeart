@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import styles from './productSlide.module.css'
 import Image from "next/image";
+import Link from "next/link";
 
 
 function SampleNextArrow(props) {
@@ -76,7 +77,7 @@ export default class ProductSlider extends Component {
 
             <div className="section-title">
                 <h3>{this.props.title}</h3>
-                <a href="" style={{color: "black"}}>View All</a>
+                <Link href="/" style={{color: "black"}}>View All</Link>
             </div>
 
             <Slider {...settings}>

@@ -1,26 +1,25 @@
 .myOwnStyleRight::before {
-    content: "\F231";
+    content: "\F285";
     font-family: "Bootstrap-icons";
-    color: #247ba3;
-    font-size: 66px;
-    font-weight: bold;
+    color: #000000;
+    font-size: 35px;
 }
 
 .myOwnStyleLeft {
-    left: -55px;
+    left: -50px;
 }
 
 .myOwnStyleLeft::before {
-    content: "\F22D";
+    content: "\F284 ";
     font-family: "Bootstrap-icons";
-    color: #247ba3;
-    font-size: 66px;
-    font-weight: bold;
+    color: #000000;
+    font-size: 35px;
 }
 
 .myOwnStyleRight {
-    right: -10px;
+    right: -30px;
 }
+
 .upperBody {
     display: flex;
     justify-content: space-between;
