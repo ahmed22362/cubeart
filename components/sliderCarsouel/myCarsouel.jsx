@@ -38,8 +38,8 @@ export default function CarsouelSlider() {
                 firstBtn={"Get in Touch"} 
                 secBtn={"Get in touch"}
                 btnColor={styles.purple}
-                img={"carsouel-2.png"}
-                alt={"image 2"} />
+                img={"carsouel-4.png"}
+                alt={"image 4"} />
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
