@@ -74,10 +74,9 @@ export default function Navbar() {
             <div>
                 <i className="bi bi-cart3"></i>
             </div>
-            <div className="lang-section">
+            {/* <div className="lang-section">
               <i className="bi bi-globe2"></i>
-              <span>Arabic</span>
-            </div>
+            </div> */}
             <div>
               <div className="dropdown">
                 <i className="bi bi-person dropdown-toggle" style={{cursor: "pointer"}} role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>

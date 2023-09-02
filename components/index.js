@@ -6,11 +6,16 @@ import CarsouleItemSlider from "./sliderCarsouel/carsouleItem";
 import ProductSlider from "./productSlider/productSlider";
 import OurService from './OurServies/ourServices';
 import ServiceCard from "./ServiceCard/serviceCard";
-import NavLinks from "./navLink/breadcurmbs";
+import NavLinks from "./breadCrumb/breadcurmbs";
 import AboutUs from "./Aboutus/AboutUs";
 import QuickQuote from './quickQuote/quickQuote';
 import MainButton from './Button/button';
+import SideBar from "./SideBar/SideBar";
 import Footer from "./Footer/Footer";
+import ComboBox from './ComboBox/ComboBox';
+import ProductsList from './ProductsList/ProductsList';
+import ProductCard from "./ProductCard/ProductCard";
+
 
 export {
     Navbar,
@@ -24,5 +29,9 @@ export {
     AboutUs,
     QuickQuote,
     MainButton,
-    Footer
+    SideBar,
+    ComboBox,
+    ProductsList,
+    ProductCard,
+    Footer,
 }

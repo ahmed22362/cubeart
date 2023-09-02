@@ -1,12 +1,11 @@
+"use client"
 import React from 'react' ;
 import styles from './page.module.css'
 import Link from 'next/link';
-import { NavLinks } from '@/components';
 
 const page = () => {
   return (
     <>
-    <NavLinks />
     <div className="container mt-5  mb-5">
         <div className="row g-4">
             <div className="col-md-4">

@@ -1,0 +1,56 @@
+.productsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 50px;
+}
+.pagination button {
+    position: relative;
+    border: 0;
+    padding: 5px;
+    width: 100px;
+    color: rgb(4, 78, 78);
+    background-color: rgb(62, 231, 237);
+}
+.pagination button:hover {
+    color: rgb(2 255 255);
+    background-color: cadetblue;
+    transition: 0.5s;
+}
+.pagination button:disabled {
+    color: rgb(2 255 255);
+    background-color: cadetblue;
+}
+.pagination button.next:before {
+    position: absolute;
+    content: "\F135";
+    font-family: "bootstrap-icons";
+    right: 0;
+    font-size: 30px;
+    top: -15%;
+}
+.pagination button.previous {
+    width: 120px;
+}
+.pagination button.previous:before {
+    position: absolute;
+    content: "\F12C";
+    font-family: "bootstrap-icons";
+    left: 0;
+    font-size: 30px;
+    top: -15%;
+}
+.pagination button.previous:hover:before {
+    left: -4px;
+    transition: 0.5s;
+}
+.pagination button.next:hover:before {
+    right: -4px;
+    transition: 0.5s;
+}

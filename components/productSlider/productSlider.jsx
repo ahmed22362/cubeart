@@ -3,8 +3,8 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import styles from './productSlide.module.css'
-import Image from "next/image";
 import Link from "next/link";
+import ProductCard from './../ProductCard/ProductCard';
 
 
 function SampleNextArrow(props) {
@@ -81,128 +81,62 @@ export default class ProductSlider extends Component {
             </div>
 
             <Slider {...settings}>
-
-            <div className="card h-100">
-                <Image src="/Items/item.png" className="card-img-top" sizes="100vh" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
-                <div className="card-body">
-                    <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
-                    <div className={styles.upperBody}>
-                        <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p className="card-text">25 EGP</p>
-                    </div>
-                    <div className="price-section">
-                        <div className={styles.discount}>
-                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
-                        </div>
-                    </div>
-                    <button className={"btn " + styles.addBtn}>
-                        <i className="bi bi-cart3"></i>
-                        Add
-                    </button>
-                </div>
-            </div>
-            {/* ============== Repeat Card =================== */}
-            <div className="card h-100">
-                <Image src="/Items/item2.png" className="card-img-top" sizes="100vw" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
-                <div className="card-body">
-                    <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
-                    <div className={styles.upperBody}>
-                        <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p className="card-text">25 EGP</p>
-                    </div>
-                    <div className="price-section">
-                        <div className={styles.discount}>
-                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
-                        </div>
-                    </div>
-                    <button className={"btn " + styles.addBtn}>
-                        <i className="bi bi-cart3"></i>
-                        Add
-                    </button>
-                </div>
-            </div>
-            <div className="card h-100">
-                <Image src="/Items/item3.png" className="card-img-top" sizes="100vw" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
-                <div className="card-body">
-                    <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
-                    <div className={styles.upperBody}>
-                        <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p className="card-text">25 EGP</p>
-                    </div>
-                    <div className="price-section">
-                        <div className={styles.discount}>
-                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
-                        </div>
-                    </div>
-                    <button className={"btn " + styles.addBtn}>
-                        <i className="bi bi-cart3"></i>
-                        Add
-                    </button>
-                </div>
-            </div>
-            <div className="card h-100">
-                <Image src="/Items/item4.png" className="card-img-top" sizes="100vw" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
-                <div className="card-body">
-                    <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
-                    <div className={styles.upperBody}>
-                        <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p className="card-text">25 EGP</p>
-                    </div>
-                    <div className="price-section">
-                        <div className={styles.discount}>
-                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
-                        </div>
-                    </div>
-                    <button className={"btn " + styles.addBtn}>
-                        <i className="bi bi-cart3"></i>
-                        Add
-                    </button>
-                </div>
-            </div>
-            <div className="card h-100">
-                <Image src="/Items/item5.png" className="card-img-top" sizes="100vw" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
-                <div className="card-body">
-                    <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
-                    <div className={styles.upperBody}>
-                        <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p className="card-text">25 EGP</p>
-                    </div>
-                    <div className="price-section">
-                        <div className={styles.discount}>
-                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
-                        </div>
-                    </div>
-                    <button className={"btn " + styles.addBtn}>
-                        <i className="bi bi-cart3"></i>
-                        Add
-                    </button>
-                </div>
-            </div>
-            <div className="card h-100">
-                <Image src="/Items/item6.png" className="card-img-top" sizes="100vw" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
-                <div className="card-body">
-                    <h5 className="card-title">HuntiWng Cat 3D Printable</h5>
-                    <div className={styles.upperBody}>
-                        <span className="category" style={{color: "rgb(151, 151, 151)"}}>3D Model</span>
-                        <p className="card-text">25 EGP</p>
-                    </div>
-                    <div className="price-section">
-                        <div className={styles.discount}>
-                            <p className="card-text text-success" style={{paddingLeft: "5px"}}>44% OFF</p>
-                            <p className="card-text" style={{textDecoration: "line-through", color: "rgb(151, 151, 151)"}}>80</p>
-                        </div>
-                    </div>
-                    <button className={"btn " + styles.addBtn}>
-                        <i className="bi bi-cart3"></i>
-                        Add
-                    </button>
-                </div>
-            </div>
+            <ProductCard 
+                    title={"HuntiWng Cat 3D Printable"} 
+                    image={"/Items/item.png"} 
+                    price={"80"}
+                    currentPrice={"25"}
+                    discount={"44%"}
+                    category={"3D Model"}
+                    id={"1"}
+                    />
+                <ProductCard 
+                    title={"HuntiWng Cat 3D Printable"} 
+                    image={"/Items/item2.png"} 
+                    price={"80"}
+                    currentPrice={"25"}
+                    discount={"44%"}
+                    category={"3D Model"}
+                    id={"2"}
+                />
+            
+            <ProductCard 
+                    title={"HuntiWng Cat 3D Printable"} 
+                    image={"/Items/item3.png"} 
+                    price={"80"}
+                    currentPrice={"25"}
+                    discount={"44%"}
+                    category={"3D Model"}
+                    id={"3"}
+                    />
+                <ProductCard 
+                    title={"HuntiWng Cat 3D Printable"} 
+                    image={"/Items/item4.png"} 
+                    price={"80"}
+                    currentPrice={"25"}
+                    discount={"44%"}
+                    category={"3D Model"}
+                    id={"4"}
+                />
+            
+            <ProductCard 
+                    title={"HuntiWng Cat 3D Printable"} 
+                    image={"/Items/item5.png"} 
+                    price={"80"}
+                    currentPrice={"25"}
+                    discount={"44%"}
+                    category={"3D Model"}
+                    id={"5"}
+                    />
+                <ProductCard 
+                    title={"HuntiWng Cat 3D Printable"} 
+                    image={"/Items/item6.png"} 
+                    price={"80"}
+                    currentPrice={"25"}
+                    discount={"44%"}
+                    category={"3D Model"}
+                    id={"6"}
+                />
             </Slider>
           </div>
         );

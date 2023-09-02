@@ -1,1 +1,3 @@
 => make button components for myCarsouel
+
+=> Placeholder for card of products when loading
