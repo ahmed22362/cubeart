@@ -17,7 +17,7 @@ export default function ProductCard({
     return (
         <div className="card h-100">
             <Link href={`/products/${id}`}>
-                <Image src={image} className="card-img-top" sizes="100vh" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} />
+                <Image src={`/Items/item2.png`} className="card-img-top" sizes="100vh" style={{width: '100%', height: "240px", filter: "drop-shadow(2px 3px 6px black)"}} width={"500"} height={"300"} alt={"image"} />
             </Link>
             <div className="card-body" style={{
                 height: "100%",

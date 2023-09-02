@@ -11,7 +11,6 @@ export default function AllProducts({ allProducts }) {
                         <ProductCard 
                             title={product.title} 
                             currentPrice={product.price}
-                            image={"/items/item.png"}
                             discount={"20"}
                             category={"3D Model"}
                             id={index}
