@@ -367,7 +367,7 @@ body {
 }
 
 .end-of-nav {
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
 }
@@ -388,12 +388,12 @@ body {
 i {
     font-size: 25px;
 }
-.lang-section {
+/* .lang-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 90px;
-}
+} */
 ul .nav-link {
     color: white;
     font-size: 18px;
@@ -821,6 +821,27 @@ ul .nav-link:hover {
     margin: 18px 0px -23px 0px;
 }
 
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/breadCrumb/breadcrumbd.module.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+.breadcrumbd_link__dJXpo {
+    font-size: 24px;
+    color: #292D32;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.breadcrumbd_link__dJXpo a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #292D32;
+}
+.breadcrumbd_link__dJXpo a:hover {
+    color: #878787;
+}
+.breadcrumbd_current__LmRpY a {
+    color: #878787;
+    text-decoration: none;
+}
 /*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/Aboutus/aboutUs.module.css ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************/
@@ -921,6 +942,25 @@ ul .nav-link:hover {
     background: linear-gradient(180deg, #91C7E0 100%, #429ECA 0%);
     color: #f3f3f3;
 }
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/SideBar/SideBar.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+.SideBar_sideBar__M0WeN {
+    background-color: white;
+    width: 280px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 70px;
+    text-align: center;
+    padding-top: 48px;
+}
+.SideBar_btnResult__22pNr button{
+    margin: 0;
+    width: auto;
+}
 /*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/Footer/footer.module.css ***!
   \*****************************************************************************************************************************************************************************************************************************************************************************/
@@ -982,3 +1022,112 @@ ul .nav-link:hover {
     }
 }
 
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/ComboBox/ComboBox.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+
+.ComboBox_comboBox__Okl7d {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.ComboBox_categories__AGVSy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.ComboBox_categories__AGVSy span {
+    background-color: #ECF5FA;
+    color: #292D32;
+    font-size: 20px;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+.ComboBox_sort__OdujQ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #676767;
+}
+.ComboBox_sort__OdujQ form select {
+    border: 0;
+}
+.ComboBox_sort__OdujQ form select:focus {
+    box-shadow: none;
+}
+
+.ComboBox_sort__OdujQ form select,
+.ComboBox_sort__OdujQ form select option {
+    font-weight: 500;
+    font-size: 20px;
+    position: relative;
+}
+.ComboBox_sort__OdujQ form select option::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #050505;
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/ProductsList/productsPage.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+.productsPage_productsSection__uRtR2 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.productsPage_pagination__1M2x3 {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 50px;
+}
+.productsPage_pagination__1M2x3 button {
+    position: relative;
+    border: 0;
+    padding: 5px;
+    width: 100px;
+    color: rgb(4, 78, 78);
+    background-color: rgb(62, 231, 237);
+}
+.productsPage_pagination__1M2x3 button:hover {
+    color: rgb(2 255 255);
+    background-color: cadetblue;
+    transition: 0.5s;
+}
+.productsPage_pagination__1M2x3 button:disabled {
+    color: rgb(2 255 255);
+    background-color: cadetblue;
+}
+.productsPage_pagination__1M2x3 button.productsPage_next__hCoaO:before {
+    position: absolute;
+    content: "\F135";
+    font-family: "bootstrap-icons";
+    right: 0;
+    font-size: 30px;
+    top: -15%;
+}
+.productsPage_pagination__1M2x3 button.productsPage_previous__Mz9tL {
+    width: 120px;
+}
+.productsPage_pagination__1M2x3 button.productsPage_previous__Mz9tL:before {
+    position: absolute;
+    content: "\F12C";
+    font-family: "bootstrap-icons";
+    left: 0;
+    font-size: 30px;
+    top: -15%;
+}
+.productsPage_pagination__1M2x3 button.productsPage_previous__Mz9tL:hover:before {
+    left: -4px;
+    transition: 0.5s;
+}
+.productsPage_pagination__1M2x3 button.productsPage_next__hCoaO:hover:before {
+    right: -4px;
+    transition: 0.5s;
+}

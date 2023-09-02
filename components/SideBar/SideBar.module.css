@@ -1,0 +1,16 @@
+.sideBar {
+    background-color: white;
+    width: 280px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 70px;
+    text-align: center;
+    padding-top: 48px;
+}
+.btnResult button{
+    margin: 0;
+    width: auto;
+}
