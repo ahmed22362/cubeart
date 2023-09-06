@@ -15,6 +15,7 @@ import Footer from "./Footer/Footer";
 import ProductsList from './ProductsList/ProductsList';
 import ProductCard from "./ProductCard/ProductCard";
 import NewProducts from './newProducts/newProducts.jsx'
+import ImagesSection from './ImagesSection/ImagesSection';
 
 
 export {
@@ -33,5 +34,5 @@ export {
     ProductsList,
     ProductCard,
     Footer,
-    NewProducts
+    ImagesSection
 }
