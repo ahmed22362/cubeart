@@ -9,7 +9,6 @@ export default function Map() {
         height={"300"}
         style={{ border: "0", borderRadius: "8px" }}
         loading={"lazy"}
-        referrerPolicy={"no-referrer-when-downgrade"}
       ></iframe>
       </>
     )

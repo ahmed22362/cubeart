@@ -103,6 +103,9 @@ ul .nav-link:hover {
     right: 17px !important;
     top: 20px !important;
 }
+.slick-dots {
+    bottom: -40px;
+}
 .slick-dots li button:before {
     color: #2E6F8D;
     font-size: 10px
