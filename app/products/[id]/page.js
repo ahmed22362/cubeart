@@ -19,6 +19,7 @@ export default function ProductDetails({params}) {
     return(
         <>
             <section>
+                <h2>Welcome</h2>
                 {/* <ImagesSection /> */}
             </section>
         </>
