@@ -13,6 +13,7 @@
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",
     "debug": "^4.3.4",
+    "email-js": "^2.0.2",
     "follow-redirects": "^1.15.2",
     "keen-slider": "^6.8.6",
     "next": "^13.4.13",
