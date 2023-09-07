@@ -5,9 +5,6 @@ import { AboutUs, CarsouelSlider, Footer, OurService, ProductSlider, QuickQuote 
 export default function Home() {
   return (
     <main>
-      <Head>
-        <title>Home</title>
-      </Head>
       <CarsouelSlider />
         <section className='px10'>
           <ProductSlider title="Our Products" /> <br />

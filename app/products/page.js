@@ -1,22 +1,25 @@
-import { SideBar, ComboBox, ProductsList, Footer } from "@/components";
+import { SideBar, ComboBox, ProductsList, Footer, NewProducts } from "@/components";
 
 export default function Products() {
+
     return (
+        <>
         <div>
-        <main className="d-flex">
-            <SideBar />
-            <section style={{
-                    flex: "1",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-start",
-                    alignItems: "center"
-            }}>
-                <ComboBox />
+        <main
+            style={{
+                display: "flex",
+                flexDirection: 'row',
+                width: "100%",
+                padding: "0 15px",
+                marginBottom: "20px",
+                gap: "10px",
+                
+            }}
+        >
                 <ProductsList />
-            </section>
         </main>
         <Footer />
     </div>
+    </>
     )
 };
