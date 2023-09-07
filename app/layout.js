@@ -8,6 +8,7 @@ import './globals.css'
 
 import React,{ useEffect } from "react";
 import { MinNav, Navbar } from '@/components';
+import Head from 'next/head';
 
 
 export default function RootLayout({ children }) {
@@ -21,7 +22,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>Cubuild</title>
-        <meta aria-description='cubuild' content='cubuild' />
       </head>
       <body>
         <Navbar />

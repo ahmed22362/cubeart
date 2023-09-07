@@ -1,7 +1,159 @@
+.sideBar {
+    background-color: white;
+    width: 270px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 70px;
+    text-align: center;
+    padding-top: 48px;
+}
+.btnResult button{
+    margin: 0;
+    width: auto;
+}
+.formFilter {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.priceRange {
+    display: flex;
+    width: 100%;
+}
+.inputBox {
+    border: 1px solid #78bad9;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.inputBox label {
+    font-size: 16px;
+}
+.inputBox input {
+    border: 0;
+    width: 100%;
+}
+.offCanvasSection {
+    text-align: center;
+}
+
+.offCanvasSection .offCanvasBody {
+    display: flex;
+}
+
+
+.offCanvasButton {
+    flex: 0;
+    display: flex;
+    height: 38px;
+    width: 100px;
+    border: 0;
+    position: absolute;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 8px;
+    color: white;
+    background-color: #429ECA;
+}
+.offCanvasButton:hover {
+    background-color: #91C7E0;
+    transition: 0.5s;
+}
+/* responsive sidebar */
+@media (max-width: 768px) {
+    .sideBar {
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    .offCanvasButton {
+        display: none;
+    }
+}
+
+/* the end of style */
+
+.submitButton {
+    transition: all 0.1s;
+    border-radius: var(--radius-lg, 16px);
+    background: linear-gradient(180deg, #91C7E0 0%, #429ECA 100%);
+    width: 172px;
+    padding: 12px 57px 12px 56px;
+    border: none;
+    margin-left: auto;
+    display: flex;
+    color: #fff;
+}
+.submitButton:hover {
+    transition: all 0.5s;
+    background: linear-gradient(180deg, #91C7E0 100%, #429ECA 0%);
+    color: #f3f3f3;
+}
+.comboBox {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.comboBox > div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.categories {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+.categories span {
+    background-color: #ECF5FA;
+    color: #292D32;
+    font-size: 20px;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+.sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #676767;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.sort label {
+    width: 100px;
+}
+.selectComponent {
+    border: 0;
+    box-shadow: none;
+}
+.selectComponent:focus {
+    border: 0;
+    box-shadow: none;
+}
+.selectComponent option {
+    border: 0px
+}
+
 .productsSection {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 70px;
+    width: 100%;
 }
 
 .pagination {
@@ -13,44 +165,23 @@
 .pagination button {
     position: relative;
     border: 0;
+    border-radius: 50%;
+    background-color: #429ECA;
+    color: #FFF;
     padding: 5px;
-    width: 100px;
-    color: rgb(4, 78, 78);
-    background-color: rgb(62, 231, 237);
 }
 .pagination button:hover {
-    color: rgb(2 255 255);
-    background-color: cadetblue;
+    background-color: #1d5f7e;
+    color: #eee;
     transition: 0.5s;
 }
 .pagination button:disabled {
-    color: rgb(2 255 255);
-    background-color: cadetblue;
-}
-.pagination button.next:before {
-    position: absolute;
-    content: "\F135";
-    font-family: "bootstrap-icons";
-    right: 0;
-    font-size: 30px;
-    top: -15%;
-}
-.pagination button.previous {
-    width: 120px;
-}
-.pagination button.previous:before {
-    position: absolute;
-    content: "\F12C";
-    font-family: "bootstrap-icons";
-    left: 0;
-    font-size: 30px;
-    top: -15%;
-}
-.pagination button.previous:hover:before {
-    left: -4px;
+    background-color: #1d5f7e;
     transition: 0.5s;
+    color: #eee;
 }
-.pagination button.next:hover:before {
-    right: -4px;
-    transition: 0.5s;
+.pagination button > i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

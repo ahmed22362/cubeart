@@ -1,11 +1,11 @@
 "use client"
 
-import React, { Component } from "react";
 import Slider from "react-slick";
 import styles from './productSlide.module.css'
 import Link from "next/link";
-import ProductCard from './../ProductCard/ProductCard';
-
+import ProductCard from '../ProductCard/ProductCard';
+import { useState, useEffect } from "react";
+import Loading from "./Loading";
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -31,114 +31,91 @@ function SampleNextArrow(props) {
     );
   }
 
-export default class ProductSlider extends Component {
-    render() {
-        const settings = {
-          dots: true,
-          infinite: true,
-          lazyLoad: true,
-          slidesToShow: 5,
-          slidesToScroll: 1,
-          slidesToScroll: 1,
-          nextArrow: <SampleNextArrow />,
-          prevArrow: <SamplePrevArrow />,
-          autoplay: true,
-          cssEase: "linear",
-          autoplaySpeed: 4000,
-          responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
+
+export default function ProductSlider(props) {
+  
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+      fetch('https://cubuild.onrender.com/api/v1/product?limit=10')
+          .then(response => response.json())
+          .then(data => {
+              setIsLoading(false);
+              setProducts(data.data);
+          })
+          .catch(error => {
+              console.log(error);
+          });
+  }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    lazyLoad: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    autoplay: true,
+    cssEase: "linear",
+    autoplaySpeed: 4000,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
                 infinite: true,
                 dots: true
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
                 initialSlide: 2
-              }
-            },
-            {
-              breakpoint: 480,
-              settings: {
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1
-              }
             }
-          ]
-        };
+        }
+    ]
+};
+
         return (
           <div className="my-5">
 
             <div className="section-title">
-                <h3>{this.props.title}</h3>
-                <Link href="/" style={{color: "black"}}>View All</Link>
+                <h3>{props.title}</h3>
+                <Link href="/products" style={{color: "black"}}>View All</Link>
             </div>
 
             <Slider {...settings}>
-            <ProductCard 
-                    title={"HuntiWng Cat 3D Printable"} 
-                    image={"/Items/item.png"} 
-                    price={"80"}
-                    currentPrice={"25"}
-                    discount={"44%"}
-                    category={"3D Model"}
-                    id={"1"}
-                    />
-                <ProductCard 
-                    title={"HuntiWng Cat 3D Printable"} 
-                    image={"/Items/item2.png"} 
-                    price={"80"}
-                    currentPrice={"25"}
-                    discount={"44%"}
-                    category={"3D Model"}
-                    id={"2"}
-                />
-            
-            <ProductCard 
-                    title={"HuntiWng Cat 3D Printable"} 
-                    image={"/Items/item3.png"} 
-                    price={"80"}
-                    currentPrice={"25"}
-                    discount={"44%"}
-                    category={"3D Model"}
-                    id={"3"}
-                    />
-                <ProductCard 
-                    title={"HuntiWng Cat 3D Printable"} 
-                    image={"/Items/item4.png"} 
-                    price={"80"}
-                    currentPrice={"25"}
-                    discount={"44%"}
-                    category={"3D Model"}
-                    id={"4"}
-                />
-            
-            <ProductCard 
-                    title={"HuntiWng Cat 3D Printable"} 
-                    image={"/Items/item5.png"} 
-                    price={"80"}
-                    currentPrice={"25"}
-                    discount={"44%"}
-                    category={"3D Model"}
-                    id={"5"}
-                    />
-                <ProductCard 
-                    title={"HuntiWng Cat 3D Printable"} 
-                    image={"/Items/item6.png"} 
-                    price={"80"}
-                    currentPrice={"25"}
-                    discount={"44%"}
-                    category={"3D Model"}
-                    id={"6"}
-                />
+
+            {
+            isLoading ? 
+              <Loading /> 
+            :(
+              products && products.map((product, index) => {
+              return (
+                <ProductCard
+                  key={index}
+                  title={product.title} 
+                  currentPrice={product.price}
+                  category={"3D Model"}
+                  image={product.coverImage || '/items/item.png'}
+                  id={product.id}
+              />
+              )
+            }))}
             </Slider>
           </div>
         );
     }
-}

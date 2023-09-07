@@ -598,6 +598,22 @@ ul .nav-link:hover {
 /*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/productSlider/productSlide.module.css ***!
   \******************************************************************************************************************************************************************************************************************************************************************************************/
+.productSlide_cardItem__LSabD .productSlide_heart__KdimG {
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    background-color: #DAF3FF;
+    color: red;
+    right: 0;
+    padding: 4px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
 .productSlide_myOwnStyleRight__sY45X::before {
     content: "\F285";
     font-family: "Bootstrap-icons";
@@ -942,25 +958,6 @@ ul .nav-link:hover {
     background: linear-gradient(180deg, #91C7E0 100%, #429ECA 0%);
     color: #f3f3f3;
 }
-/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/SideBar/SideBar.module.css ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************/
-.SideBar_sideBar__M0WeN {
-    background-color: white;
-    width: 280px;
-    height: 700px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 70px;
-    text-align: center;
-    padding-top: 48px;
-}
-.SideBar_btnResult__22pNr button{
-    margin: 0;
-    width: auto;
-}
 /*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/Footer/footer.module.css ***!
   \*****************************************************************************************************************************************************************************************************************************************************************************/
@@ -1022,63 +1019,165 @@ ul .nav-link:hover {
     }
 }
 
-/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/ComboBox/ComboBox.module.css ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/ProductsList/productsPage.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+.productsPage_sideBar__Sje2F {
+    background-color: white;
+    width: 270px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 70px;
+    text-align: center;
+    padding-top: 48px;
+}
+.productsPage_btnResult__XjW5L button{
+    margin: 0;
+    width: auto;
+}
+.productsPage_formFilter__F8jyh {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.productsPage_priceRange__gk2h5 {
+    display: flex;
+    width: 100%;
+}
+.productsPage_inputBox__u0v15 {
+    border: 1px solid #78bad9;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.productsPage_inputBox__u0v15 label {
+    font-size: 16px;
+}
+.productsPage_inputBox__u0v15 input {
+    border: 0;
+    width: 100%;
+}
+.productsPage_offCanvasSection__g6IuQ {
+    text-align: center;
+}
 
-.ComboBox_comboBox__Okl7d {
+.productsPage_offCanvasSection__g6IuQ .productsPage_offCanvasBody__zt_gy {
+    display: flex;
+}
+
+
+.productsPage_offCanvasButton__BN1qQ {
+    flex: 0 1;
+    display: flex;
+    height: 38px;
+    width: 100px;
+    border: 0;
+    position: absolute;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: 8px;
+    color: white;
+    background-color: #429ECA;
+}
+.productsPage_offCanvasButton__BN1qQ:hover {
+    background-color: #91C7E0;
+    transition: 0.5s;
+}
+/* responsive sidebar */
+@media (max-width: 768px) {
+    .productsPage_sideBar__Sje2F {
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    .productsPage_offCanvasButton__BN1qQ {
+        display: none;
+    }
+}
+
+/* the end of style */
+
+.productsPage_submitButton__wwjmU {
+    transition: all 0.1s;
+    border-radius: var(--radius-lg, 16px);
+    background: linear-gradient(180deg, #91C7E0 0%, #429ECA 100%);
+    width: 172px;
+    padding: 12px 57px 12px 56px;
+    border: none;
+    margin-left: auto;
+    display: flex;
+    color: #fff;
+}
+.productsPage_submitButton__wwjmU:hover {
+    transition: all 0.5s;
+    background: linear-gradient(180deg, #91C7E0 100%, #429ECA 0%);
+    color: #f3f3f3;
+}
+.productsPage_comboBox__rbOci {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    flex-wrap: wrap;
 }
-.ComboBox_categories__AGVSy {
+.productsPage_comboBox__rbOci > div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.productsPage_categories__DEeRl {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
-.ComboBox_categories__AGVSy span {
+.productsPage_categories__DEeRl span {
     background-color: #ECF5FA;
     color: #292D32;
     font-size: 20px;
     padding: 5px 15px;
     border-radius: 20px;
 }
-.ComboBox_sort__OdujQ {
+.productsPage_sort__Atkr7 {
     display: flex;
     justify-content: center;
     align-items: center;
     color: #676767;
+    gap: 10px;
+    flex-wrap: wrap;
 }
-.ComboBox_sort__OdujQ form select {
+.productsPage_sort__Atkr7 label {
+    width: 100px;
+}
+.productsPage_selectComponent__y82KP {
     border: 0;
-}
-.ComboBox_sort__OdujQ form select:focus {
     box-shadow: none;
 }
+.productsPage_selectComponent__y82KP:focus {
+    border: 0;
+    box-shadow: none;
+}
+.productsPage_selectComponent__y82KP option {
+    border: 0px
+}
 
-.ComboBox_sort__OdujQ form select,
-.ComboBox_sort__OdujQ form select option {
-    font-weight: 500;
-    font-size: 20px;
-    position: relative;
-}
-.ComboBox_sort__OdujQ form select option::before {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: #050505;
-}
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[7].use[3]!./components/ProductsList/productsPage.module.css ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************/
 .productsPage_productsSection__uRtR2 {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 70px;
+    width: 100%;
 }
 
 .productsPage_pagination__1M2x3 {
@@ -1090,44 +1189,24 @@ ul .nav-link:hover {
 .productsPage_pagination__1M2x3 button {
     position: relative;
     border: 0;
+    border-radius: 50%;
+    background-color: #429ECA;
+    color: #FFF;
     padding: 5px;
-    width: 100px;
-    color: rgb(4, 78, 78);
-    background-color: rgb(62, 231, 237);
 }
 .productsPage_pagination__1M2x3 button:hover {
-    color: rgb(2 255 255);
-    background-color: cadetblue;
+    background-color: #1d5f7e;
+    color: #eee;
     transition: 0.5s;
 }
 .productsPage_pagination__1M2x3 button:disabled {
-    color: rgb(2 255 255);
-    background-color: cadetblue;
-}
-.productsPage_pagination__1M2x3 button.productsPage_next__hCoaO:before {
-    position: absolute;
-    content: "\F135";
-    font-family: "bootstrap-icons";
-    right: 0;
-    font-size: 30px;
-    top: -15%;
-}
-.productsPage_pagination__1M2x3 button.productsPage_previous__Mz9tL {
-    width: 120px;
-}
-.productsPage_pagination__1M2x3 button.productsPage_previous__Mz9tL:before {
-    position: absolute;
-    content: "\F12C";
-    font-family: "bootstrap-icons";
-    left: 0;
-    font-size: 30px;
-    top: -15%;
-}
-.productsPage_pagination__1M2x3 button.productsPage_previous__Mz9tL:hover:before {
-    left: -4px;
+    background-color: #1d5f7e;
     transition: 0.5s;
+    color: #eee;
 }
-.productsPage_pagination__1M2x3 button.productsPage_next__hCoaO:hover:before {
-    right: -4px;
-    transition: 0.5s;
+.productsPage_pagination__1M2x3 button > i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+

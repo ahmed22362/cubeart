@@ -12,9 +12,9 @@ import QuickQuote from './quickQuote/quickQuote';
 import MainButton from './Button/button';
 import SideBar from "./SideBar/SideBar";
 import Footer from "./Footer/Footer";
-import ComboBox from './ComboBox/ComboBox';
 import ProductsList from './ProductsList/ProductsList';
 import ProductCard from "./ProductCard/ProductCard";
+import NewProducts from './newProducts/newProducts.jsx'
 
 
 export {
@@ -30,8 +30,8 @@ export {
     QuickQuote,
     MainButton,
     SideBar,
-    ComboBox,
     ProductsList,
     ProductCard,
     Footer,
+    NewProducts
 }
