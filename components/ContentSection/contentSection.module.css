@@ -1,0 +1,57 @@
+.contentSection {
+    flex: 0.8 1;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    color: #292D32;
+}
+.addToWishList,
+.shareWith {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    color: #666;
+    font-size: 20px;
+}
+.addToWishList i,
+.shareWith i {
+    cursor: pointer;
+    font-size: 20px !important;
+}
+.price,
+.quantity {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 100px;
+    font-size: 24px;
+}
+
+.price span {
+    font-weight: 600;
+    font-size: 20px;
+}
+.quantity select {
+    border: 1px solid #429ECA;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 20px;
+}
+.addBtn {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    align-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #429ECA;
+    color: #fff;
+    width: 300px;
+    margin: auto;
+}
+.addBtn:hover {
+    background-color: #429fcac2;
+    color: #fff;
+}

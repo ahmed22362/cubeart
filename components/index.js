@@ -15,6 +15,7 @@ import Footer from "./Footer/Footer";
 import ProductsList from './ProductsList/ProductsList';
 import ProductCard from "./ProductCard/ProductCard";
 import ImagesSection from './ImagesSection/ImagesSection';
+import ContentSection from './ContentSection/ContentSection';
 
 
 export {
@@ -33,5 +34,6 @@ export {
     ProductsList,
     ProductCard,
     Footer,
-    ImagesSection
+    ImagesSection,
+    ContentSection
 }

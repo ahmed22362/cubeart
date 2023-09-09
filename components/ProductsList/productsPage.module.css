@@ -56,19 +56,29 @@
     flex: 0;
     display: flex;
     height: 38px;
-    width: 100px;
+    width: 30px;
     border: 0;
-    position: absolute;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     justify-content: center;
     align-items: center;
     border-bottom-right-radius: 8px;
     color: white;
     background-color: #429ECA;
+    margin-top: 8px;
+    font-size: 0px;
 }
-.offCanvasButton:hover {
-    background-color: #91C7E0;
-    transition: 0.5s;
+.offCanvasButton::before {
+    content: "\F3C6";
+    font-family: "bootstrap-icons";
+    font-size: 17px;
+    font-weight: 600;
+}
+.offCanvasButton:hover{
+    transition: 0.4s;
+    width: 100px;
+    font-size: 14px;
 }
 /* responsive sidebar */
 @media (max-width: 768px) {
@@ -136,6 +146,9 @@
 }
 .sort label {
     width: 100px;
+}
+.sort select {
+    flex: 1;
 }
 .selectComponent {
     border: 0;
