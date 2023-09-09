@@ -1,0 +1,18 @@
+.imagesComponent {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
+}
+.imagesBox {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.imagesBox img {
+    border: 1px solid #979696;
+    border-radius: 8px;
+}
+.imageCover img {
+    border: 1px solid #979696;
+    border-radius: 8px;
+}

@@ -1,11 +1,11 @@
 "use client"
 
 import { useState, useEffect } from 'react';
-import { ImagesSection } from "@/components";
+import { ContentSection, ImagesSection } from "@/components";
 
 export default function ProductDetails({params}) {
-    const [data, setData] = useState(null)
     const product_id = params.id;
+    const [data, setData] = useState({})
     const fetchData = async () => {
         const response = await fetch(`https://cubuild.onrender.com/api/v1/product/${product_id}`);
         const data = await response.json();
@@ -19,11 +19,16 @@ export default function ProductDetails({params}) {
 
     return(
         <>
-            <section>
-                <h2>{data && data.title}</h2>
-
-                <ImagesSection image={data && data} />
-
+            <section style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: "60px",
+                marginBottom: "20px",
+                gap: "20px",
+            }}>
+                <ImagesSection coverImage={data && data.coverImage} images={data && data.images}/>
+                <ContentSection data={data && data} />
             </section>
         </>
     )
