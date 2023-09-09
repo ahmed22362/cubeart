@@ -26,6 +26,8 @@ export default function ProductDetails({params}) {
                 marginTop: "60px",
                 marginBottom: "20px",
                 gap: "20px",
+                flexWrap: "wrap",
+                overflow: "hidden"
             }}>
                 <ImagesSection coverImage={data && data.coverImage} images={data && data.images}/>
                 <ContentSection data={data && data} />
