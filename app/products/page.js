@@ -1,4 +1,4 @@
-import { SideBar, ComboBox, ProductsList, Footer, NewProducts } from "@/components";
+import { ProductsList, Footer } from "@/components";
 
 export default function Products() {
 

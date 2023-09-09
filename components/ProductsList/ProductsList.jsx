@@ -81,6 +81,7 @@ export default function ProductsList() {
       .catch((error) => {
         console.error(error);
       });
+      handleClose();
   };
 
   return (

@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, useEffect } from 'react';
-// import {ImagesSection} from '@Components';
+import { ImagesSection } from "@/components";
+
 export default function ProductDetails({params}) {
     const [data, setData] = useState(null)
     const product_id = params.id;
@@ -19,8 +20,10 @@ export default function ProductDetails({params}) {
     return(
         <>
             <section>
-                <h2>Welcome</h2>
-                {/* <ImagesSection /> */}
+                <h2>{data && data.title}</h2>
+
+                <ImagesSection image={data && data} />
+
             </section>
         </>
     )
