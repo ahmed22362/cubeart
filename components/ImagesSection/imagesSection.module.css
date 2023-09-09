@@ -2,17 +2,52 @@
     display: flex;
     flex-direction: row-reverse;
     gap: 20px;
+    flex-wrap: wrap;
 }
 .imagesBox {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+@media(max-width: 768px) {
+    .imagesComponent {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
+    .imagesBox {
+        flex-direction: row;
+    }
+}
 .imagesBox img {
     border: 1px solid #979696;
     border-radius: 8px;
 }
+.imageCover {
+    width: 450px;
+}
 .imageCover img {
     border: 1px solid #979696;
     border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+@media(max-width: 767px) {
+    .imageCover {
+        width: 450px;
+    }
+}
+@media(max-width: 580px) {
+    .imageCover {
+        width: 350px;
+    }
+}
+@media(max-width: 389px) {
+    .imageCover {
+        width: 300px;
+    }
+    .imagesBox img {
+        width: 75px;
+        height: 75px
+    }
 }
