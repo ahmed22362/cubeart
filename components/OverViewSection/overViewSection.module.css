@@ -1,0 +1,23 @@
+.SpecificationsBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #292D32;
+    flex-wrap: wrap;
+}
+.SpecificationsBox:nth-of-type(odd) {
+    background-color: #F8F8F8;
+}
+.SpecificationsBox span {
+    /* padding-right: 28em; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.SpecificationsBox span div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}

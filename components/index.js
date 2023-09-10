@@ -16,6 +16,8 @@ import ProductsList from './ProductsList/ProductsList';
 import ProductCard from "./ProductCard/ProductCard";
 import ImagesSection from './ImagesSection/ImagesSection';
 import ContentSection from './ContentSection/ContentSection';
+import OverViewSection from './OverViewSection/OverViewSection';
+import Recommendations from './Recommendations/Recommendations';
 
 
 export {
@@ -35,5 +37,7 @@ export {
     ProductCard,
     Footer,
     ImagesSection,
-    ContentSection
+    ContentSection,
+    OverViewSection,
+    Recommendations
 }
