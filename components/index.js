@@ -18,6 +18,7 @@ import ImagesSection from './ImagesSection/ImagesSection';
 import ContentSection from './ContentSection/ContentSection';
 import OverViewSection from './OverViewSection/OverViewSection';
 import Recommendations from './Recommendations/Recommendations';
+import Reviews from './Reviews/Reviews';
 
 
 export {
@@ -39,5 +40,6 @@ export {
     ImagesSection,
     ContentSection,
     OverViewSection,
-    Recommendations
+    Recommendations,
+    Reviews
 }
