@@ -80,6 +80,9 @@ ul .nav-link:hover {
     .section-title{
         gap: 40px
     }
+    .ul-links {
+        width: 100%;
+    }
 }
 .section-title h3 {
     font-size: 36px;
