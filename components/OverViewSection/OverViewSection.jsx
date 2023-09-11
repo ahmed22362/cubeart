@@ -1,44 +1,31 @@
 'use client'
 import styles from './overViewSection.module.css';
 
-export default function OverViewSection() {
-    const Specifications = {
-        "Geometry": "polygonal_quads/tris",
-        "Polygons": "55,114",
-        "Vertices": "50,643",
-        "Textures": "No",
-        "Rigged": "No",
-        "Animated": "No",
-        "3D Printable Ready": "No",
-        "Game Ready (low poly)": "No",
-        "UV Mapped": "Yes",
-        "Unwrapped UVs": "none",
-    }
+export default function OverViewSection({ data }) {
+
+    const Specifications = {} && data
+
     return(
         <>
-            <div className="px-5">
+            <div className="px-5 py-5">
                 <h2 style={{fontSize: "24px"}}>Overview</h2>
                 <h3 style={{fontSize: "20px", paddingTop: "10px"}}>Specifications</h3>
             
                 <div className="Specifications">
-                {Object.entries(Specifications).map(([key, value]) => (
-                    <div className={styles.SpecificationsBox} key={key}>
-                        <h4 style={{fontSize: "20px"}}>{key}</h4>
-                        {value === "No" ? (
-                            <span>
-                                {value} <div className="bg-danger"></div>
-                            </span>
-                            ) : value === "Yes" ? (
-                            <span>
-                                {value} <div className="bg-success"></div>
-                            </span>
-                            ) : (
-                                <span>
-                                {value}
-                                </span>
-                            )}
+                {Specifications && Object.entries(Specifications).map(([key, value], index) => (
+                    <div className={styles.SpecificationsBox} key={index}>
+                    <h4 style={{ fontSize: "20px" }}>{value.name}</h4>
+                    {value.values && value.values.length > 0 ? (
+                        
+                        value.values.map((val, idx) => (
+                        
+                        <span key={idx}>{val}</span>
+                        ))
+                    ) : (
+                        <span>No values found</span>
+                    )}
                     </div>
-                    ))}
+                ))}
                 </div>
             </div>
         </>
