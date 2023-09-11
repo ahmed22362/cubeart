@@ -12,17 +12,23 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/products/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/products/layout.css",
+      "static/chunks/app/products/layout.js"
+    ],
     "/products/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/products/[id]/page.css",
       "static/chunks/app/products/[id]/page.js"
     ],
-    "/products/layout": [
+    "/products/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/products/layout.css",
-      "static/chunks/app/products/layout.js"
+      "static/css/app/products/page.css",
+      "static/chunks/app/products/page.js"
     ]
   }
 }
