@@ -19,6 +19,7 @@ import ContentSection from './ContentSection/ContentSection';
 import OverViewSection from './OverViewSection/OverViewSection';
 import Recommendations from './Recommendations/Recommendations';
 import Reviews from './Reviews/Reviews';
+import AllProductReviews from './allProdectReviews/AllProductReviews';
 
 
 export {
@@ -41,5 +42,6 @@ export {
     ContentSection,
     OverViewSection,
     Recommendations,
-    Reviews
+    Reviews,
+    AllProductReviews
 }
