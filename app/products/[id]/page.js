@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react';
-import { ContentSection, ImagesSection, OverViewSection, Recommendations, Reviews } from "@/components";
+import { AllProductReviews, ContentSection, ImagesSection, OverViewSection, Recommendations, Reviews } from "@/components";
 
 export default function ProductDetails({params}) {
     const product_id = params.id;
@@ -35,6 +35,7 @@ export default function ProductDetails({params}) {
             <OverViewSection data={data && data.options}/>
             <Recommendations />
             <Reviews data={data && data}/>
+            <AllProductReviews />
         </>
     )
 };
