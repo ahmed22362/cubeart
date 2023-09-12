@@ -1,0 +1,78 @@
+.allProductReviews {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+}
+.productReview {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+    border-radius: 24px;
+    background-color:#F7FBFD;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.nameAndDate {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+.stars {
+    display: flex;
+    gap: 10px;
+}
+.stars svg {
+    width: 25px;
+    height: 25px;
+    color: #FFC62A;
+}
+.userCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.userCard span {
+    font-weight: bold;
+}
+.rateAndComment {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    font-weight: bold;
+}
+.commentSection {
+    display: flex;
+    flex-direction: column;
+}
+.commentSection span:last-of-type {
+    color: #727272;
+}
+
+.helpfulBtn {
+    border: 1px solid #429ECA;
+    width: 120px;
+    border-radius: 8px;
+    background: none;
+    color: #429ECA;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.helpfulBtn:hover {
+    background: #429ECA;
+    color: #fff;
+    transition: 0.5s;
+}
+.userCard rect {
+    fill: #429ECA;
+}
+.userCard rect:nth-of-type(odd) {
+    fill: rgb(226, 43, 98);
+}
+
