@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react';
-import { AllProductReviews, ContentSection, ImagesSection, OverViewSection, Recommendations, Reviews } from "@/components";
+import { AllProductReviews, ContentSection, ImagesSection, OverViewSection, Recommendations, Reviews, AddReview, Footer } from "@/components";
 
 export default function ProductDetails({params}) {
     const product_id = params.id;
@@ -36,6 +36,8 @@ export default function ProductDetails({params}) {
             <Recommendations />
             <Reviews data={data && data}/>
             <AllProductReviews />
+            <AddReview />
+            <Footer />
         </>
     )
 };

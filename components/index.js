@@ -20,6 +20,7 @@ import OverViewSection from './OverViewSection/OverViewSection';
 import Recommendations from './Recommendations/Recommendations';
 import Reviews from './Reviews/Reviews';
 import AllProductReviews from './allProdectReviews/AllProductReviews';
+import AddReview from './addReview/addReview';
 
 
 export {
@@ -43,5 +44,6 @@ export {
     OverViewSection,
     Recommendations,
     Reviews,
-    AllProductReviews
+    AllProductReviews,
+    AddReview,
 }
