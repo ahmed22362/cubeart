@@ -1,17 +1,19 @@
-@font-face {
+/* @font-face {
     font-family: 'Poppins';
     src: url('../public/Poppins/Poppins-Medium.ttf');
     src: url('../public/Poppins/Poppins-SemiBold.ttf');
     src: url('../public/Poppins/Poppins-Regular.ttf');
     src: url('../public/Poppins/Poppins-ExtraLight.ttf');
     font-display: swap;
-}
+} */
+
 html {
     scroll-behavior: smooth !important;
 }
-body {
-    font-family: Poppins, sans-serif;
-}
+
+/* body {
+    font-family: 'Poppins', sans-serif;
+} */
 
 .logo-div {
     display: flex;
@@ -72,6 +74,7 @@ ul .nav-link:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 40px;
 }
 @media(max-width: 767px) {
     .section-title{

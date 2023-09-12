@@ -1,7 +1,7 @@
 'use client'
 
 // import { useState } from 'react';
-// import { Rating } from 'primereact/rating';
+import { Rating } from 'primereact/rating';
 import styles from './Reviews.module.css';
 import { ProgressBar } from 'react-bootstrap';
 // import Image from 'next/image';
@@ -19,7 +19,7 @@ export default function Reviews({data}) {
                         <p style={{fontWeight: "bold"}}>Overall Rating</p>
                         <div>
                             <h1 style={{color: "#000", fontWeight: "bold"}}>{reviewsData && reviewsData.ratingsAverage}<span style={{color: "#717171"}}>/5</span></h1>
-                            {/* <Rating value={reviewsData && reviewsData.ratingsAverage} disabled cancel={false} className={styles.stars} /> */}
+                            <Rating value={reviewsData && reviewsData.ratingsAverage} disabled cancel={false} className={styles.stars} />
                             <span>{reviewsData && reviewsData.ratingsQuantity} review</span>
                         </div>
                     </div>
@@ -28,31 +28,31 @@ export default function Reviews({data}) {
                         <div className={styles.progressBoxes}>
                             <div className={styles.progress}>
                                 <span>5</span>
-                                {/* <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/> */}
+                                <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/>
                                 <ProgressBar variant="success" now={90} style={{width: "120px", height: "10px"}}/>
                                 <span>100</span>
                             </div>
                             <div className={styles.progress}>
                                 <span>4</span>
-                                {/* <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/> */}
+                                <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/>
                                 <ProgressBar variant="warning" now={70} style={{width: "120px", height: "10px"}}/>
                                 <span>60</span>
                             </div>
                             <div className={styles.progress}>
                                 <span>3</span>
-                                {/* <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/> */}
+                                <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/>
                                 <ProgressBar variant="info" now={35} style={{width: "120px", height: "10px"}}/>
                                 <span>20</span>
                             </div>
                             <div className={styles.progress}>
                                 <span>2</span>
-                                {/* <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/> */}
+                                <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/>
                                 <ProgressBar variant="danger" now={20} style={{width: "120px", height: "10px"}}/>
                                 <span>15</span>
                             </div>
                             <div className={styles.progress}>
                                 <span>1</span>
-                                {/* <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/> */}
+                                <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/>
                                 <ProgressBar variant="danger" now={10} style={{width: "120px", height: "10px"}}/>
                                 <span>2</span>
                             </div>
@@ -78,7 +78,7 @@ export default function Reviews({data}) {
                                 <span>21.July.2023</span>
                             </div>
                             <div className={styles.rateAndComment}>
-                                {/* <Rating value={reviewsData && reviewsData.ratingsAverage} disabled cancel={false} className={styles.stars}/> */}
+                                <Rating value={reviewsData && reviewsData.ratingsAverage} disabled cancel={false} className={styles.stars}/>
                                 <span className={styles.name}>Salma Sherif</span>
                                 <div className={styles.commentSection}>
                                     <span className={styles.shortComment}>Nice Item</span>
