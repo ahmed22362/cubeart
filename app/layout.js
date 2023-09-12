@@ -1,6 +1,5 @@
 "use client"
 
-import localFont from 'next/font/local'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
 import "slick-carousel/slick/slick.css"; 
@@ -10,24 +9,6 @@ import './globals.css'
 import React,{ useEffect } from "react";
 import { MinNav, Navbar } from '@/components';
 
-// Font files can be colocated inside of `app`
-const Poppins = localFont({
-  src: [
-    {
-      path: '../public/Poppins/Poppins-ExtraLight.ttf'
-    },
-    {
-      path: '../public/Poppins/Poppins-Medium.ttf'
-    },
-    {
-      path: '../public/Poppins/Poppins-Regular.ttf'
-    },
-    {
-      path: '../public/Poppins/Poppins-SemiBold.ttf'
-    }
-  ],
-  display: 'swap',
-})
 
 export default function RootLayout({ children }) {
 
@@ -37,9 +18,12 @@ export default function RootLayout({ children }) {
 
   return (
     <>
-    <html lang="en" className={`${Poppins.className}`}>
+    <html lang="en">
       <head>
         <title>Cubuild</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={"true"} />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap" rel="stylesheet" />
       </head>
       <body>
         <Navbar />
