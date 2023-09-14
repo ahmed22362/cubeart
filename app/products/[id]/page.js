@@ -32,11 +32,11 @@ export default function ProductDetails({params}) {
                 <ImagesSection coverImage={data && data.coverImage} images={data && data.images}/>
                 <ContentSection data={data && data} />
             </section>
-            <OverViewSection data={data && data.options}/>
+            <OverViewSection data={data && data.options} />
             <Recommendations />
             <Reviews data={data && data}/>
-            <AllProductReviews />
-            <AddReview />
+            <AllProductReviews data={data && data.reviews} />
+            <AddReview productId={data && data.id}/>
             <Footer />
         </>
     )

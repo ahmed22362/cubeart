@@ -1,25 +1,48 @@
+
 .reviewForm {
-    background-color: aliceblue;
-    padding: 20px;
-    border-radius: 24px;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     gap: 30px;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
+    background-color: #F7FBFD;
+    padding: 20px;
+    border-radius: 24px;
 }
-.reviewForm textarea {
+
+.stars {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+.stars svg {
+    width: 25px;
+    height: 25px;
+    color: #FFC62A;
+}
+.reviewForm textarea,
+.reviewForm input {
     border: 2px solid #429ECA;
     border-radius: 8px;
-    resize: none;
     padding: 10px;
-    width: 480px;
-    height: 250px;
+    width: 70%;
 }
-.reviewForm textarea:focus {
+.reviewForm textarea {
+    height: 250px;
+    resize: none;
+}
+.reviewForm textarea:focus,
+.reviewForm input:focus {
     outline: none;
     border: 4px solid #429ECA;
     transition: 0.1s
+}
+@media (max-width: 768px) {
+    .reviewForm textarea,
+    .reviewForm input {
+        width: 100%;
+    }
 }
 .addReviewBtn {
     border: 1px solid #429ECA;
