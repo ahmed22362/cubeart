@@ -29,32 +29,32 @@ export default function Reviews({data}) {
                             <div className={styles.progress}>
                                 <span>5</span>
                                 <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/>
-                                <ProgressBar variant="success" now={90} style={{width: "120px", height: "10px"}}/>
-                                <span>100</span>
+                                <ProgressBar variant="success" now={reviewsData?.ratingsGroup?.rate_5_count * 10 || 0} style={{width: "120px", height: "10px"}}/>
+                                <span>{reviewsData?.ratingsGroup?.rate_5_count || 0}</span>
                             </div>
                             <div className={styles.progress}>
                                 <span>4</span>
                                 <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/>
-                                <ProgressBar variant="warning" now={70} style={{width: "120px", height: "10px"}}/>
-                                <span>60</span>
+                                <ProgressBar variant="warning" now={reviewsData?.ratingsGroup?.rate_4_count * 10 || 0} style={{width: "120px", height: "10px"}}/>
+                                <span>{reviewsData?.ratingsGroup?.rate_4_count || 0}</span>
                             </div>
                             <div className={styles.progress}>
                                 <span>3</span>
                                 <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/>
-                                <ProgressBar variant="info" now={35} style={{width: "120px", height: "10px"}}/>
-                                <span>20</span>
+                                <ProgressBar variant="info" now={reviewsData?.ratingsGroup?.rate_3_count * 10 || 0} style={{width: "120px", height: "10px"}}/>
+                                <span>{reviewsData?.ratingsGroup?.rate_3_count || 0}</span>
                             </div>
                             <div className={styles.progress}>
                                 <span>2</span>
                                 <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/>
-                                <ProgressBar variant="danger" now={20} style={{width: "120px", height: "10px"}}/>
-                                <span>15</span>
+                                <ProgressBar variant="danger" now={reviewsData?.ratingsGroup?.rate_2_count * 10 || 0} style={{width: "120px", height: "10px"}}/>
+                                <span>{reviewsData?.ratingsGroup?.rate_2_count || 0}</span>
                             </div>
                             <div className={styles.progress}>
                                 <span>1</span>
                                 <Rating value={1} disabled stars={1} cancel={false} className={styles.stars}/>
-                                <ProgressBar variant="danger" now={10} style={{width: "120px", height: "10px"}}/>
-                                <span>2</span>
+                                <ProgressBar variant="danger" now={reviewsData?.ratingsGroup?.rate_1_count * 10 || 0} style={{width: "120px", height: "10px"}}/>
+                                <span>{reviewsData?.ratingsGroup?.rate_1_count || 0}</span>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,6 @@ export default function Reviews({data}) {
                         <p style={{fontWeight: "bold"}}>Most helpful review</p>
                         <div className={styles.helpfulBox}>
                             <div className={styles.userCard}>
-                                {/* <i class="bi bi-file-person-fill"></i> */}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="119" height="140" viewBox="0 0 119 140" fill="none">
                                     <g clipPath="url(#clip0_398_2386)">
                                     <rect width="119" height="140" rx="8" fill="#33B9FF"/>
@@ -83,7 +82,6 @@ export default function Reviews({data}) {
                                 <div className={styles.commentSection}>
                                     <span className={styles.shortComment}>Nice Item</span>
                                     <span className={styles.fullComment}>This item is nice, This item is nice, This item is nice, This item is nice.</span>
-
                                 </div>
                             </div>
                         </div>

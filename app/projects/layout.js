@@ -1,6 +1,6 @@
 "use client"
 
-import { NavLinks } from '@/components';
+import "doom-react-notifications/dist/style.css";
 
 export default function RootLayout({ children }) {
     return (
