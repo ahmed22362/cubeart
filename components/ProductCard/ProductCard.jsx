@@ -26,18 +26,13 @@ export default function ProductCard({
     return (
         <>
         <div className={"card h-100 " + styles.cardItem} >
-            <Link href={`/products/${id}`}>
-                <Image src={image} className="card-img-top" sizes="100vh" style={{width: '100%', height: "240px"}} width={"500"} height={"300"} alt={"image"} priority={true} />
+            <Link href={`/products/${id}`} className={styles.photo}>
+                <Image src={image} className="card-img-top" sizes="100vh" width={"500"} height={"300"} alt={"image"} priority={true} />
             </Link>
             <i  className={`bi ${styles.heart} ${!isFilled ? 'bi-heart' : 'bi-heart-fill'}`}
             onClick={() => {toggleToFill()}}></i>
-            <div className="card-body" style={{
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-            }}>
-                <h5 className="card-title" style={{height: "50px"}}>{title.length > 30 ? title.substring(0, 25) + '...' : title }</h5>
+            <div className={"card-body " + styles.cardBody}>
+                <h5 className={"card-title " + styles.cardTitle}>{title.length > 30 ? title.substring(0, 25) + '...' : title }</h5>
                 <div className={styles.upperBody}>
                     <span className="category" style={{color: "rgb(151, 151, 151)"}}>{category}</span>
                     <p className="card-text">{currentPrice} EGP</p>

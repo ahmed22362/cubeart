@@ -71,14 +71,12 @@ export default function Navbar() {
           </ul>
           <ul className={"navbar-nav me-auto mb-2 mb-lg-0 end-of-nav " + styles.rightSection}>
             <button className="nav-btn">Print your design</button>
-            <div>
+            <div className={styles.icons}>
                 <i className="bi bi-cart3"></i>
-            </div>
-            {/* <div className="lang-section">
-              <i className="bi bi-globe2"></i>
-            </div> */}
-            <div>
-              <div className="dropdown">
+                <div>
+                    <i className="bi bi-person"></i>
+              </div>
+            {/* <div className="dropdown">
                 <i className="bi bi-person dropdown-toggle" style={{cursor: "pointer"}} role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
 
                 <ul className={"dropdown-menu " + styles.dropUl} style={{right: "0", padding: "10px", left: "-310%"}}>
@@ -98,7 +96,10 @@ export default function Navbar() {
                     <button className="btn btn-danger shadow-sm">Logout</button>
                   </li>
                 </ul>
-              </div>
+
+            </div> */}
+            </div>
+            <div>
             </div>
           </ul>
         </div>

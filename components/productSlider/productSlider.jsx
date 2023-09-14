@@ -50,15 +50,15 @@ export default function ProductSlider(props) {
   }, []);
 
   const settings = {
-    dots: true,
     infinite: true,
+    dots: true,
     lazyLoad: true,
     slidesToShow: 5,
     slidesToScroll: 1,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    autoplay: true,
+    autoplay: false,
     cssEase: "linear",
     autoplaySpeed: 4000,
     responsive: [
@@ -66,17 +66,14 @@ export default function ProductSlider(props) {
             breakpoint: 1024,
             settings: {
                 slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true
+                slidesToScroll: 1,
             }
         },
         {
             breakpoint: 600,
             settings: {
                 slidesToShow: 2,
-                slidesToScroll: 2,
-                initialSlide: 2
+                slidesToScroll: 1,
             }
         },
         {
@@ -105,14 +102,14 @@ export default function ProductSlider(props) {
             :(
               products && products.map((product, index) => {
               return (
-                <ProductCard
-                  key={index}
-                  title={product.title} 
-                  currentPrice={product.price}
-                  category={"3D Model"}
-                  image={product.coverImage || '/items/item.png'}
-                  id={product.id}
-              />
+                  <ProductCard
+                    key={index}
+                    title={product.title} 
+                    currentPrice={product.price}
+                    category={"3D Model"}
+                    image={product.coverImage || '/items/item.png'}
+                    id={product.id}
+                />
               )
             }))}
             </Slider>

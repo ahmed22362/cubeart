@@ -67,7 +67,12 @@
     justify-content: space-around;
     align-items: center;
 }
-.helpfulBtn:hover {
+.helpfulBtn:hover{
+    background: #429ECA;
+    color: #fff;
+    transition: 0.5s;
+}
+.fillBtn {
     background: #429ECA;
     color: #fff;
     transition: 0.5s;

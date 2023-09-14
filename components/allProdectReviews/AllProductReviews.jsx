@@ -1,13 +1,22 @@
 'use client'
 
-import { Rating } from "primereact/rating"
+import { Rating } from "primereact/rating";
 import styles from './productReview.module.css';
 import moment from "moment/moment";
+import {useState} from 'react';
 
 export default function AllProductReviews({ data }) {
 
     const reviews = data;
+    const [isFilled, setIsFilled] = useState(Array(reviews?.length).fill(false));
 
+    const toggleToFill = (index) => {
+        setIsFilled(prevState => {
+            const newState = [...prevState];
+            newState[index] = !newState[index];
+            return newState;
+        });
+    };
 
     return(
         <>
@@ -39,7 +48,7 @@ export default function AllProductReviews({ data }) {
                                 </div>
                             </div>
                             <div>
-                                <button className={styles.helpfulBtn}>
+                                <button label="Success" className={`${styles.helpfulBtn} ${!isFilled[index] ? styles.helpfulBtn : styles.fillBtn}`} onClick={() => {toggleToFill(index)}}>
                                     <i className="bi bi-hand-thumbs-up"></i>
                                     helpful
                                 </button>
