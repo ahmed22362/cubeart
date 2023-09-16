@@ -1,0 +1,163 @@
+.modalHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+.modalHeader img {
+    width: 100%;
+    height: 100%;
+}
+.LoginFormHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+.loginFormModal form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+.inputControl {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    padding: 0 30px;
+    color: #292D32;
+}
+.inputControl label {
+    font-size: 20px;
+}
+.inputControl input {
+    height: 50px;
+    border-radius: 8px;
+    background: #F5F5F5;
+    padding-left: 14px;
+    border: 0;
+}
+.inputControl input:focus {
+    box-shadow: 0px 0px 1px 3px #9f9f9f;
+    outline: none;
+    transition: 0.3s;
+}
+.inputControl .resetPassword {
+    width: fit-content;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #676767;
+}
+.inputControl .resetPassword:hover {
+    color: #8f8e8e;
+    transition: 0.5s;
+}
+.submitBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+    width: 240px;
+    height: 50px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(181deg, #91C7E0 -50.48%, #429ECA 98.75%);
+    color: #fff;
+    font-size: 16px;
+}
+.submitBtn:hover {
+    background: linear-gradient(181deg, #429ECA 98.75%, #91C7E0 -50.48%);
+    transition: 1s;
+}
+.loginWith {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.loginWith span {
+    position: relative;
+}
+.loginWith span::before {
+    position: absolute;
+    content: "";
+    width: 140px;
+    height: 2px;
+    background-color: #96C9E2;;
+    top: 14px;
+    right: 160px;
+    border-radius: 100px;
+}
+.loginWith span::after {
+    position: absolute;
+    content: "";
+    width: 140px;
+    height: 2px;
+    background-color: #96C9E2;;
+    top: 14px;
+    left: 160px;
+    border-radius: 100px;
+}
+@media (max-width: 540px) {
+    .loginWith span::before {
+        width: 80px;
+    }
+    .loginWith span::after {
+        width: 80px;
+    }
+}
+.otherOptions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+.OuthLogin {
+    display: flex;
+    gap: 40px;
+    font-size: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.OuthLogin span {
+    width: 170px;
+    height: 50px;
+    border: 1px solid #96C9E2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 42px;
+    gap: 5px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+.OuthLogin span img {
+    width: 100%;
+    height: 100%;
+}
+.signupLink {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+.signupLink span {
+    font-weight: bold;
+    cursor: pointer;
+}
+.signupLink span:hover {
+    color: #3a3a3ae3;
+    transition: 0.5s;
+}

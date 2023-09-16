@@ -6,8 +6,7 @@ import ServicesLinks from '../servicesLinks/servicesLinks';
 import CustomModal from '../customModal/customModal';
 
 export default function ServiceCard({icon, title, paragraph, dataTarget}) {
-    
-    // const [lgShow, setLgShow] = useState(false);
+
     const [lgShow, setLgShow] = useState(false);
     
     const [currentModal, setCurrentModal] = useState(1);

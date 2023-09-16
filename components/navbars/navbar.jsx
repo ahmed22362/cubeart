@@ -1,8 +1,20 @@
+'use client'
+
 import Link from "next/link";
 import styles from "./navbar.module.css"
 import Image from "next/image";
+import { useState } from "react";
+import AuthModal from "../Auth/AuthComponent";
 
 export default function Navbar() {
+  const [showModal, setShowModal] = useState(false);
+  const handleModalOpen = () => {
+    setShowModal(true);
+  };
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
   return (
     <nav className="navbar navbar-expand-lg bg-white">
       <div className={"container " + styles.containerSm}>
@@ -73,9 +85,11 @@ export default function Navbar() {
             <button className="nav-btn">Print your design</button>
             <div className={styles.icons}>
                 <i className="bi bi-cart3"></i>
-                <div>
+                {/* <div onClick={() => setModalShow(true)}> */}
+                <div onClick={handleModalOpen}>
                     <i className="bi bi-person"></i>
-              </div>
+                </div>
+                <AuthModal show={showModal} handleClose={handleModalClose} />
             {/* <div className="dropdown">
                 <i className="bi bi-person dropdown-toggle" style={{cursor: "pointer"}} role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
 
