@@ -22,7 +22,6 @@ import Reviews from './Reviews/Reviews';
 import AllProductReviews from './allProdectReviews/AllProductReviews';
 import AddReview from './addReview/addReview';
 
-
 export {
     Navbar,
     MinNav,
@@ -45,5 +44,5 @@ export {
     Recommendations,
     Reviews,
     AllProductReviews,
-    AddReview,
+    AddReview
 }
