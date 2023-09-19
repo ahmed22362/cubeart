@@ -59,10 +59,12 @@
 .icons {
     display: flex;
     gap: 30px;
-    cursor: pointer;
     justify-content: center;
     align-items: center;
     color: #292D32;
+}
+.icons i {
+    cursor: pointer;
 }
 .icons i:hover {
     color: #292d3298;

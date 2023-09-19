@@ -2,10 +2,47 @@
 
 import Image from 'next/image';
 import styles from '../Auth/auth.module.css';
+import { useState } from 'react';
+import Cookies from 'universal-cookie';
+import { useForm } from 'react-hook-form';
 
-export default function LoginForm({ handleLinkClick, active }) {
-    const formSubmitted = () => {
-        console.log('Form submitted')
+
+export default function LoginForm({ handleLinkClick, active, closeModal }) {
+    const {register, handleSubmit, formState: { errors }} = useForm();
+    const [responseMessage, setMessage] = useState(null);
+    const cookie = new Cookies();
+
+
+    const onSubmit = (formData) => {
+        const formObj = {
+            email: formData.email,
+            password: formData.password,
+        }
+        // console.log(formObj);
+        fetch(`https://cubuild.onrender.com/api/v1/user/auth/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formObj),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                cookie.set('token', data.token);
+                cookie.set('user', data.data);
+                setMessage('login success');
+                setTimeout(() => {
+                    closeModal()
+                }, 2000)
+            } else {
+                setMessage(data.message);
+            }
+        })
+        .catch(error => {
+            setMessage('something went wrong please try again or contact with us');
+            console.log(error);
+        });
     }
 
     return(
@@ -15,14 +52,39 @@ export default function LoginForm({ handleLinkClick, active }) {
                     <h3>Welcome back !</h3>
                     <span>Login to your account</span>
                 </div>
-                <form>
+                {responseMessage && (
+                        <div className={`alert ${responseMessage.includes('success') ? 'alert-success' : 'alert-danger'}`}>
+                            {responseMessage}
+                        </div>
+                    )}
+                <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.inputControl}>
                     <label htmlFor="email">Email Address</label>
-                    <input type="email" placeholder='example@gmail.com' id='email'/>
+                    <input
+                        {...register('email', {required: "this is required", pattern: {
+                            value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                            message: "Please enter a valid email address"
+                        }})}
+                        placeholder='example@gmail.com' 
+                        id='email'
+                        type='email'
+                        autoComplete='off'
+                        />
+                    <span className="text-danger">{errors.email?.message}</span>
                 </div>
                 <div className={styles.inputControl}>
                     <label htmlFor="password">Password</label>
-                    <input type="password" placeholder='your password' id='password'/>
+                    <input 
+                        {...register('password', {pattern: {
+                            value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
+                            message: 'week password'
+                        }, required: 'this is required'})}
+                        placeholder='your password' 
+                        id='password'
+                        type='password'
+                        autoComplete='off'
+                        />
+                    <span className="text-danger">{errors.password?.message}</span>
                     <span
                         onClick={() => handleLinkClick('reset')}
                         className={active === 'reset ' ? 'active ' : ' ' + styles.resetPassword}
@@ -30,8 +92,8 @@ export default function LoginForm({ handleLinkClick, active }) {
                         Forget Password ?
                     </span>
                 </div>
+                    <input type="submit" className={styles.submitBtn} value={"Login"}/>
                 </form>
-                <button className={styles.submitBtn} onClick={formSubmitted}>Login</button>
                 <div className={styles.loginWith}>
                     <span>Or login with</span>
                 </div>
