@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import styles from './addReview.module.css';
 import { Rating } from 'primereact/rating';
+import Cookies from 'universal-cookie';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 
 export default function AddReview({productId}) {
@@ -11,24 +14,28 @@ export default function AddReview({productId}) {
     const [title, setTitle] = useState('');
     const [rate, setRate] = useState(0);
     const [responseMessage, setMessage] = useState(null);
-
+    const cookie = new Cookies();
+    const router = useRouter()
     const sendRating = () => {
         const formData = {
-            'review': review,
+            body: review,
             title: title,
-            rate: rate,
+            rating: rate,
             product: productId && productId
         }
+        console.log(formData);
         fetch(`https://cubuild.onrender.com/api/v1/review`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${cookie.get('token')}`,
             },
             body: JSON.stringify(formData),
         })
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
+                
                 setMessage('Review submitted successfully.');
                 setTimeout(() => {
                     setMessage(null);
@@ -37,6 +44,7 @@ export default function AddReview({productId}) {
                 setMessage(data.message);
                 setTimeout(() => {
                     setMessage(null);
+                    
                 }, 5000)
             }
             console.log(data);

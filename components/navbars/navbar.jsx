@@ -1,17 +1,24 @@
-'use client'
+"use client";
 
 import Link from "next/link";
-import styles from "./navbar.module.css"
+import styles from "./navbar.module.css";
 import Image from "next/image";
 import { useState } from "react";
 import AuthModal from "../Auth/AuthComponent";
+import DropDown from "./dropDown";
+import dynamic from "next/dynamic";
+
+const NoSSR = dynamic(() => import('./dropDown'), { ssr: false })
 
 export default function Navbar() {
+
   const [showModal, setShowModal] = useState(false);
+
   const handleModalOpen = () => {
     setShowModal(true);
   };
-  const handleModalClose = () => {
+
+const handleModalClose = () => {
     setShowModal(false);
   };
 
@@ -20,7 +27,13 @@ export default function Navbar() {
       <div className={"container " + styles.containerSm}>
         <div className="logo-div">
           <Link className="navbar-brand" href="/">
-            <Image src={"/logo.png"} width={"48"} height={"48"} blurDataURL={'/logo.png'} alt={"logo"} />
+            <Image
+              src={"/logo.png"}
+              width={"48"}
+              height={"48"}
+              blurDataURL={"/logo.png"}
+              alt={"logo"}
+            />
           </Link>
           <h2
             style={{
@@ -32,7 +45,11 @@ export default function Navbar() {
               lineHeight: "normal",
             }}
           >
-            <Link className="navbar-brand" style={{fontSize: "32px"}} href="/">
+            <Link
+              className="navbar-brand"
+              style={{ fontSize: "32px" }}
+              href="/"
+            >
               CuBuild
             </Link>
           </h2>
@@ -48,7 +65,10 @@ export default function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className={"collapse navbar-collapse " + styles.collapseStyles} id="navbarSupportedContent">
+        <div
+          className={"collapse navbar-collapse " + styles.collapseStyles}
+          id="navbarSupportedContent"
+        >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100">
             <form className="w-100">
               <div
@@ -62,10 +82,16 @@ export default function Navbar() {
                   id="basic-addon1"
                   style={{
                     backgroundColor: "#ECF5FA",
-                    border: "0"
+                    border: "0",
                   }}
                 >
-                  <Image src={"/search-normal.svg"} width={"24"} height={"24"} alt={"search"} blurDataURL={'/search-normal.svg'} />
+                  <Image
+                    src={"/search-normal.svg"}
+                    width={"24"}
+                    height={"24"}
+                    alt={"search"}
+                    blurDataURL={"/search-normal.svg"}
+                  />
                 </span>
                 <input
                   type="text"
@@ -81,43 +107,24 @@ export default function Navbar() {
               </div>
             </form>
           </ul>
-          <ul className={"navbar-nav me-auto mb-2 mb-lg-0 end-of-nav " + styles.rightSection}>
+          <ul
+            className={
+              "navbar-nav me-auto mb-2 mb-lg-0 end-of-nav " +
+              styles.rightSection
+            }
+          >
             <button className="nav-btn">Print your design</button>
-            <div className={styles.icons}>
+              <div className={styles.icons}>
                 <i className="bi bi-cart3"></i>
-                {/* <div onClick={() => setModalShow(true)}> */}
-                <div onClick={handleModalOpen}>
-                    <i className="bi bi-person"></i>
-                </div>
-                <AuthModal show={showModal} handleClose={handleModalClose} />
-            {/* <div className="dropdown">
-                <i className="bi bi-person dropdown-toggle" style={{cursor: "pointer"}} role="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
-
-                <ul className={"dropdown-menu " + styles.dropUl} style={{right: "0", padding: "10px", left: "-310%"}}>
-                  <li className={styles.dropDownLink}>
-                      <i className="bi bi-person-gear"></i>
-                      <Link className="dropdown-item" href="#">Edit Profile</Link>
-                    </li>
-                  <li className={styles.dropDownLink}>
-                    <i className="bi bi-heart"></i>
-                    <Link className="dropdown-item" href="#">Wishlist</Link>
-                  </li>
-                  <li className={styles.dropDownLink}>
-                    <i className="bi bi-cart3"></i>
-                    <Link className="dropdown-item" href="#">Cart</Link>
-                  </li>
-                  <li className={styles.buttonLi}>
-                    <button className="btn btn-danger shadow-sm">Logout</button>
-                  </li>
-                </ul>
-
-            </div> */}
-            </div>
-            <div>
+                  <>
+                    <NoSSR openModal={handleModalOpen} />
+                    {/* <DropDown openModal={handleModalOpen}/> */}
+                  </>
             </div>
           </ul>
         </div>
       </div>
+      <AuthModal show={showModal} closeModal={handleModalClose} />
     </nav>
   );
 }

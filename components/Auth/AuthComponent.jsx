@@ -1,17 +1,13 @@
 'use client'
 
 import { useState } from 'react';
-import { Modal, Tab, Nav, Row, Col, Form, Button } from 'react-bootstrap';
+import { Modal, Form, Button } from 'react-bootstrap';
 import LoginForm from '../AuthForms/LoginForm';
 import Image from 'next/image';
 import styles from './auth.module.css';
 
-const AuthModal = ({ show, handleClose }) => {
+const AuthModal = ({ show, closeModal }) => {
     const [activeTab, setActiveTab] = useState('login');
-  
-    const handleTabChange = (key) => {
-      setActiveTab(key);
-    };
   
     const handleFormSubmit = (e) => {
       e.preventDefault();
@@ -23,7 +19,7 @@ const AuthModal = ({ show, handleClose }) => {
     };
 
     return (
-        <Modal show={show} onHide={handleClose} size='lg' centered>
+        <Modal show={show} onHide={closeModal} size='md' centered>
           <Modal.Header style={{borderBottom: "0px", padding: "0px"}} closeButton>
           </Modal.Header>
           <Modal.Body>
@@ -32,7 +28,7 @@ const AuthModal = ({ show, handleClose }) => {
             </div>
             {activeTab === 'login' && (
 
-            <LoginForm handleLinkClick={handleLinkClick} active={activeTab}/>
+            <LoginForm handleLinkClick={handleLinkClick} active={activeTab} closeModal={closeModal} />
 
             )}
             {activeTab === 'signup' && (
