@@ -26,6 +26,7 @@ export default function DropDown({openModal}) {
 
 
     return (
+        <>
         <div className="dropdown">
             <i
             className="bi bi-person dropdown-toggle"
@@ -36,31 +37,25 @@ export default function DropDown({openModal}) {
             ></i>
         <ul
             className={"dropdown-menu " + styles.dropUl}
-            style={{ right: "0", padding: "10px", left: "-310%" }}
+            style={{ right: "0", padding: "10px", left: "0%" }}
             >
-            <li className={styles.dropDownLink}>
-                <i className="bi bi-person-gear"></i>
-                <Link className="dropdown-item" href="#">
-                Edit Profile
-                </Link>
-            </li>
             <li className={styles.dropDownLink}>
                 <i className="bi bi-heart"></i>
                 <Link className="dropdown-item" href="#">
                 Wishlist
                 </Link>
             </li>
-            <li className={styles.dropDownLink}>
-                <i className="bi bi-cart3"></i>
-                <Link className="dropdown-item" href="#">
-                Cart
-                </Link>
-            </li>
             {user ? (
             <>
+            <li className={styles.dropDownLink}>
+                <i className="bi bi-person-gear"></i>
+                <Link className="dropdown-item" href="#">
+                Edit Profile
+                </Link>
+            </li>
               <li className={styles.buttonLi}>
                 <button
-                  className="btn btn-danger shadow-sm"
+                  className={styles.logout}
                   onClick={() => logOut()}
                 >
                   Logout
@@ -70,7 +65,7 @@ export default function DropDown({openModal}) {
             ): (
               <>
                 <li className={styles.buttonLi}>
-                  <button className="btn btn-danger shadow-sm" onClick={openModal}>
+                  <button className={styles.login} onClick={openModal}>
                     Login
                   </button>
                 </li>
@@ -78,5 +73,7 @@ export default function DropDown({openModal}) {
             )}
         </ul>
       </div>
+      <li className={styles.sayHi}>Hi, {user ? user.name : ""} &#x1F44B;</li>
+    </>
     )
 };

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Modal, Form, Button } from 'react-bootstrap';
 import LoginForm from '../AuthForms/LoginForm';
+import SignUpForm from '../AuthForms/SignUpForm';
 import Image from 'next/image';
 import styles from './auth.module.css';
 
@@ -32,23 +33,7 @@ const AuthModal = ({ show, closeModal }) => {
 
             )}
             {activeTab === 'signup' && (
-              <Form onSubmit={handleFormSubmit}>
-                <Form.Group controlId="signupName">
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control type="text" placeholder="Enter name" />
-                </Form.Group>
-                <Form.Group controlId="signupEmail">
-                  <Form.Label>Email address</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" />
-                </Form.Group>
-                <Form.Group controlId="signupPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                  Sign Up
-                </Button>
-              </Form>
+              <SignUpForm handleLinkClick={handleLinkClick} active={activeTab} closeModal={closeModal} />
             )}
             {activeTab === 'reset' && (
               <Form onSubmit={handleFormSubmit}>
