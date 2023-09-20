@@ -73,7 +73,7 @@ export default function DropDown({openModal}) {
             )}
         </ul>
       </div>
-      <li className={styles.sayHi}>{user ? `Hi, ${user.name} &#x1F44B;` : ""}</li>
+      <li className={styles.sayHi}>{user ? `Hi, ${user.name} \u{1F44B}` : <></>}</li>
     </>
     )
 };
