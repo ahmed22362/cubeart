@@ -149,7 +149,7 @@ export default function SignUpForm({ handleLinkClick, active, closeModal }) {
                 </div>
                     <input type="submit" className={styles.submitBtn} value={"Register"}/>
                 </form>
-                <div className={styles.loginWith}>
+                <div className={styles.SignupWith}>
                     <span>Or Register with</span>
                 </div>
                 <div className={styles.otherOptions}>
