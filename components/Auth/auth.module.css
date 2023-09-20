@@ -36,7 +36,7 @@
     flex-direction: column;
     gap: 5px;
     width: 100%;
-    padding: 0 30px;
+    padding: 0 10px;
     color: #292D32;
 }
 .inputControl label {
@@ -99,7 +99,7 @@
     height: 2px;
     background-color: #96C9E2;;
     top: 11px;
-    right: 100px;
+    right: 120px;
     border-radius: 100px;
 }
 .loginWith span::after {
@@ -109,7 +109,7 @@
     height: 2px;
     background-color: #96C9E2;;
     top: 11px;
-    left: 100px;
+    left: 120px;
     border-radius: 100px;
 }
 @media (max-width: 540px) {
@@ -121,6 +121,13 @@
     }
     .submitBtn {
         width: 60%;
+    }
+    .fullname {
+        flex-direction: column;
+        padding: 0px 0px !important;
+    }
+    .fullname input {
+        width: 100%;
     }
 }
 .otherOptions {
@@ -168,4 +175,12 @@
 .signupLink span:hover {
     color: #3a3a3ae3;
     transition: 0.5s;
+}
+.fullname {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    padding: 0 30px;
+    justify-content: center;
+    gap: 10px;
 }

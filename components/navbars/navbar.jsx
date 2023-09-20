@@ -113,13 +113,15 @@ const handleModalClose = () => {
               styles.rightSection
             }
           >
-            <button className="nav-btn">Print your design</button>
-              <div className={styles.icons}>
+              <div className={styles.btnWithIcons}>
+                <button className={styles.navBtn}>Print your design</button>
+                <div className={styles.icons}>
                 <i className="bi bi-cart3"></i>
                   <>
                     <NoSSR openModal={handleModalOpen} />
                     {/* <DropDown openModal={handleModalOpen}/> */}
                   </>
+                </div>
             </div>
           </ul>
         </div>

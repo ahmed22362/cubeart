@@ -11,15 +11,13 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
     const {register, handleSubmit, formState: { errors }} = useForm();
     const [responseMessage, setMessage] = useState(null);
     const cookie = new Cookies();
-
-
+    const url = process.env.API_URL;
     const onSubmit = (formData) => {
         const formObj = {
             email: formData.email,
             password: formData.password,
         }
-        // console.log(formObj);
-        fetch(`https://cubuild.onrender.com/api/v1/user/auth/login`, {
+        fetch(`${url}/user/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +34,7 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
                     closeModal()
                 }, 2000)
             } else {
-                setMessage(data.message);
+                setMessage('Password or Email not correct please try again or contact us');
             }
         })
         .catch(error => {
@@ -61,7 +59,7 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
                 <div className={styles.inputControl}>
                     <label htmlFor="email">Email Address</label>
                     <input
-                        {...register('email', {required: "this is required", pattern: {
+                        {...register('email', {required: "email is required", pattern: {
                             value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
                             message: "Please enter a valid email address"
                         }})}
@@ -75,10 +73,7 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
                 <div className={styles.inputControl}>
                     <label htmlFor="password">Password</label>
                     <input 
-                        {...register('password', {pattern: {
-                            value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
-                            message: 'week password'
-                        }, required: 'this is required'})}
+                        {...register('password', {required: 'password is required'})}
                         placeholder='your password' 
                         id='password'
                         type='password'
