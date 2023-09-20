@@ -112,12 +112,47 @@
     left: 120px;
     border-radius: 100px;
 }
+.SignupWith {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    font-size: 15px;
+}
+.SignupWith span {
+    position: relative;
+}
+.SignupWith span::before {
+    position: absolute;
+    content: "";
+    width: 120px;
+    height: 2px;
+    background-color: #96C9E2;
+    top: 11px;
+    right: 140px;
+    border-radius: 100px;
+}
+.SignupWith span::after {
+    position: absolute;
+    content: "";
+    width: 120px;
+    height: 2px;
+    background-color: #96C9E2;;
+    top: 11px;
+    left: 140px;
+    border-radius: 100px;
+}
 @media (max-width: 540px) {
     .loginWith span::before {
         width: 80px;
     }
     .loginWith span::after {
         width: 80px;
+    }
+    .SignupWith span::before {
+        width: 50px;
+    }
+    .SignupWith span::after {
+        width: 50px;
     }
     .submitBtn {
         width: 60%;

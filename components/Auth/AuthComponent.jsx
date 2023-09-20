@@ -6,6 +6,7 @@ import LoginForm from '../AuthForms/LoginForm';
 import SignUpForm from '../AuthForms/SignUpForm';
 import Image from 'next/image';
 import styles from './auth.module.css';
+import Reset from '../AuthForms/Reset';
 
 const AuthModal = ({ show, closeModal }) => {
     const [activeTab, setActiveTab] = useState('login');
@@ -36,15 +37,7 @@ const AuthModal = ({ show, closeModal }) => {
               <SignUpForm handleLinkClick={handleLinkClick} active={activeTab} closeModal={closeModal} />
             )}
             {activeTab === 'reset' && (
-              <Form onSubmit={handleFormSubmit}>
-                <Form.Group controlId="resetEmail">
-                  <Form.Label>Email address</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                  Reset Password
-                </Button>
-              </Form>
+              <Reset handleLinkClick={handleLinkClick} active={activeTab} closeModal={closeModal} />
             )}
           </Modal.Body>
         </Modal>
