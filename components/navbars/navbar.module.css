@@ -117,8 +117,9 @@
 }
 @media (max-width: 480px) {
     .btnWithIcons {
-        width: 100%;
         flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
         gap: 20px;
     }
 }
