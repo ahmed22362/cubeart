@@ -5,7 +5,6 @@ import styles from "./navbar.module.css";
 import Image from "next/image";
 import { useState } from "react";
 import AuthModal from "../Auth/AuthComponent";
-import DropDown from "./dropDown";
 import dynamic from "next/dynamic";
 
 const NoSSR = dynamic(() => import('./dropDown'), { ssr: false })

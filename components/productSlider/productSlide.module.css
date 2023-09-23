@@ -1,19 +1,5 @@
 
-.cardItem .heart {
-    font-size: 20px;
-    cursor: pointer;
-    position: absolute;
-    background-color: #DAF3FF;
-    color: red;
-    right: 0;
-    padding: 4px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-}
+/* 
 .cardItem > a {
     width: 180px;
     height: 180px;
@@ -22,20 +8,12 @@
     align-items: center;
     margin: auto;
 }
-.cardItem a > img {
-    width: 100%;
-    height: 100%;
-}
 
-.myOwnStyleRight::before {
-    content: "\F285";
-    font-family: "Bootstrap-icons";
-    color: #000000;
-    font-size: 35px;
-}
+
+
 .cardBody {
     height: 200px;
-    width: 250px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -45,23 +23,7 @@
     width: 100%;
     font-size: 1em;
 }
-/* .cardBody h5 {
-    font-size: 10vw;
-} */
-.myOwnStyleLeft {
-    left: -50px;
-}
 
-.myOwnStyleLeft::before {
-    content: "\F284 ";
-    font-family: "Bootstrap-icons";
-    color: #000000;
-    font-size: 35px;
-}
-
-.myOwnStyleRight {
-    right: -30px;
-}
 
 .upperBody {
     display: flex;
@@ -73,6 +35,22 @@
     display: flex;
     flex-direction: row-reverse;
 }
+ */
+/* product image */
+.cardItem .photo {
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.cardItem .photo > img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Add Button */
 .addBtn {
     display: flex;
     width: 100%;
@@ -88,8 +66,108 @@
     background-color: #429fca9f;
     color: #fff;
 }
-/* @media (max-width: 1172px) {
-    .cardBody h5 {
-        font-size: 10vw;
+/* heart icon */
+.cardItem .heart {
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    background-color: #DAF3FF;
+    color: red;
+    right: 0;
+    padding: 4px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+/* Arrows */
+.myOwnStyleLeft {
+    left: -23px;
+}
+.myOwnStyleLeft::before {
+    content: "\F284 ";
+    font-family: "Bootstrap-icons";
+    color: #000000;
+    font-size: 35px;
+}
+.myOwnStyleRight {
+    right: -19px;
+}
+.myOwnStyleRight::before {
+    content: "\F285";
+    font-family: "Bootstrap-icons";
+    color: #000000;
+    font-size: 35px;
+}
+
+@media (min-width: 320px) {
+    .cardItem {
+        border: 0;
+        margin: 0 4px;
+        width: 98%;
     }
-} */
+    .myOwnStyleRight::before,
+    .myOwnStyleLeft::before {
+        font-size: 22px;
+    }
+    .cardBody {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .upperBody {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 14px;
+        gap: 10px;
+        width: 100%;
+        height: 65px;
+        flex-wrap: wrap;
+        padding: 5px;
+    }
+    .cardBody .cardTitle {
+        font-size: 14px;
+        text-align: start;
+        height: 45px;
+        padding: 5px;
+    }
+    .addBtn {
+        width: 100px;
+        height: 40px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+    .addBtn i {
+        font-size: 20px;
+    }
+}
+@media(min-width: 768px) {
+    .myOwnStyleLeft {
+        left: -18px;
+    }
+    .myOwnStyleRight {
+        right: -14px;
+    }
+    .myOwnStyleRight::before,
+    .myOwnStyleLeft::before {
+        font-size: 24px;
+    }
+    .upperBody,
+    .cardBody .cardTitle {
+        font-size: 16px;
+    }
+    .addBtn {
+        width: 140px;
+        height: 45px;
+        font-size: 17px;
+    }
+    .addBtn i {
+        font-size: 22px;
+    }
+}

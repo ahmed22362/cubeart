@@ -1,0 +1,20 @@
+.recommendationsItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.recommendationsItems .product {
+    width: 25% !important;
+}
+@media (max-width: 768px) {
+    .recommendationsItems .product {
+        width: 50% !important;
+    }
+}
+@media (max-width: 375px) {
+    .recommendationsItems .product {
+        width: 98% !important;
+    }
+}

@@ -28,11 +28,12 @@
 .carosuelBtns .white {
     background-color: rgba(255, 255, 255, 0);
     color: white;
-    border: 1px solid #ffffff
+    border: 2px solid #ffffff
 } 
 .carosuelBtns .white:hover {
     background-color: rgba(255, 255, 255, 0.73);
     color: #000;
+    font-weight: bold;
 } 
 .carosuelBtns .yellow {
     background-color: #FFC636;
@@ -41,6 +42,7 @@
 .carosuelBtns .yellow:hover {
     background-color: #f7b816c6;
     color: #ffffff;
+    font-weight: bold;
 }
 .carosuelBtns .purple {
     background-color: #FB65FE;
@@ -49,12 +51,12 @@
 .carosuelBtns .purple:hover {
     background-color: #f72bfabf;
     color: #ffffff;
+    font-weight: bold;
 }
 
 .carosuelImg {
     filter: brightness(70%);
 }
-
 
 @media (max-width: 768px) {
     .header1 {

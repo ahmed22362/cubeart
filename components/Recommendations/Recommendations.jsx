@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import { useState } from "react";
+import styles from './recommendations.module.css';
 import Loading from "./Loading";
 
 export default function Recommendations() {
@@ -37,10 +38,12 @@ export default function Recommendations() {
         <>
             <div className="px-5">
                 <h2>Recommendations</h2>
-                <div className="d-flex flex-wrap justify-content-center py-5">
+                <div className={styles.recommendationsItems}>
                     {loading === false ? data.map((item, index) => {
                         return(
-                                <ProductCard title={item.title} currentPrice={item.price} image={item.coverImage} category={item.category} key={index} id={item.id}/>
+                                <div className={styles.product} >
+                                    <ProductCard title={item.title} currentPrice={item.price} image={item.coverImage} category={item.category || "3D Model"} key={index} id={item.id}/>
+                                </div>
                                 )
                             }) : 
                             <div className="d-flex flex-wrap justify-content-between w-100">
