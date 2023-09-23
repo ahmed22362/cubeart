@@ -103,6 +103,12 @@
 }
 
 @media (min-width: 320px) {
+    .myOwnStyleLeft {
+        left: -16px;
+    }
+    .myOwnStyleRight {
+        right: -13px;
+    }
     .cardItem {
         border: 0;
         margin: 0 4px;
