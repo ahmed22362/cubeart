@@ -6,8 +6,7 @@ import ServiceCard from "./../ServiceCard/serviceCard";
 export default function OurService() {
   return (
     <div className="m-5">
-      <h3 style={{ 
-                  fontSize: "36px", paddingLeft: "0.5rem" }} id="services">Our Services</h3>
+      <h3 className="section-title-h3" style={{paddingLeft: "0.5rem", paddingTop: "15px"}} id="services">Our Services</h3>
       <div className={styles.services}>
         {/* <!-- Bootstrap Modal --> */}
         <ServiceCard

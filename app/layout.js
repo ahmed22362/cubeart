@@ -9,7 +9,6 @@ import './globals.css'
 import React,{ useEffect } from "react";
 import { MinNav, Navbar } from '@/components';
 
-
 export default function RootLayout({ children }) {
 
   useEffect(() => {

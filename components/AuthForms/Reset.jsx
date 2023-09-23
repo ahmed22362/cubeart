@@ -37,7 +37,7 @@ export default function Reset({ handleLinkClick, active, closeModal }) {
                 setMessage(data.message);
                 setTimeout(() => {
                     closeModal()
-                }, 2000)
+                }, 4000)
             } else {
                 setMessage(data[0].message);
                 console.log(data);

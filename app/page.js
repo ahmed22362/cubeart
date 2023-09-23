@@ -1,14 +1,12 @@
-import Head from 'next/head'
 import './page.module.css'
 import { AboutUs, CarsouelSlider, Footer, OurService, ProductSlider, QuickQuote } from '@/components'
 
 export default function Home() {
   return (
-    <main>
+    <main style={{overflow: "hidden"}}>
       <CarsouelSlider />
-        <section className='px10'>
+        <section className={"productSliderSection"}>
           <ProductSlider title="Our Products" /> <br />
-          
           <ProductSlider title="Offers Up to 50%" />
 
         </section>
