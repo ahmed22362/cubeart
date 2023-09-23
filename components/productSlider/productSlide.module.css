@@ -103,6 +103,11 @@
 }
 
 @media (min-width: 320px) {
+    .cardItem {
+        border: 0;
+        margin: 0 4px;
+        width: 98%;
+    }
     .myOwnStyleRight::before,
     .myOwnStyleLeft::before {
         font-size: 22px;

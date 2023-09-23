@@ -59,11 +59,6 @@ ul .nav-link:hover {
     .productSliderSection {
         padding: 0 20px;
     }
-    .card {
-        border: 0;
-        margin: 0 4px;
-        width: 98%;
-    }
 }
 .card {
     border: 0;
