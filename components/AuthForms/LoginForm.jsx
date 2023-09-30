@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import styles from '../Auth/auth.module.css';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import Cookies from 'universal-cookie';
 import { useForm } from 'react-hook-form';
 
@@ -12,6 +12,11 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
     const [responseMessage, setMessage] = useState(null);
     const cookie = new Cookies();
     const url = process.env.API_URL;
+    const [showComponent, setShowComponent] = useState(false);
+
+    useEffect(() => {
+            setShowComponent(true);
+    }, []);
     const onSubmit = (formData) => {
         const formObj = {
             email: formData.email,
@@ -45,7 +50,7 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
 
     return(
         <>
-            <div className={styles.loginFormModal}>
+            <div  className={`${styles.loginFormModal + ' ' + styles.effect} ${showComponent ? styles.show : ''}`}>
                 <div className={styles.LoginFormHeader}>
                     <h3>Welcome back !</h3>
                     <span>Login to your account</span>

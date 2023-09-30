@@ -1,0 +1,37 @@
+/* CSS for responsiveness */
+.container {
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+  
+  .responsive-table {
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto; /* Add horizontal scrollbar if needed */
+  }
+  
+  /* Media query for tablet screens */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 10px;
+    }
+    
+    .responsive-table {
+      overflow-x: initial; /* Remove horizontal scrollbar on small screens */
+    }
+  }
+  .special_button button{
+    display: inline-flex;
+    padding: 10px 32px 9px 32px;
+    justify-content: center;
+    align-items: center;  
+}
+.empty_text{
+    color: #292D32;
+    font-family: Poppins;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

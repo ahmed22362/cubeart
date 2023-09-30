@@ -6,7 +6,9 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
 }
-
+.dropdown {
+    background: white !important;
+}
 .logo-div {
     display: flex;
     align-items: center;

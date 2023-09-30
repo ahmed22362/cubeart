@@ -23,6 +23,13 @@
 .LoginFormHeader h3 {
     font-size: 26px;
 }
+.effect {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.effect.show {
+    opacity: 1;
+}
 .loginFormModal form {
     display: flex;
     flex-direction: column;

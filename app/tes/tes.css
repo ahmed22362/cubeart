@@ -1,0 +1,186 @@
+.print-your-design {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.print-your-design .overlap-group-wrapper {
+  background-color: #ffffff;
+  height: 1024px;
+  width: 1440px;
+}
+
+.print-your-design .overlap-group {
+  background-image: url(https://generation-sessions.s3.amazonaws.com/ce172766eaf2f4c3522d1eccea072dd0/img/gavin-allanwood-q1ns-nisniw-unsplash-1.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 1024px;
+  position: relative;
+}
+
+.print-your-design .rectangle {
+  height: 1024px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1440px;
+}
+
+.print-your-design .more-details {
+  height: 770px;
+  left: 278px;
+  position: absolute;
+  top: 185px;
+  width: 514px;
+}
+
+.print-your-design .img {
+  height: 770px;
+  left: 365px;
+  position: absolute;
+  top: 156px;
+  width: 514px;
+}
+
+.print-your-design .more-details-2 {
+  height: 760px;
+  left: 475px;
+  position: absolute;
+  top: 136px;
+  width: 490px;
+}
+.form-button button:first-child{
+  border-radius: var(--radius-lg, 16px);
+  border: 2px solid #96C9E2;
+  background: #FFF;
+  color: #292D32;
+  }
+.form-button button:last-child{
+  display: flex;
+  width: 311px;
+  padding: 14px 0px;
+  justify-content: center;
+  align-items: center;
+}
+.discardButton{
+  border-radius: var(--radius-lg, 16px);
+  border: 2px solid #96C9E2;
+  background: #FFF !important ;
+  color: #292D32 !important;
+}
+.kjxBcc span{
+  height: 3px !important;
+  background-color: #96C9E2 !important;
+}
+ span{
+  height: 3px !important;
+  transition: all .3s !important;
+}
+.hCVjpM .default-node {
+  background-color:  #429ECA !important;
+  border-color: #91C7E0 !important;
+  color: white !important;
+  content: 'icon';
+
+  }
+   .default-node{
+    border-color: #91C7E0 !important;
+    border: 2px solid #91C7E0;
+    background: white !important;
+    color: black !important;
+  }
+  .layer{
+    min-width: 500px !important;
+  }
+  .density_value{
+    border-radius: 8px;
+    background: #F5F5F5;
+    border: none;
+    width: 100;
+  }
+  .material{
+    padding: 15px 10px;
+
+  }
+  .material:hover{
+    background: #ECF5FA;
+    width: 100% !important;
+    border-radius: 8px;
+  }
+  .color{
+    display: flex;
+    gap: 8px;
+  }
+  .color span{
+    width: 25px;
+    height: 25px !important;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+  }
+  .red{
+    background: #EA223B;
+  }
+  .green{
+    background: #34A853;
+  }
+  .yellow{
+    background: #FBBC05;
+  }
+  textarea{
+    resize: none;
+    display: inline-flex;
+    border: none;
+height: 146px;
+align-items: center;
+width: 100%;
+border-radius: 8px;
+background: #F5F5F5;
+padding: 10px 15px;
+}
+textarea:focus{
+  border: none;
+  outline: none;
+}
+  .dropdown{
+    display: block;
+    width: 100% ;
+    padding: 7px 16px 7px 19px;
+    border-radius: 8px;
+  background: #F5F5F5;
+    border: none;
+  }
+  .dropdown:focus{
+    outline: none;
+    border: none;
+  }
+   /* .option{
+    border-radius: 8px;
+    background: #FFF;
+    padding: 15px 10px;
+    background: #429ECA;
+    margin-bottom: 15px !important;
+    border-bottom: 1px solid #777;
+    height: 15px !important;
+  } */
+  .option {
+    /* Optional: Add styles for the <option> elements */
+    font-size: 14px;
+    color: #555;
+    padding: 8px; /* Add padding to all options */
+  }
+  
+  /* Apply styles to the 2nd and 3rd options */
+  .option:nth-child(2),
+  .option:nth-child(3) {
+    margin-top: 5px; /* Add margin to the 2nd and 3rd options */
+    border-bottom: 1px solid #ccc; /* Add border-bottom to the 2nd and 3rd options */
+  }
+  .p-button {
+    min-height: 50px !important;
+    }
+    .p-button span{
+      height: fit-content !important;
+    }

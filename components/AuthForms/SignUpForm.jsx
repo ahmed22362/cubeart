@@ -2,14 +2,13 @@
 
 import Image from 'next/image';
 import styles from '../Auth/auth.module.css';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import Cookies from 'universal-cookie';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 export default function SignUpForm({ handleLinkClick, active, closeModal }) {
-
     const validationSchema = Yup.object().shape({
         first_name: Yup.string()
             .required('First Name is required'),
@@ -36,6 +35,11 @@ export default function SignUpForm({ handleLinkClick, active, closeModal }) {
     const [responseMessage, setMessage] = useState(null);
     const cookie = new Cookies();
     const url = process.env.API_URL;
+    const [showComponent, setShowComponent] = useState(false);
+
+    useEffect(() => {
+        setShowComponent(true);
+    }, []);
     const onSubmit = (formData) => {
         const formObj = {
             name: `${formData.first_name} ${formData.last_name}`,
@@ -73,7 +77,7 @@ export default function SignUpForm({ handleLinkClick, active, closeModal }) {
 
     return(
         <>
-            <div className={styles.loginFormModal}>
+            <div className={`${styles.loginFormModal + ' ' + styles.effect} ${showComponent ? styles.show : ''}`}>
                 <div className={styles.LoginFormHeader}>
                     <h3>Welcome to Cubuild!</h3>
                     <span>Register to get your full experience with us!</span>

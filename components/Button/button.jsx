@@ -2,8 +2,8 @@
 
 import styles from './button.module.css';
 
-export default function MainButton({text}) {
+export default function MainButton({text , onclick}) {
     return (
-        <button className={styles.button}>{text}</button>
+        <button className={styles.button} onClick={onclick}>{text}</button>
     )
 }

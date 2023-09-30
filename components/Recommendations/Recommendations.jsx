@@ -19,9 +19,7 @@ export default function Recommendations() {
             const responseData = await response.json();
             setData(responseData.data);
             setLoading(false);
-            console.log(responseData.data);
         } catch (err) {
-
             console.log(err);
         }
     }

@@ -39,17 +39,17 @@ export default function DropDown({openModal}) {
             className={"dropdown-menu " + styles.dropUl}
             style={{ right: "0", padding: "10px", left: "0%" }}
             >
-            <li className={styles.dropDownLink}>
-                <i className="bi bi-heart"></i>
-                <Link className="dropdown-item" href="#">
-                Wishlist
-                </Link>
-            </li>
             {user ? (
             <>
+                <li className={styles.dropDownLink}>
+                    <i className="bi bi-heart"></i>
+                    <Link className="dropdown-item" href="/editprofile/wishlist">
+                        Wishlist
+                    </Link>
+                </li>
             <li className={styles.dropDownLink}>
                 <i className="bi bi-person-gear"></i>
-                <Link className="dropdown-item" href="#">
+                <Link className="dropdown-item" href="/editprofile/security">
                 Edit Profile
                 </Link>
             </li>

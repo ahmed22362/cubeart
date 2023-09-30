@@ -2,20 +2,28 @@
 
 import { useState, useEffect } from 'react';
 import { AllProductReviews, ContentSection, ImagesSection, OverViewSection, Recommendations, Reviews, AddReview, Footer } from "@/components";
+import { useParams, useRouter } from 'next/navigation';
 
-export default function ProductDetails({params}) {
-    const product_id = params.id;
-    const [data, setData] = useState({})
+export default function ProductDetails() {
+    const {id} = useParams();
+    const [data, setData] = useState({});
+    const [isValidId, setIsValidId] = useState(true);
+
     const fetchData = async () => {
-        const response = await fetch(`https://cubuild.onrender.com/api/v1/product/${product_id}`);
+        const response = await fetch(`https://cubuild.onrender.com/api/v1/product/${id}`);
         const data = await response.json();
-        console.log(data.data)
         setData(data.data);
-        
+        setIsValidId(!!data.data);
     };
+
     useEffect(() => {
+        if (!id) return;
         fetchData();
-    }, []);
+    }, [id]);
+
+    if (!isValidId) {
+        return <Error />
+    }
 
     return(
         <>

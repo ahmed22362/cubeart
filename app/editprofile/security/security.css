@@ -1,0 +1,17 @@
+.p-icon{
+    position: absolute;
+    right: 6px;
+}
+.form-button button:first-child{
+    border-radius: var(--radius-lg, 16px);
+    border: 2px solid #96C9E2;
+    background: #FFF;
+    color: #292D32;
+    }
+.form-button button:last-child{
+    display: flex;
+    width: 311px;
+    padding: 14px 0px;
+    justify-content: center;
+    align-items: center;
+}

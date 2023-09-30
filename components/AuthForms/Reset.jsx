@@ -1,6 +1,6 @@
 'use client'
 import styles from '../Auth/auth.module.css';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -19,6 +19,11 @@ export default function Reset({ handleLinkClick, active, closeModal }) {
     const {register, handleSubmit, formState: { errors }} = useForm(formOptions);
     const [responseMessage, setMessage] = useState(null);
     const url = process.env.API_URL;
+    const [showComponent, setShowComponent] = useState(false);
+
+    useEffect(() => {
+        setShowComponent(true);
+    }, []);
     const onSubmit = (formData) => {
         const formObj = {
             email: formData.email
@@ -50,7 +55,7 @@ export default function Reset({ handleLinkClick, active, closeModal }) {
     }
 
     return(
-        <div className={styles.loginFormModal} style={{padding: "25px"}}>
+        <div className={`${styles.loginFormModal + ' ' + styles.effect} ${showComponent ? styles.show : ''}`} style={{padding: "25px"}}>
             <div className={styles.LoginFormHeader}>
                 <h3>Forget your Password ?</h3>
                 <span style={{
