@@ -213,7 +213,7 @@ export default function ProductsList() {
           </button>
         </div>
       </div>
-      <section className="comboBoxAndProducts" style={{ flex: "1" }}>
+      <section className="comboBoxAndProducts" style={{ flex: "1", marginTop: "55px" }}>
         <section className={styles.comboBox + " my-5"}>
           <div className={styles.categories}>
             {categories.map((catName, index) => {

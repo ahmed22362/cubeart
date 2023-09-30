@@ -169,6 +169,7 @@
         position: fixed;
         z-index: 100;
         width: 100%;
+        top: 0px;
     }
     .containerStyle {
         padding: 0px;
@@ -189,8 +190,5 @@
         flex-direction: row;
         justify-content: space-evenly !important;
         align-items: center;
-    }
-    .iconsLinks i:hover {
-
     }
 }
