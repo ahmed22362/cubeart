@@ -89,11 +89,13 @@
     background: #2e6f8da1;
     transition: 0.5s;
 }
-.btnWithIcons {
+.btnWithIcons,
+.btnWithIcons a {
     display: flex;
     justify-content: center;
     align-items: center;
     color: #292D32;
+    text-decoration: none;
 }
 .btnWithIcons i {
     cursor: pointer;
@@ -123,4 +125,35 @@
         gap: 20px;
     }
 }
-
+.searchDiv {
+    background: none;
+    padding: 0;
+    padding-right: 0 !important;
+    position: relative;
+}
+.searchDiv::before{
+    content: "\F52A";
+    font-family: 'Bootstrap-icons';
+    position: absolute;
+    font-size: 23px;
+    width: 50px;
+    color: #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 2px;
+    left: -4px;
+}
+.searchInput {
+    border: 0;
+    background-color: #ECF5FA;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    padding-left: 40px;
+}
+.searchInput:focus {
+    box-shadow: none;
+    outline: 3px solid #8f8e8e;
+    transition: 0.1s;
+}

@@ -133,9 +133,9 @@ export default function ProductCard({
         });
     };
 
-    useEffect(() => {
-        checkWishlistItem();
-    }, []);
+    // useEffect(() => {
+    //     checkWishlistItem();
+    // }, []);
 
     return (
             <div className={"card h-100 " + styles.cardItem}>

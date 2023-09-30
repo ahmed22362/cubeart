@@ -30,6 +30,7 @@ const handleModalClose = () => {
               src={"/logo.png"}
               width={"48"}
               height={"48"}
+              placeholder='blur'
               blurDataURL={"/logo.png"}
               alt={"logo"}
             />
@@ -70,35 +71,10 @@ const handleModalClose = () => {
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100">
             <form className="w-100">
-              <div
-                className="input-group"
-                style={{
-                  borderRadius: "8px",
-                }}
-              >
-                <span
-                  className="input-group-text"
-                  id="basic-addon1"
-                  style={{
-                    backgroundColor: "#ECF5FA",
-                    border: "0",
-                  }}
-                >
-                  <Image
-                    src={"/search-normal.svg"}
-                    width={"24"}
-                    height={"24"}
-                    alt={"search"}
-                    blurDataURL={"/search-normal.svg"}
-                  />
-                </span>
+              <div className={styles.searchDiv}>
                 <input
                   type="text"
-                  style={{
-                    border: "0",
-                    backgroundColor: "#ECF5FA",
-                  }}
-                  className="form-control"
+                  className={styles.searchInput}
                   placeholder="Search"
                   aria-label="Search"
                   aria-describedby="basic-addon1"
@@ -113,9 +89,13 @@ const handleModalClose = () => {
             }
           >
               <div className={styles.btnWithIcons}>
-                <button className={styles.navBtn}>Print your design</button>
+                <Link href={'/upload'}>
+                  <button className={styles.navBtn}>Print your design</button>
+                </Link>
                 <div className={styles.icons}>
-                <i className="bi bi-cart3"></i>
+                  <Link href={'editprofile/cart'}>
+                    <i className="bi bi-cart3" ></i>
+                  </Link>
                   <>
                     <NoSSR openModal={handleModalOpen} />
                     {/* <DropDown openModal={handleModalOpen}/> */}
