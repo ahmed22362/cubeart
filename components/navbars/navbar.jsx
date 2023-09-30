@@ -22,7 +22,7 @@ const handleModalClose = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-white">
+    <nav className={"navbar navbar-expand-lg bg-white " + styles.mainNav}>
       <div className={"container " + styles.containerSm}>
         <div className="logo-div">
           <Link className="navbar-brand" href="/">

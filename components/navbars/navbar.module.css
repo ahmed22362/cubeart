@@ -157,3 +157,40 @@
     outline: 3px solid #8f8e8e;
     transition: 0.1s;
 }
+.links {
+    display: flex;
+}
+.iconsLinks {
+    display: none;
+}
+
+@media(max-width: 425px) {
+    .mainNav {
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+    }
+    .containerStyle {
+        padding: 0px;
+    }
+    .minNav {
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+        bottom: 0;
+        height: 60px;
+        overflow: hidden;
+    }
+    .ulMinLinks {
+        display: none;
+    }
+    .iconsLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .iconsLinks i:hover {
+
+    }
+}

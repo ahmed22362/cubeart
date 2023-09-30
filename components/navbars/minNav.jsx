@@ -3,8 +3,8 @@ import styles from './navbar.module.css'
 
 export default function MinNav() {
     return(
-        <nav className="navbar navbar-expand-lg" style={{backgroundColor: "#429ECA"}}>
-        <div className="container">
+        <nav className={"navbar navbar-expand-lg " + styles.minNav} style={{backgroundColor: "#429ECA"}}>
+        <div className={"container " + styles.containerStyle}>
             <ul className={"navbar-nav me-auto mb-2 mb-lg-0 ul-links " + styles.ulMinLinks}>
               <li className="nav-item">
                 <Link href={'/'} className="nav-link">Home</Link>
@@ -18,6 +18,20 @@ export default function MinNav() {
               <li className="nav-item">
                 <Link href={'/projects'} className="nav-link">Projects</Link> 
               </li>
+            </ul>
+            <ul className={"navbar-nav me-auto mb-lg-0 ul-links " + styles.iconsLinks}>
+                <li className="nav-item">
+                    <Link href={'/'} className="nav-link"><i className="bi bi-house-door"></i></Link>
+                </li>
+                <li className="nav-item">
+                    <Link href={'/#services'} className="nav-link"><i className="bi bi-layout-wtf"></i></Link>
+                </li>
+                <li className="nav-item">
+                    <Link href={'/products'} className="nav-link"><i className="bi bi-shop"></i></Link>
+                </li>
+                <li className="nav-item">
+                    <Link href={'/projects'} className="nav-link"><i className="bi bi-palette2"></i></Link>
+                </li>
             </ul>
           </div>
       </nav>
