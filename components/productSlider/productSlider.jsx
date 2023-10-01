@@ -36,9 +36,9 @@ export default function ProductSlider(props) {
   
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+  const url = process.env.API_URL;
   useEffect(() => {
-      fetch('https://cubuild.onrender.com/api/v1/product?limit=10')
+      fetch(`${url}/product?limit=10`)
           .then(response => response.json())
           .then(data => {
               setIsLoading(false);
@@ -54,7 +54,6 @@ export default function ProductSlider(props) {
     dots: true,
     lazyLoad: true,
     slidesToShow: 5,
-    slidesToScroll: 1,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,

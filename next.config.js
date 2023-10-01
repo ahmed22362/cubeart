@@ -6,7 +6,7 @@ const nextConfig = {
           domains: ['res.cloudinary.com'],
         },
         env: {
-          API_URL : 'https://cubuild.onrender.com/api/v1',
+          API_URL : 'https://api.cubuild.net/api/v1',
         }
 }
 

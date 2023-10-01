@@ -7,7 +7,11 @@
     flex-wrap: wrap;
     padding: 30px 30px !important
 }
-
+@media(max-width: 425px) {
+    .footerSection {
+        margin-bottom: 50px;
+    }
+}
 .footerContent {
     display: flex;
     flex-direction: column;

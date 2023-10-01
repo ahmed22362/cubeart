@@ -39,8 +39,8 @@ export default function Recommendations() {
                 <div className={styles.recommendationsItems}>
                     {loading === false ? data.map((item, index) => {
                         return(
-                                <div className={styles.product} >
-                                    <ProductCard title={item.title} currentPrice={item.price} image={item.coverImage} category={item.category || "3D Model"} key={index} id={item.id}/>
+                                <div className={styles.product} key={index + 1}>
+                                    <ProductCard title={item.title} currentPrice={item.price} image={item.coverImage} category={item.category || "3D Model"} id={item.id}/>
                                 </div>
                                 )
                             }) : 

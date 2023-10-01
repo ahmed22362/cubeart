@@ -6,7 +6,6 @@ import Loading from "./Loading";
 import { useState } from "react";
 
 export default function ImagesSection({ coverImage, images }) {
-
     const [selectedImage, setSelectedImage] = useState(coverImage);
 
     const selectImage = (image) => {
@@ -38,8 +37,8 @@ export default function ImagesSection({ coverImage, images }) {
                 </div>
                 {images ? images.map((img, index) => {
                     return(
-                        <div className={styles.overlay} key={index} >
-                            <Image 
+                        <div className={styles.overlay} key={index + 1}>
+                            <Image
                                 src={img} 
                                 alt={"alt"} 
                                 width={100} 

@@ -9,7 +9,6 @@ import { ProgressBar } from 'react-bootstrap';
 export default function Reviews({data}) {
     
     const reviewsData = data || {};
-
     return(
         <>
             <div className="px-5 py-5">

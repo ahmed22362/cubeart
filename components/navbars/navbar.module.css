@@ -112,17 +112,22 @@
 }
 .sayHi {
     text-transform: capitalize;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 110px;
 }
 @media (max-width: 480px) {
     .btnWithIcons {
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
-        align-items: baseline;
+        align-items: center;
         gap: 20px;
+        flex-wrap: wrap;
+    }
+    .dropUl {
+        left: -90px !important;
+        top: 40px !important;
     }
 }
 .searchDiv {
@@ -169,6 +174,7 @@
         position: fixed;
         z-index: 100;
         width: 100%;
+        top: 0px;
         top: 0px;
     }
     .containerStyle {
