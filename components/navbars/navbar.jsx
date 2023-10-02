@@ -12,7 +12,6 @@ const NoSSR = dynamic(() => import('./dropDown'), { ssr: false })
 export default function Navbar() {
 
   const [showModal, setShowModal] = useState(false);
-
   const handleModalOpen = () => {
     setShowModal(true);
   };
@@ -93,9 +92,6 @@ const handleModalClose = () => {
                   <button className={styles.navBtn}>Print your design</button>
                 </Link>
                 <div className={styles.icons}>
-                  <Link href={'editprofile/cart'}>
-                    <i className="bi bi-cart3" ></i>
-                  </Link>
                   <>
                     <NoSSR openModal={handleModalOpen} />
                     {/* <DropDown openModal={handleModalOpen}/> */}

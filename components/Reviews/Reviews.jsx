@@ -9,18 +9,17 @@ import { ProgressBar } from 'react-bootstrap';
 export default function Reviews({data}) {
     
     const reviewsData = data || {};
-
     return(
         <>
             <div className="px-5 py-5">
-                <h2 style={{marginBottom: "40px"}}>Product review Display</h2>
+                <h2 style={{marginBottom: "40px"}}>Product reviews Display</h2>
                 <div className={styles.sectionsBox}>
                     <div className={styles.ratingBox}>
                         <p style={{fontWeight: "bold"}}>Overall Rating</p>
                         <div>
                             <h1 style={{color: "#000", fontWeight: "bold"}}>{reviewsData && reviewsData.ratingsAverage}<span style={{color: "#717171"}}>/5</span></h1>
                             <Rating value={reviewsData && reviewsData.ratingsAverage} disabled cancel={false} className={styles.stars} />
-                            <span>{reviewsData && reviewsData.ratingsQuantity} review</span>
+                            <span>{reviewsData && reviewsData.ratingsQuantity} reviews</span>
                         </div>
                     </div>
                     <div className={styles.progressBox}>

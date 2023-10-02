@@ -21,7 +21,9 @@ export default function DropDown({openModal}) {
     const logOut = () => {
         cookie.remove('user');
         cookie.remove('token');
+        localStorage.clear();
         router.refresh();
+        location.reload();
     } 
 
 
@@ -37,10 +39,17 @@ export default function DropDown({openModal}) {
             ></i>
         <ul
             className={"dropdown-menu " + styles.dropUl}
-            style={{ right: "0", padding: "10px", left: "0%" }}
+            style={{ right: "0", padding: "10px", left: "0%", top: "48px"}}
             >
             {user ? (
             <>
+                <li className={styles.dropDownLink}>
+                    <i className="bi bi-cart3"></i>
+                    <Link className={"dropdown-item"} href={'/editprofile/cart'}>
+                        Cart
+                    </Link>
+                </li>
+
                 <li className={styles.dropDownLink}>
                     <i className="bi bi-heart"></i>
                     <Link className="dropdown-item" href="/editprofile/wishlist">
@@ -73,7 +82,7 @@ export default function DropDown({openModal}) {
             )}
         </ul>
       </div>
-      <li className={styles.sayHi}>{user ? `Hi, ${user.name} \u{1F44B}` : <></>}</li>
+      <li className={`${styles.sayHi} ${user ? 'd-flex' : ''}`}>{user ? `Hi, ${user.name} \u{1F44B}` : <></>}</li>
     </>
     )
 };

@@ -13,7 +13,7 @@ export default function OverViewSection({ data }) {
             
                 <div className="Specifications">
                 {Specifications && Object.entries(Specifications).map(([key, value], index) => (
-                    <div className={styles.SpecificationsBox} key={index}>
+                    <div className={styles.SpecificationsBox} key={index + 1}>
                     <h4 style={{ fontSize: "20px" }}>{value.name}</h4>
                     {value.values && value.values.length > 0 ? (
                         

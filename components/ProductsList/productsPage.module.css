@@ -53,6 +53,7 @@
 
 
 .offCanvasButton {
+    top: 50%;
     flex: 0;
     display: flex;
     height: 38px;
