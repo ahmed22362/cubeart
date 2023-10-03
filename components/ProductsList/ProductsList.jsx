@@ -21,7 +21,7 @@ export default function ProductsList() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const url = process.env.API_URL;
+  const url = process.env.NEXT_PUBLIC_URL;
 
   const [selectedValue, setSelectedValue] = useState("");
 

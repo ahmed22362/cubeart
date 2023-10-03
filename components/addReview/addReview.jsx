@@ -16,7 +16,7 @@ export default function AddReview({productId, fetchData}) {
     const [responseMessage, setMessage] = useState(null);
     const cookie = new Cookies();
 
-    const url = process.env.API_URL;
+    const url = process.env.NEXT_PUBLIC_URL;
     const sendRating = () => {
         const formData = {
             body: review,

@@ -18,7 +18,7 @@ export default function Reset({ handleLinkClick, active, closeModal }) {
 
     const {register, handleSubmit, formState: { errors }} = useForm(formOptions);
     const [responseMessage, setMessage] = useState(null);
-    const url = process.env.API_URL;
+    const url = process.env.NEXT_PUBLIC_URL
     const [showComponent, setShowComponent] = useState(false);
 
     useEffect(() => {

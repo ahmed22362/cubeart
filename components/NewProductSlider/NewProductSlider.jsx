@@ -34,7 +34,7 @@ const ProductCarousel = () => {
 
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const url = process.env.API_URL;
+  const url = process.env.NEXT_PUBLIC_URL;
 
 
   useEffect(() => {

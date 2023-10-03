@@ -1,7 +1,6 @@
 
 import { ProductsList, Footer } from "@/components";
 
-
 export default function Products() {
 
     return (

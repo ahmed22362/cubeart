@@ -30,28 +30,11 @@ export default function ProductCard({
     const [bgMessage, setBgMessage] = useState('');
     const [wishListMsg, setWishListMsg] = useState('');
     const [bgWishList, setbgWishList] = useState('');
-    const url = process.env.API_URL;
+    const [wishlistItems, setWishlistItems] = useState([]);
+
+    const url = process.env.NEXT_PUBLIC_URL;
 
 
-    const checkWishlistItem = () => {
-        fetch(`${url}/wishlist`, {
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${cookie.get('token')}`,
-        },
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            data.data.items.map((item) => {
-                if(item.product.id === id) {
-                    setIsFilled(true);
-                } 
-            })
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-    };
     const addToCart = () => {
         console.log(url)
         fetch(`${url}/product/${id}/cart/item`, {
@@ -68,7 +51,7 @@ export default function ProductCard({
                 setBgMessage('success')
                 setShow(true)
             } else {
-                setResponseMessage("your not logged in. Please log in first.")
+                setResponseMessage("you are not logged in. Please log in first.")
                 setBgMessage('danger')
                 setShow(true)
                 console.log(data);
@@ -133,13 +116,9 @@ export default function ProductCard({
         });
     };
 
-    // useEffect(() => {
-    //     checkWishlistItem();
-    // }, []);
-
     return (
             <div className={"card h-100 " + styles.cardItem}>
-                <Overlay target={target.current} show={showOverlay} placement="right">
+                <Overlay target={target.current} show={showOverlay} placement="top">
                 {({
                     placement: _placement,
                     arrowProps: _arrowProps,
@@ -176,12 +155,9 @@ export default function ProductCard({
                     <Image src={image} className="card-img-top" width={100} height={100} alt={"image"} priority={true} />
                 </Link>
                 
-                <i  
-                
+                <i
                 className={`bi ${styles.heart} ${!isFilled ? 'bi-heart' : 'bi-heart-fill'}`}
-
                 onClick={() => {addToWishList()}} variant="danger" ref={target}
-                
                 ></i>
                 
                 <div className={"card-body " + styles.cardBody}>

@@ -3,15 +3,20 @@
 import { Rating } from "primereact/rating";
 import styles from './productReview.module.css';
 import moment from "moment/moment";
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef} from 'react';
 import Cookies from "universal-cookie";
+import Overlay from 'react-bootstrap/Overlay';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 export default function AllProductReviews({ data, fetchData }) {
 
     const reviews = data;
     const [isFilled, setIsFilled] = useState(Array(reviews?.length).fill(false));
-    const url = process.env.API_URL;
+    const url = process.env.NEXT_PUBLIC_URL;
     const cookie = new Cookies()
+    const [message, setMessage] = useState(null);
+    const [show, setShow] = useState(false);
+    const target = useRef(null);
 
     useEffect(() => {
         const storedStyles = localStorage.getItem('reviewStyles');
@@ -25,14 +30,6 @@ export default function AllProductReviews({ data, fetchData }) {
     const saveStylesToLocalStorage = (styles) => {
         localStorage.setItem('reviewStyles', JSON.stringify(styles));
     };
-    // const toggleToFill = (index) => {
-    //     setIsFilled((prevState) => {
-    //         const newState = [...prevState];
-    //         newState[index] = !newState[index];
-    //         saveStylesToLocalStorage(newState);
-    //         return newState;
-    //     });
-    // };
     const handleHelpfulToggle = async (reviewId, index) => {
         const isAddedToHelpful = isFilled[index];
         try {
@@ -57,10 +54,13 @@ export default function AllProductReviews({ data, fetchData }) {
                 console.log(isAddedToHelpful ? 'Deleted successfully' : 'Added successfully');
             } else {
                 console.error('Error:', isAddedToHelpful ? 'clear Helpful is Done' : 'Adding to Helpful is Done');
-                console.log(isAddedToHelpful ? 'Delete failed' : 'Add failed');
+                setMessage('login first !');
+                setShow(!show);
             }
         } catch (error) {
             console.error('Error:', isAddedToHelpful ? 'Removing from Helpful' : 'Adding to Helpful', error);
+            setMessage('login first !')
+            setShow(!show);
         }
     };
     return(
@@ -95,11 +95,15 @@ export default function AllProductReviews({ data, fetchData }) {
                             </div>
                             <div>
                                 <button
+                                        ref={target}
                                         className={`${styles.helpfulBtn} ${!isAddedToHelpful ? styles.helpfulBtn : styles.fillBtn}`}
                                         onClick={() => handleHelpfulToggle(review.id, index)}>
                                     <i className="bi bi-hand-thumbs-up"></i>
                                     helpful ({review.likeCount})
                                 </button>
+                                <Overlay target={target.current} show={show} placement="top">
+                                    {(props) => <Tooltip id="overlay-example" {...props}>{message}</Tooltip>}
+                                </Overlay>
                             </div>
                         </div>
                     )})}

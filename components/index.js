@@ -10,7 +10,6 @@ import NavLinks from "./breadCrumb/breadcurmbs";
 import AboutUs from "./Aboutus/AboutUs";
 import QuickQuote from './quickQuote/quickQuote';
 import MainButton from './Button/button';
-import SideBar from "./SideBar/SideBar";
 import Footer from "./Footer/Footer";
 import ProductsList from './ProductsList/ProductsList';
 import ProductCard from "./ProductCard/ProductCard";
@@ -34,7 +33,6 @@ export {
     AboutUs,
     QuickQuote,
     MainButton,
-    SideBar,
     ProductsList,
     ProductCard,
     Footer,
