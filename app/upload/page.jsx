@@ -16,23 +16,13 @@ function Upload() {
     setIsUploadVisible(true);
   };
 
-  // const ThreeDPreview = dynamic(() => ('./../../components/File/File'), {
-  //   ssr: false,
-  // })
 
-  // const UploadFile = dynamic(() => import('./../../components/UploadFile/UploadFile'), {
-  //   ssr: false,
-  // })
-
-  // const MyVerticallyCenteredModal = dynamic(() => import('./../../components/UploadModal/UploadModal'), {
-  //   ssr: false,
-  // });
 
   return (
     <>
       {isUploadVisible ? (
         <div  className={` ${styles.upload}`}>
-        <UploadFile />
+        {/* <UploadFile /> */}
         </div>
       ) : (
         <div className={`upload d-flex justify-content-center align-items-center ${styles.upload}`}>

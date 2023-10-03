@@ -9,47 +9,37 @@ import Link from 'next/link';
 
 
   function SlideBar() {
-
-    const [width, setWidth] = useState('');
-    const [collapse, setCollapse] = useState(false);
-    const [isExpand, setIsExpand] = useState(false)
-
-
-    const updateWidth = () => {
-      setWidth(window.innerWidth);
+    const [width, setWidth] = useState(window.innerWidth);
+    const [collapse, setCollapse] = useState(width < 500);
+    const [isExpand, setIsExpand] = useState(false);
+  
+    const handleCollapse = () => {
+      setCollapse(!collapse);
     };
-
-    const handleCollapse=()=>{
-      setCollapse(!collapse)
-    }
-
+  
     useEffect(() => {
-      
-      window.addEventListener('resize', updateWidth);
-
-
-
-      if(width < 500){
-        setCollapse(true)
-        setIsExpand(true)
-      }else{
-        setCollapse(false)
-        setIsExpand(false)
-      }
-    
-
+      // Add the 'resize' event listener to the window and call updateWidth when resized
+      const handleResize = () => {
+        const newWidth = window.innerWidth;
+        setWidth(newWidth);
+        setCollapse(newWidth < 500);
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
       // Cleanup: Remove the event listener when the component unmounts
       return () => {
-        window.removeEventListener('resize', updateWidth);
+        window.removeEventListener('resize', handleResize);
       };
     }, []);
-
+  
+  
     
     
     return (
       <>
             <Sidebar width={'300px'} className='position-absloute' collapsed={collapse} style={{minHeight:'100vh', backgroundColor: '#ECF5FA'}}  >
-            <div onClick={()=>handleCollapse()} className={`icon ${isExpand ? '' : 'd-block'} me-1`}>
+            <div onClick={() => handleCollapse()} className={`icon ${isExpand ? '' : 'd-block'} me-1`}>
             <i className="bi bi-list"></i>
             </div>
           <Menu className='mt-4'>

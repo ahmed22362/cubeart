@@ -35,3 +35,73 @@
     font-weight: 500;
     line-height: normal;
 }
+/* Original styles for larger screens */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+
+thead {
+  border-bottom: 2px solid #D9D9D9;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+  border: none;
+}
+
+th {
+  color: black;
+  font-weight: bold;
+  border-bottom: 1px solid #a60202;
+}
+
+td,
+th {
+  padding: 6px;
+  text-align: left;
+  border: none;
+}
+
+.cart_button {
+  padding: 8px 15px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--Radius---Lg, 16px);
+  background: #429ECA;
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.bi-trash {
+  color: #EA223B;
+  cursor: pointer;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  table {
+    width: auto; /* Allow the table to be wider than the viewport */
+  }
+
+  th,
+  td {
+    display: block; /* Stack table cells vertically */
+    width: 100%; /* Make each cell full width */
+    box-sizing: border-box;
+    text-align: center; /* Center-align cell contents */
+  }
+
+  th {
+    font-size: 16px; /* Increase font size for headers on smaller screens */
+  }
+
+  /* You can add more styles as needed for smaller screens */
+}
