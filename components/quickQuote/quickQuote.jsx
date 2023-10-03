@@ -54,7 +54,7 @@ export default function QuickQuote() {
                 <div className={"row" + styles.fromHalfSection}>
                     <div className="form-outline" style={{display: 'flex', flexDirection: "column"}}>
                         <input type="text" id="form3Example1" {...register('username')} className={styles.item} placeholder="Your Name" name='username'/>
-                        <span className="text-danger">{errors.name?.message}</span>
+                        <span className="text-danger">{errors.username?.message}</span>
                     </div>
                     <div className="form-outline" style={{display: 'flex', flexDirection: "column"}}>
                         <input type="email" id="form3Example2" className={styles.item} {...register('email')} placeholder="Email" name="email"/>
@@ -62,7 +62,7 @@ export default function QuickQuote() {
                     </div>
                     <div className="form-outline" style={{display: 'flex', flexDirection: "column"}}>
                         <input type="tel" id="form3Example3" className={styles.item} placeholder="Phone number" {...register('phoneNumber')} name="phoneNumber"/>
-                        <span className="text-danger">{errors.phoneNum?.message}</span>
+                        <span className="text-danger">{errors.phoneNumber?.message}</span>
                     </div>
                 </div>
                 <div className={"row" + styles.fromHalfSection}>
@@ -81,7 +81,6 @@ export default function QuickQuote() {
                         {responseMessage}
                     </div>
                 )}
-                {/* <MainButton text="sumbit"  /> */}
                 <button type="submit" className={styles.submitButton}>Submit</button>
             </form>
         </div>

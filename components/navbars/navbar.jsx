@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import AuthModal from "../Auth/AuthComponent";
 import dynamic from "next/dynamic";
+import Search from "@/components/search/search";
 
 const NoSSR = dynamic(() => import('./dropDown'), { ssr: false })
 
@@ -69,17 +70,7 @@ const handleModalClose = () => {
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100">
-            <form className="w-100">
-              <div className={styles.searchDiv}>
-                <input
-                  type="text"
-                  className={styles.searchInput}
-                  placeholder="Search"
-                  aria-label="Search"
-                  aria-describedby="basic-addon1"
-                />
-              </div>
-            </form>
+            <Search />
           </ul>
           <ul
             className={

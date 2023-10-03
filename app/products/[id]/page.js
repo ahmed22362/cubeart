@@ -8,7 +8,7 @@ export default function ProductDetails() {
     const {id} = useParams();
     const [data, setData] = useState({});
     const [isValidId, setIsValidId] = useState(true);
-    const url = process.env.API_URL;
+    const url = process.env.NEXT_PUBLIC_URL;
 
     const fetchData = async () => {
         try {

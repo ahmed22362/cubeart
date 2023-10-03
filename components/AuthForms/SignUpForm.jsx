@@ -34,7 +34,7 @@ export default function SignUpForm({ handleLinkClick, active, closeModal }) {
     const {register, watch,handleSubmit, formState: { errors }} = useForm(formOptions);
     const [responseMessage, setMessage] = useState(null);
     const cookie = new Cookies();
-    const url = process.env.API_URL;
+    const url = process.env.NEXT_PUBLIC_URL;
     const [showComponent, setShowComponent] = useState(false);
 
     useEffect(() => {
