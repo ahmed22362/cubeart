@@ -5,8 +5,8 @@ import styles from './sliderCarsouel.module.css'
 
 export default function CarsouelSlider() {
     return(
-        <div id="carouselExampleAutoplaying" className="carousel slide my-5" data-bs-ride="carousel">
-        <div className="carousel-inner">
+        <div id="carouselExampleAutoplaying" className={"carousel slide my-5 "} data-bs-ride="carousel">
+        <div className={"carousel-inner " + styles.carsouelMargin}>
             <CarsouleItemSlider
                 headerText={"Let’s Bring your idea to life"}
                 carsouelText={"If you want to customize your product or design,contact us for partnership, support and more."}

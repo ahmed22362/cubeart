@@ -3,27 +3,73 @@
 import { Rating } from "primereact/rating";
 import styles from './productReview.module.css';
 import moment from "moment/moment";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import Cookies from "universal-cookie";
 
-export default function AllProductReviews({ data }) {
+export default function AllProductReviews({ data, fetchData }) {
 
     const reviews = data;
     const [isFilled, setIsFilled] = useState(Array(reviews?.length).fill(false));
+    const url = process.env.API_URL;
+    const cookie = new Cookies()
 
-    const toggleToFill = (index) => {
-        setIsFilled(prevState => {
-            const newState = [...prevState];
-            newState[index] = !newState[index];
-            return newState;
-        });
+    useEffect(() => {
+        const storedStyles = localStorage.getItem('reviewStyles');
+        if (storedStyles) {
+            setIsFilled(JSON.parse(storedStyles));
+        } else {
+            setIsFilled(Array(reviews?.length).fill(false));
+        }
+    }, [reviews]);
+
+    const saveStylesToLocalStorage = (styles) => {
+        localStorage.setItem('reviewStyles', JSON.stringify(styles));
     };
-
+    // const toggleToFill = (index) => {
+    //     setIsFilled((prevState) => {
+    //         const newState = [...prevState];
+    //         newState[index] = !newState[index];
+    //         saveStylesToLocalStorage(newState);
+    //         return newState;
+    //     });
+    // };
+    const handleHelpfulToggle = async (reviewId, index) => {
+        const isAddedToHelpful = isFilled[index];
+        try {
+            const response = await fetch(
+                `${url}/review/${reviewId}/helpful`,
+                {
+                    method: isAddedToHelpful ? 'DELETE' : 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${cookie.get('token')}`,
+                    },
+                }
+            );
+            if (response.ok) {
+                setIsFilled((prevState) => {
+                    const newState = [...prevState];
+                    newState[index] = !isAddedToHelpful;
+                    saveStylesToLocalStorage(newState);
+                    return newState;
+                });
+                fetchData();
+                console.log(isAddedToHelpful ? 'Deleted successfully' : 'Added successfully');
+            } else {
+                console.error('Error:', isAddedToHelpful ? 'clear Helpful is Done' : 'Adding to Helpful is Done');
+                console.log(isAddedToHelpful ? 'Delete failed' : 'Add failed');
+            }
+        } catch (error) {
+            console.error('Error:', isAddedToHelpful ? 'Removing from Helpful' : 'Adding to Helpful', error);
+        }
+    };
     return(
         <>
-            <div className={styles.allProductReviews + " py-5 px-5"}>
+            <div className={styles.allProductReviews + " px-5"}>
                 {data && reviews.map((review, index) => {
+                    const isAddedToHelpful = isFilled[index];
                     return(
-                        <div className={styles.rateBox} key={index}>
+                        <div className={styles.rateBox} key={index + 1}>
                             <div className={styles.userCard}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="119" height="140" viewBox="0 0 119 140" fill="none">
                                     <g clipPath="url(#clip0_398_2386)">
@@ -48,9 +94,11 @@ export default function AllProductReviews({ data }) {
                                 </div>
                             </div>
                             <div>
-                                <button label="Success" className={`${styles.helpfulBtn} ${!isFilled[index] ? styles.helpfulBtn : styles.fillBtn}`} onClick={() => {toggleToFill(index)}}>
+                                <button
+                                        className={`${styles.helpfulBtn} ${!isAddedToHelpful ? styles.helpfulBtn : styles.fillBtn}`}
+                                        onClick={() => handleHelpfulToggle(review.id, index)}>
                                     <i className="bi bi-hand-thumbs-up"></i>
-                                    helpful
+                                    helpful ({review.likeCount})
                                 </button>
                             </div>
                         </div>

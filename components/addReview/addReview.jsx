@@ -5,17 +5,18 @@ import styles from './addReview.module.css';
 import { Rating } from 'primereact/rating';
 import Cookies from 'universal-cookie';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 
-export default function AddReview({productId}) {
+export default function AddReview({productId, fetchData}) {
 
     const [review, setReview] = useState('');
     const [title, setTitle] = useState('');
     const [rate, setRate] = useState(0);
     const [responseMessage, setMessage] = useState(null);
     const cookie = new Cookies();
-    const router = useRouter()
+
+    const url = process.env.API_URL;
     const sendRating = () => {
         const formData = {
             body: review,
@@ -24,7 +25,7 @@ export default function AddReview({productId}) {
             product: productId && productId
         }
         console.log(formData);
-        fetch(`https://cubuild.onrender.com/api/v1/review`, {
+        fetch(`${url}/review`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -37,14 +38,17 @@ export default function AddReview({productId}) {
             if (data.status === 'success') {
                 
                 setMessage('Review submitted successfully.');
+                fetchData();
                 setTimeout(() => {
                     setMessage(null);
                 }, 5000)
             } else {
                 setMessage(data.message);
+
                 setTimeout(() => {
+
                     setMessage(null);
-                    
+
                 }, 5000)
             }
             console.log(data);

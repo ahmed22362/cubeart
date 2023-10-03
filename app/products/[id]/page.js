@@ -8,12 +8,18 @@ export default function ProductDetails() {
     const {id} = useParams();
     const [data, setData] = useState({});
     const [isValidId, setIsValidId] = useState(true);
+    const url = process.env.API_URL;
 
     const fetchData = async () => {
-        const response = await fetch(`https://cubuild.onrender.com/api/v1/product/${id}`);
-        const data = await response.json();
-        setData(data.data);
-        setIsValidId(!!data.data);
+        try {
+            const response = await fetch(`${url}/product/${id}`);
+            const data = await response.json();
+            setData(data.data);
+            setIsValidId(!!data.data);
+            console.log(data.data)
+        } catch (error) {
+            console.log('Error:', error);
+        }
     };
 
     useEffect(() => {
@@ -43,8 +49,8 @@ export default function ProductDetails() {
             <OverViewSection data={data && data.options} />
             <Recommendations />
             <Reviews data={data && data}/>
-            <AllProductReviews data={data && data.reviews} />
-            <AddReview productId={data && data.id}/>
+            <AllProductReviews data={data && data.reviews} fetchData={fetchData} />
+            <AddReview productId={data && data.id} fetchData={fetchData}/>
             <Footer />
         </>
     )

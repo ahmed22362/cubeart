@@ -7,6 +7,7 @@ import styles from "./productsPage.module.css";
 import categories from "../ComboBox/CatBox";
 import Form from "react-bootstrap/Form";
 import { Offcanvas } from "react-bootstrap";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 export default function ProductsList() {
   const size = 9;
@@ -20,7 +21,7 @@ export default function ProductsList() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const url = "https://cubuild.onrender.com/api/v1/product";
+  const url = process.env.API_URL;
 
   const [selectedValue, setSelectedValue] = useState("");
 
@@ -31,7 +32,7 @@ export default function ProductsList() {
   };
 
   const selectionData = (value) => {
-    fetch(`${url}?page=${pageNumber}&limit=${size}&sort=${value}`)
+    fetch(`${url}/product?page=${pageNumber}&limit=${size}&sort=${value}`)
       .then((response) => response.json())
 
       .then((filterSelectionData) => {
@@ -44,7 +45,7 @@ export default function ProductsList() {
   const fetchData = async () => {
     setIsLoading(true);
 
-    const response = await fetch(`${url}?page=${pageNumber}&limit=${size}`);
+    const response = await fetch(`${url}/product?page=${pageNumber}&limit=${size}`);
 
     const data = await response.json();
 
@@ -71,7 +72,7 @@ export default function ProductsList() {
     let fromPriceValue = fromPrice < 0 ? 0 : fromPrice;
 
     fetch(
-      `${url}?page=${pageNumber}&limit=${size}&price[lt]=${toPriceValue}&price[gt]=${fromPriceValue}&sort=price`
+      `${url}/product?page=${pageNumber}&limit=${size}&price[lt]=${toPriceValue}&price[gt]=${fromPriceValue}&sort=price`
     )
       .then((response) => response.json())
 
