@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react' ;
 import styles from './page.module.css'
 import Link from 'next/link';
 import Loader from "@/components/loader/loader";
+import {Footer} from "@/components";
 
 const page = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +35,8 @@ const page = () => {
                     <Loader />
                 </div>
                 :
-                <div className={`container mt-5  mb-5 ${styles.mainSection} ${showMain ? styles.show : ''}`}>
+                <main className={`${styles.mainSection} ${showMain ? styles.show : ''}`}>
+                <div className={`container mt-5  mb-5`}>
         <div className="row g-4">
             <div className="col-md-4">
                 <div className={`${styles.box}`}>
@@ -126,7 +128,9 @@ const page = () => {
                 </div>
             </div>
         </div>
-    </div>}
+    </div>
+        <Footer className="px-2 py-2 footerSection" />
+        </main>}
     </>
   )
 }

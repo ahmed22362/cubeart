@@ -61,3 +61,8 @@
     /* transition: opacity 7s ease-in-out; */
     opacity: 1;
 }
+@media(max-width: 425px) {
+    .mainSection {
+        margin-top: 100px;
+    }
+}
