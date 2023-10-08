@@ -7,6 +7,11 @@ import Cookies from 'universal-cookie';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import bcrypt from 'bcryptjs'
+
+// SALT should be created ONE TIME upon sign up
+const salt = bcrypt.genSaltSync(10)
+
 
 export default function SignUpForm({ handleLinkClick, active, closeModal }) {
     const validationSchema = Yup.object().shape({
@@ -44,8 +49,8 @@ export default function SignUpForm({ handleLinkClick, active, closeModal }) {
         const formObj = {
             name: `${formData.first_name} ${formData.last_name}`,
             email: formData.email,
-            password: formData.password,
-            passwordConfirmation: formData.confirm_password
+            password: bcrypt.hashSync(formData.password, salt),
+            passwordConfirmation: bcrypt.hashSync(formData.confirm_password, salt)
         }
         console.log(formObj);
         fetch(`${url}/user/auth/signup`, {

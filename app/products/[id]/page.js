@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { AllProductReviews, ContentSection, ImagesSection, OverViewSection, Recommendations, Reviews, AddReview, Footer } from "@/components";
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 export default function ProductDetails() {
     const {id} = useParams();
@@ -16,7 +16,6 @@ export default function ProductDetails() {
             const data = await response.json();
             setData(data.data);
             setIsValidId(!!data.data);
-            console.log(data.data)
         } catch (error) {
             console.log('Error:', error);
         }

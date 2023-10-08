@@ -19,11 +19,14 @@ export default function DropDown({openModal}) {
     const user = cookie.get('user')
 
     const logOut = () => {
-        cookie.remove('user');
-        cookie.remove('token');
-        localStorage.clear();
-        router.refresh();
-        location.reload();
+        if(cookie.get('user') || cookie.get('token')) {
+            cookie.remove('user');
+            cookie.remove('token');
+            localStorage.clear();
+        }
+        setTimeout(() => {
+            location.replace("/")
+        }, 3000)
     } 
 
 
@@ -44,22 +47,22 @@ export default function DropDown({openModal}) {
             {user ? (
             <>
                 <li className={styles.dropDownLink}>
-                    <i className="bi bi-cart3"></i>
                     <Link className={"dropdown-item"} href={'/editprofile/cart'}>
+                        <i className="bi bi-cart3"></i>
                         Cart
                     </Link>
                 </li>
 
                 <li className={styles.dropDownLink}>
-                    <i className="bi bi-heart"></i>
                     <Link className="dropdown-item" href="/editprofile/wishlist">
+                        <i className="bi bi-heart"></i>
                         Wishlist
                     </Link>
                 </li>
             <li className={styles.dropDownLink}>
-                <i className="bi bi-person-gear"></i>
                 <Link className="dropdown-item" href="/editprofile/security">
-                Edit Profile
+                    <i className="bi bi-person-gear"></i>
+                    Edit Profile
                 </Link>
             </li>
               <li className={styles.buttonLi}>

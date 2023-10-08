@@ -117,3 +117,6 @@ ul .nav-link:hover {
     color: #2E6F8D;
     font-size: 10px;
 }
+.tagsBox .card .p-listbox {
+    border: 0px !important;
+}

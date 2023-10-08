@@ -4,10 +4,9 @@ import AllProducts from "../MapProducts/MapProducts";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 import styles from "./productsPage.module.css";
-import categories from "../ComboBox/CatBox";
 import Form from "react-bootstrap/Form";
 import { Offcanvas } from "react-bootstrap";
-import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
+import Categories from "@/components/ComboBox/CatBox";
 
 export default function ProductsList() {
   const size = 9;
@@ -17,24 +16,20 @@ export default function ProductsList() {
   const [toPrice, setToPrice] = useState(0);
   const [fromPrice, setfromPrice] = useState(0);
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   const url = process.env.NEXT_PUBLIC_URL;
-
   const [selectedValue, setSelectedValue] = useState("");
+
 
   const handleOptionClick = (value) => {
     setSelectedValue(value);
-
     selectionData(value);
   };
 
   const selectionData = (value) => {
     fetch(`${url}/product?page=${pageNumber}&limit=${size}&sort=${value}`)
       .then((response) => response.json())
-
       .then((filterSelectionData) => {
         setData(filterSelectionData);
       })
@@ -42,18 +37,14 @@ export default function ProductsList() {
         console.error(error);
       });
   };
+
   const fetchData = async () => {
     setIsLoading(true);
-
     const response = await fetch(`${url}/product?page=${pageNumber}&limit=${size}`);
-
     const data = await response.json();
-
     setIsLoading(false);
-
     setData(data);
   };
-
   useEffect(() => {
     fetchData();
   }, [pageNumber]);
@@ -67,15 +58,12 @@ export default function ProductsList() {
 
   const submitThePriceValuesFromInputs = (event) => {
     event.preventDefault();
-
     let toPriceValue = toPrice < 0 ? 0 : toPrice;
     let fromPriceValue = fromPrice < 0 ? 0 : fromPrice;
-
     fetch(
       `${url}/product?page=${pageNumber}&limit=${size}&price[lt]=${toPriceValue}&price[gt]=${fromPriceValue}&sort=price`
     )
       .then((response) => response.json())
-
       .then((filterData) => {
         setData(filterData);
       })
@@ -85,6 +73,9 @@ export default function ProductsList() {
       handleClose();
   };
 
+  const resetAll = () => {
+    fetchData();
+  }
   return (
     <>
       <button className={styles.offCanvasButton} onClick={handleShow}>open filter</button>
@@ -217,13 +208,10 @@ export default function ProductsList() {
       <section className="comboBoxAndProducts" style={{ flex: "1", marginTop: "55px" }}>
         <section className={styles.comboBox + " my-5"}>
           <div className={styles.categories}>
-            {categories.map((catName, index) => {
-              return (
-                <div className={styles.catBox} key={index}>
-                  <span>{catName}</span>
+            <span className={'text-primary'} onClick={() => resetAll()}>Reset All</span>
+                <div className={styles.catBox}>
+                  <Categories setData={setData} resetAll={resetAll}/>
                 </div>
-              );
-            })}
           </div>
           <div className={styles.sort}>
             <label>sort by : </label>
@@ -232,12 +220,11 @@ export default function ProductsList() {
               className={styles.selectComponent}
               value={selectedValue}
               onChange={(e) => handleOptionClick(e.target.value)}
+
             >
               <option defaultValue>select sorting option</option>
               <option value={"price"}>Price - Low to High</option>
               <option value={"-price"}>Price - High to low</option>
-              {/* <option value={""}>New Arrival</option> */}
-              {/* <option value={""}>Top Rated</option> */}
             </Form.Select>
           </div>
         </section>

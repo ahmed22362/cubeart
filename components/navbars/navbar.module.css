@@ -1,4 +1,4 @@
-.dropDownLink{
+.dropDownLink {
     display: flex;
     justify-content: right;
     align-items: center;
@@ -6,11 +6,9 @@
     border-bottom: 1px solid #eee;
     font-size: 14px;
 }
+
 .dropDownLink i {
     font-size: 24px;
-}
-.dropDownLink a {
-    padding-left: 10px;
 }
 .buttonLi {
     display: flex;
@@ -92,7 +90,8 @@
 .btnWithIcons,
 .btnWithIcons a {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 20px;
     align-items: center;
     color: #292D32;
     text-decoration: none;
@@ -126,7 +125,7 @@
         flex-wrap: wrap;
     }
     .dropUl {
-        left: -90px !important;
+        left: -68px !important;
         top: 40px !important;
     }
 }
