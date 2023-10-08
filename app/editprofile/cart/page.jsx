@@ -1,15 +1,20 @@
 'use client';
 
-import PaymentMethods from '@/components/CheckOut/CheckOut'
+import PaymentMethods from '@/components/Cart/Cart'
 import React from 'react';
 import './cart.css'
+import { ProductSlider } from '@/components';
 
 function page() {
 
   return (
+    <>
     <div className='control'>
       <PaymentMethods/>
+     
     </div>
+   
+    </>
   )
 }
 

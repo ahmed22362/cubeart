@@ -1,10 +1,108 @@
-"use client";
-import React, { Suspense, useState } from "react";
-import "./personalInfoStyle.css";
-import { MainButton } from "@/components";
+"use client"
+import React, { useState, useEffect } from 'react';
+import './personalInfoStyle.css';
+import { MainButton } from '@/components';
+import Cookies from 'universal-cookie';
 
-function page() {
-  const name = "mangood";
+function Page() {
+  const url = process.env.API_URL;
+  const token = new Cookies().get('token');
+
+  const [userData, setUserData] = useState({
+    first_name: '',
+    last_name: '',
+    email: '',
+    phone: '',
+    address: '',
+    country: '',
+    city: '',
+  });
+
+  useEffect(() => {
+    fetch(`${url}/user/me`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Log the data received from the API
+        console.log('User Data:', data);
+        // Set the user data received from the API to the state
+        setUserData(data.data);
+      })
+      .catch((error) => {
+        console.error('Fetch error:', error);
+      });
+  }, [url, token]);
+
+  // Function to handle saving the data to the API
+  const handleSave = () => {
+    const formattedData = {
+      name: `${userData?.billing?.first_name || userData.first_name} ${userData?.billing?.last_name || userData.last_name}`,
+      email: userData.email,
+      address: {
+        location: {
+          type: 'Point',
+          coordinates: [40, 70], // Replace with actual coordinates
+        },
+        street: userData?.billing?.street || userData?.address?.street || 'NA',
+        city: userData?.billing?.city || userData?.address?.city || 'NA',
+        country: userData?.billing?.country || userData?.address?.country || 'NA',
+      },
+      billing: {
+        apartment: 'NA', // Replace with actual value
+        email: userData?.billing?.email || userData.email,
+        floor: 'NA', // Replace with actual value
+        first_name: userData?.billing?.first_name || userData.first_name,
+        street: 'NA', // Replace with actual value
+        building: 'NA', // Replace with actual value
+        phone_number: userData?.billing?.phone_number || userData.phone_number,
+        shipping_method: 'PKG', // Replace with actual value
+        postal_code: 'NA', // Replace with actual value
+        city: userData?.billing?.country||'NA', // Replace with actual value
+        country: userData?.billing?.country || userData?.address?.country || 'NA',
+        last_name: userData?.billing?.last_name || userData.last_name,
+        state: 'NA', // Replace with actual value
+      },
+    };
+
+    // Log the data to be sent in the request
+    console.log('Formatted Data:', formattedData);
+
+    // Make a PATCH request to update the user data with 'formattedData'
+    fetch(`${url}/user/updateMe`, {
+      method: 'PATCH',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formattedData),
+    })
+      .then((response) => {
+        console.log({ text: response.text, status: response.status, body: response.body });
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Log the response data
+        console.log('Update Response:', data);
+      })
+      .catch((error) => {
+        console.error('Fetch error:', error);
+      });
+  };
+
+
 
   return (
     <>
@@ -17,8 +115,9 @@ function page() {
               <input
                 className="input-group form-control"
                 type="text"
-                placeholder={name}
+                placeholder={userData?.billing?.first_name}
                 name="first_name"
+                onChange={(e) => setUserData({ ...userData, first_name: e.target.value })}
               />
               <label className="d-block">First name</label>
             </div>
@@ -26,21 +125,25 @@ function page() {
               <input
                 className="input-group form-control"
                 type="text"
-                placeholder="Mostafa"
+                placeholder={userData?.billing?.last_name}
                 name="last_name"
+                value={userData.last_name}
+                onChange={(e) => setUserData({ ...userData, last_name: e.target.value })}
               />
               <label className="d-block">Last name</label>
             </div>
           </div>
-          <label className="mt-4 d-block" htmlFor="emai">
+          <label className="mt-4 d-block" htmlFor="email">
             Email Address
           </label>
           <input
             className="input-group form-control"
             type="email"
-            placeholder="ahmed@codegate.com"
+            placeholder={userData?.billing?.email}
             name="email"
             id="email"
+            value={userData.email}
+            onChange={(e) => setUserData({ ...userData, email: e.target.value })}
           />
 
           <label className="d-block mt-4" htmlFor="phone">
@@ -48,21 +151,24 @@ function page() {
           </label>
           <input
             className="input-group form-control"
-            type="number"
+            type="text"
             name="phone"
-            placeholder="01123456789"
+            placeholder={userData?.billing?.phone_number}
             id="phone"
+            value={userData.phone_number}
+            onChange={(e) => setUserData({ ...userData, phone_number: e.target.value })}
           />
 
           <label className="d-block mt-4" htmlFor="address">
-            Phone Number
+            Address
           </label>
           <input
             className="input-group form-control"
             type="text"
-            name="phone"
-            placeholder="15 Elmohamdia street"
+            name="address"
+            placeholder={userData?.billing?.street}
             id="address"
+            onChange={(e) => setUserData({ ...userData, address: e.target.value })}
           />
 
           <div className="address d-flex justify-content-between mt-4 gap-4">
@@ -71,8 +177,9 @@ function page() {
               <input
                 className="input-group form-control"
                 type="text"
-                placeholder="Egypt"
+                placeholder={userData?.billing?.country}
                 name="country"
+                onChange={(e) => setUserData({ ...userData, country: e.target.value })}
               />
             </div>
 
@@ -81,14 +188,15 @@ function page() {
               <input
                 className="input-group form-control"
                 type="text"
-                placeholder="Fayoum"
+                placeholder={userData.billing?.city}
                 name="city"
+                onChange={(e) => setUserData({ ...userData, city: e.target.value })}
               />
             </div>
           </div>
           <div className="form-button mt-5 d-flex">
-            <MainButton className="" text={"Discard"} />
-            <MainButton text={"Save"} />
+            <MainButton className="" text={'Discard'} />
+            <MainButton text={'Save'} onclick={handleSave} />
           </div>
         </div>
       </div>
@@ -96,4 +204,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
