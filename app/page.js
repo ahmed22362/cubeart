@@ -3,6 +3,7 @@ import styles from './page.module.css';
 import {AboutUs, CarsouelSlider, Footer, OurService, ProductSlider, QuickQuote} from '@/components'
 import {useState, useEffect} from 'react';
 import Loader from "@/components/loader/loader";
+
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
     const [showMain, setShowMain] = useState(false);
@@ -25,7 +26,6 @@ export default function Home() {
                 }, 500);
             }
         }, [isLoading]);
-
     return (
         <>
             {isLoading ? (

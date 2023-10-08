@@ -45,3 +45,24 @@
     color:white ;
 
 }
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.mainSection {
+    opacity: 0.1;
+    transition: opacity 1s ease-in-out;
+}
+
+.mainSection.show {
+    /* transition: opacity 7s ease-in-out; */
+    opacity: 1;
+}
+@media(max-width: 425px) {
+    .mainSection {
+        margin-top: 100px;
+    }
+}

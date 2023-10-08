@@ -36,7 +36,7 @@ export default function ProductSlider(props) {
   
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const url = process.env.API_URL;
+  const url = process.env.NEXT_PUBLIC_URL;
   useEffect(() => {
       fetch(`${url}/product?limit=10`)
           .then(response => response.json())
@@ -84,7 +84,6 @@ export default function ProductSlider(props) {
         }
     ]
 };
-
         return (
           <div className="my-5">
 

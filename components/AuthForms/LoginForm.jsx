@@ -11,7 +11,7 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
     const {register, handleSubmit, formState: { errors }} = useForm();
     const [responseMessage, setMessage] = useState(null);
     const cookie = new Cookies();
-    const url = process.env.API_URL;
+    const url = process.env.NEXT_PUBLIC_URL;
     const [showComponent, setShowComponent] = useState(false);
 
     useEffect(() => {

@@ -130,15 +130,51 @@
         top: 40px !important;
     }
 }
+.searchBox {
+    width: 100%;
+    position: relative;
+}
+
+.searchResults {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    margin-top: 5px;
+    height: 198px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.searchResults.show {
+    display: block;
+}
+.searchItemBox {
+    width: 100%;
+}
+.searchItemBox:hover {
+    background-color: rgba(143, 142, 142, 0.32);
+    transition: 0.5s;
+}
+.itemBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #262626;
+    text-decoration: none;
+    padding: 5px;
+}
+
 .searchDiv {
     background: none;
     padding: 0;
     padding-right: 0 !important;
     position: relative;
 }
-.searchDiv::before{
-    content: "\F52A";
-    font-family: 'Bootstrap-icons';
+.searchICon {
     position: absolute;
     font-size: 23px;
     width: 50px;
@@ -146,8 +182,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 2px;
+    top: 7px;
     left: -4px;
+    cursor: pointer;
 }
 .searchInput {
     border: 0;
