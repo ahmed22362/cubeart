@@ -14,6 +14,8 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
     const url = process.env.NEXT_PUBLIC_URL;
     const [showComponent, setShowComponent] = useState(false);
 
+
+
     useEffect(() => {
             setShowComponent(true);
     }, []);

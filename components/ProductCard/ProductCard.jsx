@@ -36,7 +36,7 @@ export default function ProductCard({
 
 
     const addToCart = () => {
-        console.log(url)
+
         fetch(`${url}/product/${id}/cart/item`, {
             method: 'POST',
             headers: {
