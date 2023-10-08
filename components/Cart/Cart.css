@@ -28,9 +28,10 @@ background: #F8FCFD;
     border-radius: 8px;
     background: #F8FCFD !important;
 }
-@media (max-width:367px) {
+@media (max-width:425px) {
     .image{
         flex-direction: column;
+        flex-wrap: wrap !important;
     }
     .image img{
         width: 100% !important;
@@ -39,3 +40,17 @@ background: #F8FCFD;
 .summary{
     border-bottom: 2px solid  #B8D4E2;;
 }
+.p-button-icon-only{
+    height: 35px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4799d0;
+    color: white;
+}
+.p-button-icon-only:hover{
+    background: rgb(23, 102, 180);
+    }
+    .bi-trash{
+        color: #EA223B;
+    }

@@ -9,6 +9,7 @@ export default function Home() {
     const [showMain, setShowMain] = useState(false);
 
         useEffect(() => {
+            
             const timer = setTimeout(() => {
             setIsLoading(false);
             }, 200);
@@ -27,7 +28,6 @@ export default function Home() {
         }, [isLoading]);
     return (
         <>
-
             {isLoading ? (
             <div className={styles.loader}>
             <Loader />

@@ -43,7 +43,7 @@ backgroundColor: '#F8FCFD', padding:'15px'}}>
         <h3>Your Order</h3>
           <div className="  d-flex flex-column ">
           <div className='order p-5 pb-0 mb-3 d-flex gap-5' style={{backgroundColor:'#F8FCFD'}}>
-          <div className="image d-flex ">
+          <div className="pic d-flex ">
               <img className='w-100' src="/items/item.png" alt="" />
             </div>
             <div className="caption">

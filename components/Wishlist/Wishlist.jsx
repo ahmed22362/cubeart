@@ -1,156 +1,217 @@
 "use client"
-import React, { useState } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { Button } from 'primereact/button';
-import { Checkbox } from 'primereact/checkbox';
-import { Dropdown } from 'primereact/dropdown';
-import { MainButton } from '..';
+import React, { useEffect, useState ,useRef} from 'react';
+import Image from 'next/image'
 import './whishlist.css'
+import Cookies from 'universal-cookie';
+import { Toast } from 'primereact/toast';
+import { Button } from 'primereact/button';
 
 export default function TemplateDemo() {
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: 'Product A',
-      quantity: 2,
-      Added: '25-Aug-2023',
-      price: 35.0,
-      image: '/items/item.png',
-      inventoryStatus: 'INSTOCK',
-      selected: false,
-      value: 'pA',
-    },
-    {
-      id: 2,
-      name: 'Product B',
-      quantity: 2,
-      Added: '2-Jul-2023',
-      price: 29.0,
-      image: '/items/item.png',
-      inventoryStatus: 'LOWSTOCK',
-      selected: false,
-      value: 'pB',
-    },
-    {
-      id: 3,
-      name: 'Product C',
-      quantity: 2,
-      Added: '12-May-2023',
-      price: 42.0,
-      image: '/items/item.png',
-      inventoryStatus: 'OUTOFSTOCK',
-      selected: false,
-      value: 'pC',
-    },
-    // Add more product objects as needed
-  ]);
+  const url =process.env.API_URL;
+  const [wishlistItems, setWishlistItems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const token= new Cookies().get('token')
+  const [width, setWidth] = useState(window.innerWidth);
+  const [addToCartMessage, setAddToCartMessage] = useState("");
 
- 
-  const formatCurrency = (value) => {
-    return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-  };
+  const toast = useRef(null);
 
-  const toggleSelect = (productId) => {
-    setProducts((prevProducts) =>
-      prevProducts.map((product) =>
-        product.id === productId ? { ...product, selected: !product.selected } : product
-      )
-    );
-  };
+    const showSuccess = () => {
+        toast.current.show({severity:'success', summary: '', detail:'Item added to cart successfully', life: 3000});
+    }
 
-  const header = (
-    <div className="flex flex-wrap align-items-center justify-content-between gap-2">
-      <span className="text-xl text-900 font-bold">Products</span>
-      <Button style={{ float: 'right', margin: '0 0 10px 0' }} icon="pi pi-refresh" rounded raised />
-    </div>
-  );
+    const showError = () => {
+      toast.current.show({severity:'error', summary: 'Error', detail:'Message Content', life: 3000});
+  }
+  useEffect(() => {
+    // Add the 'resize' event listener to the window and call updateWidth when resized
+    const handleResize = () => {
+      const newWidth = window.innerWidth;
+      setWidth(newWidth);
+      
+    };
 
-  const footer = `In total there are ${products ? products.length : 0} products.`;
+    window.addEventListener('resize', handleResize);
 
-  const nameTemplate = (product) => {
-    return (
-      <Checkbox
-        checked={product.selected}
-        onChange={() => toggleSelect(product.id)}
-      />
-    );
-  };
+    // Cleanup: Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-  const imageBodyTemplate = (product) => {
-    return (
-      <>
-        <img src={product.image} alt={product.name} className="w-6rem shadow-2 border-round" />
-        <span>{product.name}</span>
-      </>
-    );
+
+  useEffect(() => {
+  
+    // Make a GET request to the wishlist API endpoint
+      const  headers= {
+      Authorization : `Bearer ${token}`,
+      "Content-Type": "application/json",
+    }
+    fetch("https://api.cubuild.net/api/v1/wishlist" , { headers })
+      .then((response) => response.json())
+      .then((data) => {
+        // Assuming the API returns an array of wishlist items
+        setWishlistItems(data.data.items);
+        console.log(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching wishlist data:", error);
+        setLoading(false);
+      });
+  }, []);
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString(); // Formats to "MM/DD/YYYY"
   };
  
 
-  const priceBodyTemplate = (product) => {
-    return formatCurrency(product.price);
+
+  const handleDeleteItem = (productId) => {
+    // Make a DELETE request to remove the item from the wishlist
+    console.log("delete item of id :" + productId);
+    console.log(token);
+    const payload = {
+      product: productId,
+    };
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json', // Set content type to JSON
+    };
+    fetch(`https://api.cubuild.net/api/v1/wishlist/item`, {
+      method: 'DELETE',
+      headers,
+      body: JSON.stringify(payload),
+    })
+      .then((response) => {
+        console.log({text:response.text,status:response.status,body:response.body});
+        if (response.status === 200) {
+          fetchWishlistData(); 
+          console.log("Successfully deleted");
+        } else {
+          console.error('Error deleting wishlist item:', response);
+        }
+      })
+      .catch((error) => {
+        console.error('Error deleting wishlist item:', error);
+      });
   };
+  const handleAddToCart = (productId) => {
 
-  const buttons=()=>{
-
-    return(
-        <>
-        <MainButton className={'special_butto'} text={'Add to Cart '} />
-        </>
-    )
+    // Make a POST request to add the item to the cart
+    console.log("add item to cart with ID: " + productId);
+    console.log(token);
+    const payload = {
+      product: productId,
+      quantity:1,
+    };
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json', // Set content type to JSON
+    };
+    fetch(`https://api.cubuild.net/api/v1/cart/item`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(payload),
+    })
+      .then((response) => {
+        console.log({ text: response.text, status: response.status, body: response.body });
+        if (response.status === 200) {
+          showSuccess();
+          // Item added to cart successfully
+          console.log("Item added to cart successfully");
+          setAddToCartMessage("The item has been added to the cart.");
+        } else {
+          showError();
+          console.error('Error adding item to cart:', response);
+        }
+      })
+      .catch((error) => {
+        console.error('Error adding item to cart:', error);
+      });
+  };
+  
+  const fetchWishlistData = () => {
+    // Make a GET request to fetch the updated wishlist data
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    };
+    fetch("https://api.cubuild.net/api/v1/wishlist", { headers })
+      .then((response) => response.json())
+      .then((data) => {
+        // Assuming the API returns an array of wishlist items
+        setWishlistItems(data.data.items);
+        console.log(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching wishlist data:", error);
+        setLoading(false);
+      });
+  };
+ 
+  if (loading) {
+    return <div>Loading wishlist...</div>;
   }
 
-  const statusBodyTemplate = () => {
-    return <i className="bi bi-trash"></i>;
-  };
   return (
-            <div className="">
-              <div className="">
-                {products.length === 0 ? (
-                  <div className='container mt-5'>
-                    <div className=" d-flex justify-content-center  align-items-center flex-column">
-                        <div className='w-50 text-center'>
-                            <img className='w-' src="images/empty_wishlist.png" alt="no products" />
-                            <p className="pt-5 ms- text-center empty_text">Your Wishlist  is empty</p>
-                            <p className='text-center ' style={{color: '#292D32',
-            fontFamily: 'Poppins',
-            fontSize:' 17px',
-            fontStyle: 'normal',
-            fontWeight: 500,
-            lineHeight: 'normal',}}>View more Products</p>
-                        </div>
-                        <div>
-                        <MainButton text={'Shop Now'} />
-                        </div>
-                    </div>
-                  </div>
-                ) : (
-                  <DataTable
-                    responsiveLayout="scroll"
-                    value={products}
-                        
-                    footer={footer}
-                    tableStyle={{ maxWidth: 'rem' }}
-                  >
-                    <Column field="name" header="" body={nameTemplate}></Column>
-                    <Column
-                      className="w-25"
-                      header="Product"
-                      field="image"
-                      body={imageBodyTemplate}
-                    ></Column>
-                    <Column field="price" header="Price" body={priceBodyTemplate}></Column>
-                    <Column field="Added" header="Added on"></Column>
-                  
-                    <Column
-                      header=""
-                      bodyClassName={'special_button'}
-                      body={buttons}
-                    ></Column> 
-                    <Column header="Remove" body={statusBodyTemplate}></Column>
-                  </DataTable>
+    <>
+       <Toast ref={toast} position="top-left" />
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Added on</th>
+          <th>Price</th>
+          <th></th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        {Array.isArray(wishlistItems) && wishlistItems.length > 0 ? (
+          wishlistItems.map((item) => (
+            <tr key={item.id}>
+              <td className="">
+                <Image
+                  alt="product"
+                  className="me-2"
+                  src={item.product.coverImage}
+                  style={{ borderRadius: "10px" }}
+                  width={60}
+                  height={60}
+                />
+                <p className='product_title'> {item.product.title}</p>
+              </td>
+              <td className="add_on">{formatDate(item.added_on)}</td>
+              <td>{item.product.price} EGP</td>
+              <td>
+                {width > 500 ? (<>         
+
+                  <button className="cart_button"  onClick={() => handleAddToCart(item.product.id)}>Add To Cart</button>
+                  {/* <Button label="Success" className="p-button-success" onClick={showSuccess} /> */}
+                  </>
+                  ) : (
+                  <i className="bi bi-cart-dash" onClick={() => handleAddToCart(item.product.id)}></i>
                 )}
-              </div>
-            </div>
-          );
-        }  
+              </td>
+              <td>
+                <i
+                  className="bi bi-trash"
+                  onClick={() => handleDeleteItem(item.product.id)}
+                ></i>
+
+              </td>
+            </tr>
+          ))
+        ) : (
+          <tr>
+            <td colSpan="5">No items in your wishlist</td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+    </>
+
+  );}

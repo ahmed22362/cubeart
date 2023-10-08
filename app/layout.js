@@ -6,6 +6,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './globals.css';
 import 'primeicons/primeicons.css';
+
+//theme
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+        
 import React,{ useEffect } from "react";
 import { MinNav, Navbar } from '@/components';
 
