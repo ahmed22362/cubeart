@@ -11,7 +11,7 @@ export default function TemplateDemo() {
   const [wishlistItems, setWishlistItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const token= new Cookies().get('token')
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : '');
   const [addToCartMessage, setAddToCartMessage] = useState("");
 
   const toast = useRef(null);
@@ -26,17 +26,19 @@ export default function TemplateDemo() {
   useEffect(() => {
     // Add the 'resize' event listener to the window and call updateWidth when resized
     const handleResize = () => {
-      const newWidth = window.innerWidth;
+      const newWidth = typeof window !== 'undefined' ? window.innerWidth : '';
       setWidth(newWidth);
-      
     };
 
-    window.addEventListener('resize', handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+    }
 
-    // Cleanup: Remove the event listener when the component unmounts
     return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+      }
+    }
   }, []);
 
 
