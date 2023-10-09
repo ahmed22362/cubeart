@@ -1,8 +1,10 @@
+.dropDown {
+    width: 30% !important;
+}
 .dropDownLink {
     display: flex;
     justify-content: right;
     align-items: center;
-    padding: 0px 0px 0px 10px;
     border-bottom: 1px solid #eee;
     font-size: 14px;
 }
@@ -114,7 +116,7 @@
     display: none;
     justify-content: center;
     align-items: center;
-    width: 110px;
+    width: 100%;
 }
 @media (max-width: 480px) {
     .btnWithIcons {

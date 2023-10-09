@@ -22,7 +22,7 @@ import Link from "next/link";
         };
     console.log(payload)
         // Make a PUT request to update the quantity
-        fetch(`https://api.cubuild.net/api/v1/cart/item/${itemId}`, {
+        fetch(`${process.env.NEXT_PUBLIC_URL}/cart/item/${itemId}`, {
           method: "PATCH",
           headers: {
             Authorization : `Bearer ${token}`,
@@ -50,7 +50,7 @@ import Link from "next/link";
     };
 
     // Make a GET request to the API endpoint with the headers
-    fetch('https://api.cubuild.net/api/v1/cart', { headers })
+    fetch(`${process.env.NEXT_PUBLIC_URL}/cart`, { headers })
       .then((response) => response.json())
       .then(({data}) => {
         setCartItems(data); // Assuming the API returns an array of cart items

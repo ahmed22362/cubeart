@@ -5,8 +5,6 @@ import styles from './addReview.module.css';
 import { Rating } from 'primereact/rating';
 import Cookies from 'universal-cookie';
 import { useRouter } from 'next/navigation';
-import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
-
 
 export default function AddReview({productId, fetchData}) {
 

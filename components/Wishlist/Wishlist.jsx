@@ -11,7 +11,7 @@ export default function TemplateDemo() {
   const [wishlistItems, setWishlistItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const token= new Cookies().get('token')
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : '');
   const [addToCartMessage, setAddToCartMessage] = useState("");
 
   const toast = useRef(null);
@@ -26,17 +26,19 @@ export default function TemplateDemo() {
   useEffect(() => {
     // Add the 'resize' event listener to the window and call updateWidth when resized
     const handleResize = () => {
-      const newWidth = window.innerWidth;
+      const newWidth = typeof window !== 'undefined' ? window.innerWidth : '';
       setWidth(newWidth);
-      
     };
 
-    window.addEventListener('resize', handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+    }
 
-    // Cleanup: Remove the event listener when the component unmounts
     return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+      }
+    }
   }, []);
 
 
@@ -47,7 +49,7 @@ export default function TemplateDemo() {
       Authorization : `Bearer ${token}`,
       "Content-Type": "application/json",
     }
-    fetch("https://api.cubuild.net/api/v1/wishlist" , { headers })
+    fetch(`${process.env.NEXT_PUBLIC_URL}/wishlist` , { headers })
       .then((response) => response.json())
       .then((data) => {
         // Assuming the API returns an array of wishlist items
@@ -78,7 +80,7 @@ export default function TemplateDemo() {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json', // Set content type to JSON
     };
-    fetch(`https://api.cubuild.net/api/v1/wishlist/item`, {
+    fetch(`${process.env.NEXT_PUBLIC_URL}/wishlist/item`, {
       method: 'DELETE',
       headers,
       body: JSON.stringify(payload),
@@ -109,7 +111,7 @@ export default function TemplateDemo() {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json', // Set content type to JSON
     };
-    fetch(`https://api.cubuild.net/api/v1/cart/item`, {
+    fetch(`${process.env.NEXT_PUBLIC_URL}/cart/item`, {
       method: 'POST',
       headers,
       body: JSON.stringify(payload),
@@ -137,7 +139,7 @@ export default function TemplateDemo() {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     };
-    fetch("https://api.cubuild.net/api/v1/wishlist", { headers })
+    fetch(`${process.env.NEXT_PUBLIC_URL}/wishlist`, { headers })
       .then((response) => response.json())
       .then((data) => {
         // Assuming the API returns an array of wishlist items

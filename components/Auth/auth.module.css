@@ -189,16 +189,17 @@
     align-items: center;
 }
 .OuthLogin span {
-    width: 170px;
+    width: 158px;
     height: 50px;
     border: 1px solid #96C9E2;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 12px 42px;
-    gap: 5px;
+    gap: 2px;
     border-radius: 16px;
     cursor: pointer;
+    font-weight: bold;
 }
 .OuthLogin span img {
     width: 100%;

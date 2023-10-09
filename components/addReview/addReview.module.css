@@ -17,9 +17,9 @@
     cursor: pointer;
 }
 .stars svg {
-    width: 25px;
-    height: 25px;
-    color: #FFC62A;
+    width: 25px !important;
+    height: 25px !important;
+    color: #FFC62A !important;
 }
 .reviewForm textarea,
 .reviewForm input {
