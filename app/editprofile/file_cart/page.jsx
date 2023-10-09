@@ -35,7 +35,7 @@ function page() {
            </td>
            <td className="add_on">fdfr</td>
            <td>108 EGP</td>
-           <td> <i style={{fontSize:'12px'}} class="text-success  bi bi-circle-fill"></i> completed</td>
+           <td> <i style={{fontSize:'12px'}} className="text-success  bi bi-circle-fill"></i> completed</td>
            <td>
              <img src="../images/edit.png" alt="" />
            </td>

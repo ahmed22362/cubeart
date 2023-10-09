@@ -47,7 +47,7 @@ export default function TemplateDemo() {
       Authorization : `Bearer ${token}`,
       "Content-Type": "application/json",
     }
-    fetch("https://api.cubuild.net/api/v1/wishlist" , { headers })
+    fetch(`${process.env.NEXT_PUBLIC_URL}/wishlist` , { headers })
       .then((response) => response.json())
       .then((data) => {
         // Assuming the API returns an array of wishlist items
@@ -78,7 +78,7 @@ export default function TemplateDemo() {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json', // Set content type to JSON
     };
-    fetch(`https://api.cubuild.net/api/v1/wishlist/item`, {
+    fetch(`${process.env.NEXT_PUBLIC_URL}/wishlist/item`, {
       method: 'DELETE',
       headers,
       body: JSON.stringify(payload),
@@ -109,7 +109,7 @@ export default function TemplateDemo() {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json', // Set content type to JSON
     };
-    fetch(`https://api.cubuild.net/api/v1/cart/item`, {
+    fetch(`${process.env.NEXT_PUBLIC_URL}/cart/item`, {
       method: 'POST',
       headers,
       body: JSON.stringify(payload),
@@ -137,7 +137,7 @@ export default function TemplateDemo() {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     };
-    fetch("https://api.cubuild.net/api/v1/wishlist", { headers })
+    fetch(`${process.env.NEXT_PUBLIC_URL}/wishlist`, { headers })
       .then((response) => response.json())
       .then((data) => {
         // Assuming the API returns an array of wishlist items

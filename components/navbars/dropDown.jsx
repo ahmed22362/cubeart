@@ -32,7 +32,7 @@ export default function DropDown({openModal}) {
 
     return (
         <>
-        <div className="dropdown">
+        <div className={"dropdown " + styles.dropDown}>
             <i
             className="bi bi-person dropdown-toggle"
             style={{ cursor: "pointer" }}
@@ -85,7 +85,7 @@ export default function DropDown({openModal}) {
             )}
         </ul>
       </div>
-      <li className={`${styles.sayHi} ${user ? 'd-flex' : ''}`}>{user ? `Hi, ${user.name} \u{1F44B}` : <></>}</li>
+      <li className={`${styles.sayHi} ${user ? 'd-flex' : ''}`}>{user ? `Hi, ${user.fName} \u{1F44B}` : <></>}</li>
     </>
     )
 };

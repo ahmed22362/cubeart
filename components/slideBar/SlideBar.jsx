@@ -55,10 +55,10 @@ import Link from 'next/link';
                Wishlist
             </MenuItem>
             <SubMenu  label="Cart"  icon={<i className="slid_icon bi bi-cart"></i>}>
-            <MenuItem    component={<Link href={'/editprofile/cart'}></Link>} className='hoverClass ' icon={<i class="bi bi-bag-check-fill"></i>}>
+            <MenuItem    component={<Link href={'/editprofile/cart'}></Link>} className='hoverClass ' icon={<i className="bi bi-bag-check-fill"></i>}>
               Shopping Cart
             </MenuItem>
-            <MenuItem  component={<Link href={'/editprofile/file_cart'}></Link>} className='hoverClass ' icon={<i class="bi bi-file-earmark-zip"></i>}>
+            <MenuItem  component={<Link href={'/editprofile/file_cart'}></Link>} className='hoverClass ' icon={<i className="bi bi-file-earmark-zip"></i>}>
               File Cart
             </MenuItem>
             </SubMenu>

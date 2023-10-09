@@ -26,11 +26,11 @@ backgroundColor: '#F8FCFD', padding:'15px'}}>
       >
        <div className="">
         <div className="d-flex gap-3 mt-2">
-        <i class="bi bi-wallet2"></i>
+        <i className="bi bi-wallet2"></i>
        <FormControlLabel  value="cash" control={<Radio />}  label={` Cash on delivery `} />
         </div>
         <div className="d-flex gap-3 mt-2">
-        <i class="fa-brands fa-cc-visa mt-2"></i>
+        <i className="fa-brands fa-cc-visa mt-2"></i>
         <FormControlLabel value="visa" control={<Radio />} label="Visa" />
         </div>
        </div>

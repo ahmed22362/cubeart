@@ -2,10 +2,9 @@
 import React, { useState } from 'react';
 import { Password } from 'primereact/password';
 import { MainButton } from '@/components';
-import '../personal_info/PersonalInfoStyle.css';
 import './security.css';
+
 import Cookies from 'universal-cookie';
-import Alertt from '@/components/Alert/Alert';
 import { Alert } from 'react-bootstrap';
 import { useEffect } from 'react';
 
@@ -50,11 +49,11 @@ function Page() {
       newPasswordConfirm,
     };
 
-    fetch('https://api.cubuild.net/api/v1/user/auth/updateMyPassword', {
+    fetch(`${process.env.NEXT_PUBLIC_URL}/user/auth/updateMyPassword`, {
       method: 'PATCH',
       headers: {
-        Authorization: `Bearer ${cookei.get('token')}`,
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${cookei.get('token')}`,
       },
       body: JSON.stringify(data),
     })

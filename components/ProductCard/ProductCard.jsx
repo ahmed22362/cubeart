@@ -8,6 +8,7 @@ import Cookies from 'universal-cookie';
 import Toast from 'react-bootstrap/Toast';
 import ToastContainer from 'react-bootstrap/ToastContainer';
 import Overlay from 'react-bootstrap/Overlay';
+import GetWishlist from "@/components/GetWishlist/getWishlist";
 
 
 export default function ProductCard({
@@ -30,7 +31,6 @@ export default function ProductCard({
     const [bgMessage, setBgMessage] = useState('');
     const [wishListMsg, setWishListMsg] = useState('');
     const [bgWishList, setbgWishList] = useState('');
-    const [wishlistItems, setWishlistItems] = useState([]);
 
     const url = process.env.NEXT_PUBLIC_URL;
 
@@ -85,9 +85,11 @@ export default function ProductCard({
             if (isFilled) {
                 setbgWishList('danger');
                 setWishListMsg('Item removed from wishlist');
+                GetWishlist()
             } else {
                 setbgWishList('primary');
                 setWishListMsg('Item added to wishlist');
+                GetWishlist()
             }
             setIsFilled(!isFilled);
             setShowOverlay(true);
@@ -115,6 +117,15 @@ export default function ProductCard({
             console.log('You are not logged in yet.');
         });
     };
+    useEffect(() => {
+        const data = JSON.parse(localStorage.getItem('wishlist'))
+        if(data) {
+            if (data) {
+                const found = data.items.some(item => item.product.id === id);
+                setIsFilled(found);
+            }
+        }
+    }, [])
 
     return (
             <div className={"card h-100 " + styles.cardItem}>

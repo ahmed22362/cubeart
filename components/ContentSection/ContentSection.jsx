@@ -1,26 +1,63 @@
 "use client"
 import styles from './contentSection.module.css'
 import Cookies from "universal-cookie";
-import {useRef, useState} from "react";
+import {useRef, useState, useEffect} from "react";
 import { Toast } from 'primereact/toast';
+import {usePathname} from "next/navigation";
+import GetWishlist from "@/components/GetWishlist/getWishlist";
 
 export default function ContentSection({data}) {
-    // const currentID = usePathname()
     const productData = data || "Loading";
     const cookie = new Cookies()
     const [isFilled, setIsFilled] = useState(false);
     const [selectedQuantity, setSelectedQuantity] = useState(1)
     const url = process.env.NEXT_PUBLIC_URL;
     const toast = useRef(null);
-
+    const productId = usePathname()
     const showSuccess = () => {
         toast.current.show({severity:'success', summary: 'Success', detail:'Message Content', life: 3000});
     }
 
+    const addToWishList = () => {
 
-    const toggleToFill = () => {
-        setIsFilled(!isFilled);
-    }
+        const method = isFilled ? 'DELETE' : 'POST';
+
+        fetch(`${url}/wishlist/item`, {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${cookie.get('token')}`,
+            },
+            body: JSON.stringify({
+                product: productData.id,
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.status === 'success') {
+                    if (isFilled) {
+                        console.log('item remove from wishlist')
+                        GetWishlist()
+                    } else {
+                        console.log('item added to wishlist')
+                        GetWishlist()
+                    }
+                    setIsFilled(!isFilled);
+                } else {
+                    console.log(data);
+                    if (data.message.substring(0, 7) === 'Invalid') {
+                        console.log('login first')
+                    } else {
+                        console.log("item already in wishlist")
+                    }
+                }
+                console.log(data);
+            })
+            .catch((error) => {
+                console.log(error);
+                console.log('You are not logged in yet.');
+            });
+    };
 
     const addToCart = () => {
         fetch(`${url}/cart/item`, {
@@ -50,10 +87,21 @@ export default function ContentSection({data}) {
             });
         console.log("Done")
     }
-
     const handleQuantityChange = event => {
         setSelectedQuantity(event.target.value);
     };
+
+    useEffect(() => {
+        GetWishlist()
+        const data = JSON.parse(localStorage.getItem('wishlist'))
+            if(data) {
+                if (data) {
+                    const found = data.items.some(item => item.product.id === productId.split('/')[2]);
+                    setIsFilled(found);
+                }
+            }
+    }, []);
+
 
     return(
         <div className={styles.contentSection}>
@@ -61,12 +109,8 @@ export default function ContentSection({data}) {
             <h3>{productData.title}</h3>
             <div className={styles.addToWishList}>
                 <i className={`bi ${!isFilled ? 'bi-heart' : 'bi-heart-fill text-danger'}`}
-                onClick={() => {toggleToFill()}}></i>
+                onClick={() => addToWishList()}></i>
                     <span>Add to Wishlist</span>
-            </div>
-            <div className={styles.shareWith}>
-                <i className="bi bi-share"></i>
-                <span>Share</span>
             </div>
             <div className={styles.description}>
                 <h4>Description</h4>

@@ -5,7 +5,7 @@ import { MainButton } from '@/components';
 import Cookies from 'universal-cookie';
 
 function Page() {
-  const url = process.env.API_URL;
+  const url = process.env.NEXT_PUBLIC_URL;
   const token = new Cookies().get('token');
 
   const [userData, setUserData] = useState({

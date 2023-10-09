@@ -4,10 +4,10 @@ import Image from 'next/image';
 import styles from '../Auth/auth.module.css';
 import {useEffect, useState} from 'react';
 import Cookies from 'universal-cookie';
-import { useForm } from 'react-hook-form';
-
-
+import { useForm } from 'react-hook-form'
+import GetWishlist from "@/components/GetWishlist/getWishlist";
 export default function LoginForm({ handleLinkClick, active, closeModal }) {
+
     const {register, handleSubmit, formState: { errors }} = useForm();
     const [responseMessage, setMessage] = useState(null);
     const cookie = new Cookies();
@@ -19,6 +19,7 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
     useEffect(() => {
             setShowComponent(true);
     }, []);
+
     const onSubmit = (formData) => {
         const formObj = {
             email: formData.email,
@@ -39,6 +40,8 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
                 setMessage('login success');
                 setTimeout(() => {
                     closeModal()
+                    GetWishlist()
+                    location.reload();
                 }, 2000)
             } else {
                 setMessage('Password or Email not correct please try again or contact us');
@@ -50,6 +53,9 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
         });
     }
 
+    const signWithGoogle = () => {
+        location.href = `${process.env.NEXT_PUBLIC_SIGNWITHGOOGLE}`;
+    }
     return(
         <>
             <div  className={`${styles.loginFormModal + ' ' + styles.effect} ${showComponent ? styles.show : ''}`}>
@@ -101,13 +107,9 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
                 </div>
                 <div className={styles.otherOptions}>
                     <div className={styles.OuthLogin}>
-                        <span>
-                            <Image src={'/Social-icons/google.png'} width={50} height={50} loading={'lazy'} alt={'google-icon'} />
-                            Google
-                        </span>
-                        <span>
-                            <Image src={'/Social-icons/facebook.png'} width={50} height={50} loading={'lazy'} alt={'facebook-icon'} />
-                            Facebook
+                        <span onClick={() => signWithGoogle()}>
+                            <Image src={'/Social-icons/google.png'} width={35} height={35} loading={'lazy'} alt={'google-icon'} />
+                            oogle
                         </span>
                     </div>
                     <div className={styles.signupLink}>
