@@ -7,19 +7,33 @@ import { useState } from "react";
 import AuthModal from "../Auth/AuthComponent";
 import dynamic from "next/dynamic";
 import Search from "@/components/search/search";
+import Cookies from 'universal-cookie';
+import {useRouter} from "next/navigation";
 
 const NoSSR = dynamic(() => import('./dropDown'), { ssr: false })
 
 export default function Navbar() {
+  const cookie = new Cookies();
+  const router = useRouter();
 
   const [showModal, setShowModal] = useState(false);
+
   const handleModalOpen = () => {
     setShowModal(true);
   };
 
-const handleModalClose = () => {
+  const handleModalClose = () => {
     setShowModal(false);
   };
+
+  const printYourDesign = () => {
+    if(cookie.get('token')) {
+      router.replace('/upload')
+    } else {
+      setShowModal(true)
+    }
+  }
+
 
   return (
     <nav className={"navbar navbar-expand-lg bg-white " + styles.mainNav}>
@@ -79,13 +93,12 @@ const handleModalClose = () => {
             }
           >
               <div className={styles.btnWithIcons}>
-                <Link href={'/upload'}>
+                <div onClick={() => printYourDesign()}>
                   <button className={styles.navBtn}>Print your design</button>
-                </Link>
+                </div>
                 <div className={styles.icons}>
                   <>
                     <NoSSR openModal={handleModalOpen} />
-                    {/* <DropDown openModal={handleModalOpen}/> */}
                   </>
                 </div>
             </div>
