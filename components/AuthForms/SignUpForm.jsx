@@ -7,6 +7,7 @@ import Cookies from 'universal-cookie';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import GetUserData from "@/components/getUserData/getUserData";
 
 export default function SignUpForm({ handleLinkClick, active, closeModal }) {
     const validationSchema = Yup.object().shape({
@@ -36,6 +37,8 @@ export default function SignUpForm({ handleLinkClick, active, closeModal }) {
     const cookie = new Cookies();
     const url = process.env.NEXT_PUBLIC_URL;
     const [showComponent, setShowComponent] = useState(false);
+    const expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 30);
 
     useEffect(() => {
         setShowComponent(true);
@@ -59,11 +62,12 @@ export default function SignUpForm({ handleLinkClick, active, closeModal }) {
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                cookie.set('token', data.token);
-                cookie.set('user', data.data);
+                cookie.set('token', data.token, {expires: expirationDate});
+                GetUserData()
                 setMessage('Signup success');
                 setTimeout(() => {
                     closeModal()
+                    location.reload()
                 }, 2000)
             } else {
                 setMessage(data[0].message);
@@ -78,6 +82,7 @@ export default function SignUpForm({ handleLinkClick, active, closeModal }) {
 
     const signWithGoogle = () => {
         location.href = `${process.env.NEXT_PUBLIC_SIGNWITHGOOGLE}`;
+        GetUserData()
     }
 
     return(

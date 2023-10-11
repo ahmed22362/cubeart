@@ -10,64 +10,15 @@ import Tooltip from 'react-bootstrap/Tooltip';
 
 export default function AllProductReviews({ data, fetchData }) {
 
-    const reviews = data;
-    const [isFilled, setIsFilled] = useState(Array(reviews?.length).fill(false));
+    const reviews = data || [];
     const url = process.env.NEXT_PUBLIC_URL;
-    const cookie = new Cookies()
-    const [message, setMessage] = useState(null);
-    const [show, setShow] = useState(false);
-    const target = useRef(null);
+    const cookie = new Cookies();
 
-    useEffect(() => {
-        const storedStyles = localStorage.getItem('reviewStyles');
-        if (storedStyles) {
-            setIsFilled(JSON.parse(storedStyles));
-        } else {
-            setIsFilled(Array(reviews?.length).fill(false));
-        }
-    }, [reviews]);
 
-    const saveStylesToLocalStorage = (styles) => {
-        localStorage.setItem('reviewStyles', JSON.stringify(styles));
-    };
-    const handleHelpfulToggle = async (reviewId, index) => {
-        const isAddedToHelpful = isFilled[index];
-        try {
-            const response = await fetch(
-                `${url}/review/${reviewId}/helpful`,
-                {
-                    method: isAddedToHelpful ? 'DELETE' : 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${cookie.get('token')}`,
-                    },
-                }
-            );
-            if (response.ok) {
-                setIsFilled((prevState) => {
-                    const newState = [...prevState];
-                    newState[index] = !isAddedToHelpful;
-                    saveStylesToLocalStorage(newState);
-                    return newState;
-                });
-                fetchData();
-                console.log(isAddedToHelpful ? 'Deleted successfully' : 'Added successfully');
-            } else {
-                console.error('Error:', isAddedToHelpful ? 'clear Helpful is Done' : 'Adding to Helpful is Done');
-                setMessage('login first !');
-                setShow(!show);
-            }
-        } catch (error) {
-            console.error('Error:', isAddedToHelpful ? 'Removing from Helpful' : 'Adding to Helpful', error);
-            setMessage('login first !')
-            setShow(!show);
-        }
-    };
     return(
         <>
             <div className={styles.allProductReviews + " px-5"}>
                 {data && reviews.map((review, index) => {
-                    const isAddedToHelpful = isFilled[index];
                     return(
                         <div className={styles.rateBox} key={index + 1}>
                             <div className={styles.userCard}>
@@ -95,15 +46,11 @@ export default function AllProductReviews({ data, fetchData }) {
                             </div>
                             <div>
                                 <button
-                                        ref={target}
-                                        className={`${styles.helpfulBtn} ${!isAddedToHelpful ? styles.helpfulBtn : styles.fillBtn}`}
-                                        onClick={() => handleHelpfulToggle(review.id, index)}>
+                                    className={`${styles.helpfulBtn}`}
+                                >
                                     <i className="bi bi-hand-thumbs-up"></i>
-                                    helpful ({review.likeCount})
+                                    helpful
                                 </button>
-                                <Overlay target={target.current} show={show} placement="top">
-                                    {(props) => <Tooltip id="overlay-example" {...props}>{message}</Tooltip>}
-                                </Overlay>
                             </div>
                         </div>
                     )})}
