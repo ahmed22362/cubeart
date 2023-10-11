@@ -71,7 +71,6 @@ export default function SignUpForm({ handleLinkClick, active, closeModal }) {
                 }, 2000)
             } else {
                 setMessage(data[0].message);
-                console.log(data);
             }
         })
         .catch(error => {
@@ -82,7 +81,6 @@ export default function SignUpForm({ handleLinkClick, active, closeModal }) {
 
     const signWithGoogle = () => {
         location.href = `${process.env.NEXT_PUBLIC_SIGNWITHGOOGLE}`;
-        GetUserData()
     }
 
     return(

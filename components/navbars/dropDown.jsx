@@ -2,18 +2,18 @@
 import styles from "./navbar.module.css";
 import Link from "next/link";
 import Cookies from "universal-cookie";
-import {useRouter} from 'next/navigation';
-import { useState, useEffect} from 'react';
+import { useEffect} from 'react';
+import GetUserData from "@/components/getUserData/getUserData";
 
 export default function DropDown({openModal}) {
-    const router = useRouter()
+
     const cookie = new Cookies();
-    const [isClient, setIsClient] = useState(false)
 
     useEffect(() => {
 
-      setIsClient(true)
-    
+        if(cookie.get('token')) {
+            GetUserData()
+        }
     }, [])
 
     const user = cookie.get('user')
