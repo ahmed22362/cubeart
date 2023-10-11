@@ -6,6 +6,8 @@ import {useEffect, useState} from 'react';
 import Cookies from 'universal-cookie';
 import { useForm } from 'react-hook-form'
 import GetWishlist from "@/components/GetWishlist/getWishlist";
+import GetUserData from "@/components/getUserData/getUserData";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 export default function LoginForm({ handleLinkClick, active, closeModal }) {
 
     const {register, handleSubmit, formState: { errors }} = useForm();
@@ -13,6 +15,8 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
     const cookie = new Cookies();
     const url = process.env.NEXT_PUBLIC_URL;
     const [showComponent, setShowComponent] = useState(false);
+    const expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + 30);
 
 
 
@@ -35,14 +39,15 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                cookie.set('token', data.token);
-                cookie.set('user', data.data);
+                cookie.set('token', data.token, {expires: expirationDate});
+                GetUserData();
+                // cookie.set('user', data.data, {expires: expirationDate});
                 setMessage('login success');
+                GetWishlist()
                 setTimeout(() => {
                     closeModal()
-                    GetWishlist()
                     location.reload();
-                }, 2000)
+                }, 1000)
             } else {
                 setMessage('Password or Email not correct please try again or contact us');
             }

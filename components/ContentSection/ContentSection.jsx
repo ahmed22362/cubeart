@@ -14,9 +14,12 @@ export default function ContentSection({data}) {
     const url = process.env.NEXT_PUBLIC_URL;
     const toast = useRef(null);
     const productId = usePathname()
+
     const showSuccess = () => {
         toast.current.show({severity:'success', summary: 'Success', detail:'Message Content', life: 3000});
     }
+
+
 
     const addToWishList = () => {
 
@@ -92,7 +95,6 @@ export default function ContentSection({data}) {
     };
 
     useEffect(() => {
-        GetWishlist()
         const data = JSON.parse(localStorage.getItem('wishlist'))
             if(data) {
                 if (data) {
