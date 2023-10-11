@@ -61,6 +61,7 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
     const signWithGoogle = () => {
         location.href = `${process.env.NEXT_PUBLIC_SIGNWITHGOOGLE}`;
     }
+
     return(
         <>
             <div  className={`${styles.loginFormModal + ' ' + styles.effect} ${showComponent ? styles.show : ''}`}>
