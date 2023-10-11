@@ -3,17 +3,22 @@ import styles from './page.module.css';
 import {AboutUs, CarsouelSlider, Footer, OurService, ProductSlider, QuickQuote} from '@/components'
 import {useState, useEffect} from 'react';
 import Loader from "@/components/loader/loader";
+import GetUserData from "@/components/getUserData/getUserData";
+import Cookies from "universal-cookie";
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
     const [showMain, setShowMain] = useState(false);
+    const cookie = new Cookies()
 
-        useEffect(() => {
-            
+    useEffect(() => {
+
             const timer = setTimeout(() => {
-            setIsLoading(false);
+                setIsLoading(false);
             }, 200);
-
+            if(cookie.get('token')) {
+                GetUserData();
+            }
             return () => {
             clearTimeout(timer);
             };
