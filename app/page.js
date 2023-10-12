@@ -12,13 +12,10 @@ export default function Home() {
     const cookie = new Cookies()
 
     useEffect(() => {
-
+            console.log(cookie.get('user'));
             const timer = setTimeout(() => {
                 setIsLoading(false);
             }, 200);
-            if(cookie.get('token')) {
-                GetUserData();
-            }
             return () => {
             clearTimeout(timer);
             };
