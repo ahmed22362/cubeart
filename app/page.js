@@ -8,15 +8,14 @@ import Cookies from "universal-cookie";
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
     const [showMain, setShowMain] = useState(false);
-    const cookie = new Cookies()
 
+    const getToken = () => {
+        const cookie = new Cookies()
+        const token = cookie.get('token')
+        console.log(token)
+    }
     useEffect(() => {
-        if(cookie.get('token')) {
-            console.log(true)
-        } else {
-            console.log(false)
-        }
-
+        getToken()
             const timer = setTimeout(() => {
                 setIsLoading(false);
             }, 200);
