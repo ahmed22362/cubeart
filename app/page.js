@@ -3,7 +3,6 @@ import styles from './page.module.css';
 import {AboutUs, CarsouelSlider, Footer, OurService, ProductSlider, QuickQuote} from '@/components'
 import {useState, useEffect} from 'react';
 import Loader from "@/components/loader/loader";
-import GetUserData from "@/components/getUserData/getUserData";
 import Cookies from "universal-cookie";
 
 export default function Home() {
@@ -12,7 +11,12 @@ export default function Home() {
     const cookie = new Cookies()
 
     useEffect(() => {
-            console.log(cookie.get('user'));
+        if(cookie.get('token')) {
+            console.log(true)
+        } else {
+            console.log(false)
+        }
+
             const timer = setTimeout(() => {
                 setIsLoading(false);
             }, 200);
