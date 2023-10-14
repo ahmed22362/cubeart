@@ -1,22 +1,19 @@
 "use client"
 
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import styles from './page.module.css';
-import UploadFile from '@/components/UploadFile/UploadFile';
 import { MainButton } from '@/components';
 import ThreeDPreview from '@/components/File/File'; // Assuming this is your 3D preview component
 import MyVerticallyCenteredModal from '@/components/UploadModal/UploadModal';
-import dynamic from 'next/dynamic';
 
 function Upload() {
-  const [isUploadVisible, setIsUploadVisible] = useState(false);
-  const [modalShow, setModalShow] = useState(false);
+
+    const [isUploadVisible, setIsUploadVisible] = useState(false);
+    const [modalShow, setModalShow] = useState(false);
 
   const toggleUploadVisibility = () => {
     setIsUploadVisible(true);
   };
-
-
 
   return (
     <>
