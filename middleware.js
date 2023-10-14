@@ -3,7 +3,6 @@ import {NextResponse} from "next/server";
 export default function  middleware(req) {
     let verify = req.cookies.get('user-access-token')
     let url = req.url
-
     if(!verify && (
                 url.includes("/upload") ||
                 url.includes("/editprofile") ||
@@ -12,6 +11,6 @@ export default function  middleware(req) {
                 url.includes("/editprofile/cart") ||
                 url.includes("/editprofile/file_cart")
             )) {
-        return NextResponse.redirect("http://localhost:3000/")
+        return NextResponse.redirect("https://cubuild.net")
     }
 }
