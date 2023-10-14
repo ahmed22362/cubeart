@@ -7,7 +7,6 @@ import './security.css';
 import Cookies from 'universal-cookie';
 import { Alert } from 'react-bootstrap';
 import { useEffect } from 'react';
-import GuardAuth from "@/middleware/auth";
 import {useRouter} from "next/navigation";
 
 function Page() {
@@ -23,8 +22,6 @@ function Page() {
   const [newPasswordConfirmError, setNewPasswordConfirmError] = useState('');
 
   const cookie = new Cookies();
-  const router = useRouter()
-  const guard = GuardAuth();
   const handleSaveClick = () => {
     // Reset previous error messages
     setCurrentPasswordError('');
@@ -84,9 +81,7 @@ function Page() {
   };
 
   useEffect(() => {
-    if(guard === false) {
-      router.replace("/")
-    }
+
     if (showAlert) {
       // Hide the alert after 3 seconds
       const timeoutId = setTimeout(() => {

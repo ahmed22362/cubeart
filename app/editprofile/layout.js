@@ -6,7 +6,6 @@ export default function RootLayout({ children }) {
     })
 
 return(
-
     <>
    <div className={`d-flex gap-4 position-relative ${styles.resetWidth}`}>
    <SlideBar/>
