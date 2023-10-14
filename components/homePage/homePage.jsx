@@ -3,12 +3,14 @@ import styles from './../../app/page.module.css';
 import {AboutUs, CarsouelSlider, Footer, OurService, ProductSlider, QuickQuote} from '@/components'
 import {useState, useEffect} from 'react';
 import Loader from "@/components/loader/loader";
+import GetUserData from "@/components/getUserData/getUserData";
 
 export default function HomePage() {
     const [isLoading, setIsLoading] = useState(true);
     const [showMain, setShowMain] = useState(false);
 
     useEffect(() => {
+        GetUserData()
         const timer = setTimeout(() => {
             setIsLoading(false);
         }, 200);

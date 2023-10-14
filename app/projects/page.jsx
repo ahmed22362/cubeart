@@ -18,7 +18,6 @@ const page = () => {
             clearTimeout(timer);
         };
     }, []);
-
     useEffect(() => {
         if (!isLoading) {
             setTimeout(() => {
