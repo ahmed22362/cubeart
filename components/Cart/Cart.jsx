@@ -12,7 +12,7 @@ import Link from "next/link";
       const [loading, setLoading] = useState(true);
       const [cartItems, setCartItems] = useState({ items: [] });
 
-       const token=new Cookies().get('token')
+       const token=new Cookies().get('user-access-token')
         
       const updateQuantity = (itemId, newQuantity) => {
         console.log(newQuantity);

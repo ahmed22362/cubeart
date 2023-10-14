@@ -8,25 +8,25 @@ import GetUserData from "@/components/getUserData/getUserData";
 export default function DropDown({openModal}) {
 
     const cookie = new Cookies();
+    //
+    // useEffect(() => {
+    //
+    //     // if(cookie.get('user-access-token')) {
+    //     //     GetUserData()
+    //     // }
+    // }, [])
 
-    useEffect(() => {
-
-        if(cookie.get('token')) {
-            GetUserData()
-        }
-    }, [])
-
-    const user = cookie.get('user')
+    const user = cookie.get('user-data')
 
     const logOut = () => {
-        if(cookie.get('user') || cookie.get('token')) {
-            cookie.remove('user');
-            cookie.remove('token');
+        if(cookie.get('user-data') || cookie.get('user-access-token')) {
+            cookie.remove('user-data');
+            cookie.remove('user-access-token');
             localStorage.clear();
         }
         setTimeout(() => {
             location.replace("/")
-        }, 3000)
+        }, 1000)
     } 
 
 

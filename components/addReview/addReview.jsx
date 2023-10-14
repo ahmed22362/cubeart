@@ -27,7 +27,7 @@ export default function AddReview({productId, fetchData}) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${cookie.get('token')}`,
+                'Authorization': `Bearer ${cookie.get('user-access-token')}`,
             },
             body: JSON.stringify(formData),
         })

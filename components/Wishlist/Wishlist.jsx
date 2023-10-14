@@ -10,7 +10,7 @@ export default function TemplateDemo() {
   const url =process.env.API_URL;
   const [wishlistItems, setWishlistItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  const token= new Cookies().get('token')
+  const token= new Cookies().get('user-access-token')
   const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : '');
   const [addToCartMessage, setAddToCartMessage] = useState("");
 
@@ -72,7 +72,6 @@ export default function TemplateDemo() {
   const handleDeleteItem = (productId) => {
     // Make a DELETE request to remove the item from the wishlist
     console.log("delete item of id :" + productId);
-    console.log(token);
     const payload = {
       product: productId,
     };
@@ -102,7 +101,7 @@ export default function TemplateDemo() {
 
     // Make a POST request to add the item to the cart
     console.log("add item to cart with ID: " + productId);
-    console.log(token);
+
     const payload = {
       product: productId,
       quantity:1,

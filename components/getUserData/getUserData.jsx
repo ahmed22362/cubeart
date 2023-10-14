@@ -8,7 +8,7 @@ export default function GetUserData() {
         {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${cookie.get('token')}`,
+                'Authorization': `Bearer ${cookie.get('user-access-token')}`,
                 "Content-Type": "application/json",
             }
         })

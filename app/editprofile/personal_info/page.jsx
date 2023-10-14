@@ -6,7 +6,7 @@ import Cookies from 'universal-cookie';
 
 function Page() {
   const url = process.env.NEXT_PUBLIC_URL;
-  const token = new Cookies().get('token');
+  const token = new Cookies().get('user-access-token');
 
   const [userData, setUserData] = useState({
     first_name: '',

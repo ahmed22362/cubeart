@@ -10,7 +10,7 @@ export default function HomePage() {
     const [showMain, setShowMain] = useState(false);
 
     useEffect(() => {
-        GetUserData()
+        // GetUserData()
         const timer = setTimeout(() => {
             setIsLoading(false);
         }, 200);

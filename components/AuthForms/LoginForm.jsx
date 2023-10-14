@@ -39,15 +39,19 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                cookie.set('token', data.token, {expires: expirationDate});
-                GetUserData();
-                // cookie.set('user', data.data, {expires: expirationDate});
+                cookie.set('user-access-token', data.token, {
+                    expires: expirationDate
+                });
+                cookie.set('user-data', data.data, {
+                    expires: expirationDate
+                });
+                // GetUserData();
                 setMessage('login success');
                 GetWishlist()
                 setTimeout(() => {
                     closeModal()
                     location.reload();
-                }, 1000)
+                }, 500)
             } else {
                 setMessage('Password or Email not correct please try again or contact us');
             }
