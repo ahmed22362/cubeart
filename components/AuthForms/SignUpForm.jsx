@@ -62,8 +62,8 @@ export default function SignUpForm({ handleLinkClick, active, closeModal }) {
         .then(response => response.json())
         .then(data => {
             if (data.status === 'success') {
-                cookie.set('token', data.token, {expires: expirationDate});
-                GetUserData()
+                cookie.set('user-access-token', data.token, {expires: expirationDate});
+                // GetUserData()
                 setMessage('Signup success');
                 setTimeout(() => {
                     closeModal()

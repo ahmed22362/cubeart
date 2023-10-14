@@ -29,7 +29,7 @@ export default function ContentSection({data}) {
             method: method,
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${cookie.get('token')}`,
+                'Authorization': `Bearer ${cookie.get('user-access-token')}`,
             },
             body: JSON.stringify({
                 product: productData.id,
@@ -67,7 +67,7 @@ export default function ContentSection({data}) {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${cookie.get('token')}`,
+                'Authorization': `Bearer ${cookie.get('user-access-token')}`,
             },
             body: JSON.stringify({
                 "product": productData.id,

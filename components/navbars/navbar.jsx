@@ -27,7 +27,7 @@ export default function Navbar() {
   };
 
   const printYourDesign = () => {
-    if(cookie.get('token')) {
+    if(cookie.get('user-access-token')) {
       router.replace('/upload')
     } else {
       setShowModal(true)

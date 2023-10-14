@@ -53,7 +53,7 @@ function Page() {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${cookei.get('token')}`,
+        Authorization: `Bearer ${cookei.get('user-access-token')}`,
       },
       body: JSON.stringify(data),
     })
@@ -67,8 +67,8 @@ function Page() {
           setResMessage(data.message);
           setResStatus(false);
         }
-        console.log(cookei.get('token'));
-        data.token ? cookei.set('token', data.token) : '';
+        console.log(cookei.get('user-access-token'));
+        data.token ? cookei.set('user-access-token', data.token) : '';
         setShowAlert(true); // Show the alert after the API request
         setTimeout(() => {
           setShowAlert(false); // Hide the alert after 3 seconds

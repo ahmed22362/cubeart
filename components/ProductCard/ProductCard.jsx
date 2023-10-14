@@ -41,7 +41,7 @@ export default function ProductCard({
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${cookie.get('token')}`,
+                'Authorization': `Bearer ${cookie.get('user-access-token')}`,
             },
         })
         .then(response => response.json())
@@ -73,7 +73,7 @@ export default function ProductCard({
         method: method,
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${cookie.get('token')}`,
+            'Authorization': `Bearer ${cookie.get('user-access-token')}`,
         },
         body: JSON.stringify({
             product: id,
