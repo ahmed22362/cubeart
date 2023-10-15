@@ -8,8 +8,9 @@ export default function NotFoundPage() {
                     <div className=" col-md-6">
                         <Image src="/404.avif" alt="404 error"
                              className="img-fluid"
-                        width={100} height={100} loading={"lazy"}
-                        style={{width: "100%"}}/>
+                        width={100} height={100} loading={"eager"}
+                        style={{width: "100%"}}
+                        priority={true}/>
                     </div>
                     <div className=" col-md-6 mt-5">
                         <p className="fs-3"> <span className="text-danger">Opps!</span> Page not found.</p>

@@ -53,8 +53,6 @@ tr{
   border-bottom: 1px solid  #D9D9D9;
 }
 
-th {
-}
 
 td,
 th {
@@ -125,11 +123,11 @@ th {
     font-size: 24px;
   }
 }
-.p-toast{
+/* .p-toast{
   width: 300px !important;
   position: fixed;
   right: 0;
 }
 .p-toast-icon-close{
   border: none;
-}
+} */

@@ -1,6 +1,6 @@
 "use client"
 import Modal from 'react-bootstrap/Modal';
-import Stepper from '@/app/tes/page';
+import Stepper from '@/components/ourStepper/ourStepper';
 
 export default function MyVerticallyCenteredModal(props) {
   return (

@@ -9,7 +9,8 @@ export default function  middleware(req) {
                 url.includes("/editprofile/security") ||
                 url.includes("/editprofile/wishlist") ||
                 url.includes("/editprofile/cart") ||
-                url.includes("/editprofile/file_cart")
+                url.includes("/editprofile/file_cart") ||
+                url.includes("/tes")
             )) {
         return NextResponse.redirect("https://cubuild.net")
     }

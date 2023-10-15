@@ -15,8 +15,9 @@ export default function Error({ error, reset }) {
               <div className=" col-md-6">
                   <Image src="/disapoented.jpg" alt="404 error"
                          className="img-fluid"
-                         width={500} height={500} loading={"lazy"}
-                         style={{width: "100%"}}/>
+                         width={500} height={500} loading={"eager"}
+                         style={{width: "100%"}}
+                        property={true}/>
               </div>
               <div className=" col-md-6 mt-5">
                   <p className="fs-3"> <span className="text-info">opps!</span> no items with this link.</p>
