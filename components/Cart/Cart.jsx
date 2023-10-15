@@ -13,7 +13,7 @@ import Link from "next/link";
       const [loading, setLoading] = useState(true);
       const [cartItems, setCartItems] = useState({ items: [] });
       const toastRef = useRef(null);
-
+      const url = process.env.NEXT_PUBLIC_URL;
       const showToast = (message, severity) => {
         toastRef.current.show({
           severity,
@@ -34,7 +34,7 @@ import Link from "next/link";
         };
     console.log(payload)
         // Make a PUT request to update the quantity
-        fetch(`https://api.cubuild.net/api/v1/cart/item/${itemId}`, {
+        fetch(`${url}/cart/item/${itemId}`, {
           method: "PATCH",
           headers: {
             Authorization : `Bearer ${token}`,
@@ -62,7 +62,7 @@ import Link from "next/link";
     };
 
     // Make a GET request to the API endpoint with the headers
-    fetch('https://api.cubuild.net/api/v1/cart', { headers })
+    fetch(`${url}/cart`, { headers })
       .then((response) => response.json())
       .then(({data}) => {
         setCartItems(data); // Assuming the API returns an array of cart items
@@ -94,7 +94,7 @@ import Link from "next/link";
   };
   const removeItem = (itemId) => {
     // Make a DELETE request to remove the item from the cart
-    fetch(`https://cubuild.onrender.com/api/v1/cart/item/${itemId}`, {
+    fetch(`${url}/cart/item/${itemId}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}` , },

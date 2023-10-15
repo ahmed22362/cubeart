@@ -20,7 +20,7 @@ function Page() {
   const [currentPasswordError, setCurrentPasswordError] = useState('');
   const [newPasswordError, setNewPasswordError] = useState('');
   const [newPasswordConfirmError, setNewPasswordConfirmError] = useState('');
- 
+  const url = process.env.NEXT_PUBLIC_URL
   
 
   const cookei = new Cookies();
@@ -53,7 +53,7 @@ function Page() {
       newPasswordConfirm,
     };
 
-    fetch('https://api.cubuild.net/api/v1/user/auth/updateMyPassword', {
+    fetch(`${url}/user/auth/updateMyPassword`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${cookei.get('token')}`,

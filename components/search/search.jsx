@@ -46,9 +46,7 @@ export default function Search() {
 
     const handleSearch = (value) => {
         setInput(value);
-        setTimeout(() => {
             fetchData(value);
-        }, 3000)
     };
 
     return(

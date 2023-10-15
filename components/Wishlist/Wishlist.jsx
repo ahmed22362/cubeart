@@ -10,7 +10,6 @@ import { MainButton } from '..';
 import Link from 'next/link';
 
 export default function TemplateDemo() {
-  const url = process.env.API_URL;
   const [wishlistItems, setWishlistItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const token = new Cookies().get('token');
@@ -18,7 +17,7 @@ export default function TemplateDemo() {
   const [deleteSuccessMessage, setDeleteSuccessMessage] = useState('');
 
   const toast = useRef(null);
-
+    const url = process.env.NEXT_PUBLIC_URL;
   const showSuccess = (message) => {
     toast.current.show({ severity: 'success', summary: '', detail: message, life: 3000 });
   }
@@ -48,7 +47,7 @@ export default function TemplateDemo() {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     }
-    fetch("https://api.cubuild.net/api/v1/wishlist", { headers })
+    fetch(`${url}/wishlist`, { headers })
       .then((response) => response.json())
       .then((data) => {
         // Assuming the API returns an array of wishlist items
@@ -78,7 +77,7 @@ export default function TemplateDemo() {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     };
-    fetch(`https://api.cubuild.net/api/v1/wishlist/item`, {
+    fetch(`${url}/wishlist/item`, {
       method: 'DELETE',
       headers,
       body: JSON.stringify(payload),
@@ -125,7 +124,7 @@ export default function TemplateDemo() {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     };
-    fetch(`https://api.cubuild.net/api/v1/cart/item`, {
+    fetch(`${url}/cart/item`, {
       method: 'POST',
       headers,
       body: JSON.stringify(payload),
@@ -151,7 +150,7 @@ export default function TemplateDemo() {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     };
-    fetch("https://api.cubuild.net/api/v1/wishlist", { headers })
+    fetch(`${url}/wishlist`, { headers })
       .then((response) => response.json())
       .then((data) => {
         // Assuming the API returns an array of wishlist items
