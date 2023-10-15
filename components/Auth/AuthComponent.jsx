@@ -13,7 +13,6 @@ const AuthModal = ({ show, closeModal }) => {
   
     const handleFormSubmit = (e) => {
       e.preventDefault();
-      // Handle form submission here
     };
   
     const handleLinkClick = (tab) => {

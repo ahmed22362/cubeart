@@ -35,7 +35,7 @@ export default function CarsouelSlider() {
             <CarsouleItemSlider 
                 headerText={"Do you want to discover our services ?"}
                 carsouelText={"If you want to customize your product or design,contact us for partnership, support and more."}
-                firstBtn={"Get in Touch"} 
+                firstBtn={"Get in Touch"}
                 secBtn={"Get in touch"}
                 btnColor={styles.purple}
                 img={"carsouel-4.png"}
