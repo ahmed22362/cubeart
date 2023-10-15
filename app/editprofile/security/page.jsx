@@ -7,8 +7,10 @@ import './security.css';
 import Cookies from 'universal-cookie';
 import { Alert } from 'react-bootstrap';
 import { useEffect } from 'react';
+import {useRouter} from "next/navigation";
 
 function Page() {
+
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [newPasswordConfirm, setNewPasswordConfirm] = useState('');
@@ -19,8 +21,7 @@ function Page() {
   const [newPasswordError, setNewPasswordError] = useState('');
   const [newPasswordConfirmError, setNewPasswordConfirmError] = useState('');
 
-  const cookei = new Cookies();
-
+  const cookie = new Cookies();
   const handleSaveClick = () => {
     // Reset previous error messages
     setCurrentPasswordError('');
@@ -53,7 +54,7 @@ function Page() {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${cookei.get('user-access-token')}`,
+        Authorization: `Bearer ${cookie.get('user-access-token')}`,
       },
       body: JSON.stringify(data),
     })
@@ -67,8 +68,8 @@ function Page() {
           setResMessage(data.message);
           setResStatus(false);
         }
-        console.log(cookei.get('user-access-token'));
-        data.token ? cookei.set('user-access-token', data.token) : '';
+        console.log(cookie.get('user-access-token'));
+        data.token ? cookie.set('user-access-token', data.token) : '';
         setShowAlert(true); // Show the alert after the API request
         setTimeout(() => {
           setShowAlert(false); // Hide the alert after 3 seconds
@@ -80,6 +81,7 @@ function Page() {
   };
 
   useEffect(() => {
+
     if (showAlert) {
       // Hide the alert after 3 seconds
       const timeoutId = setTimeout(() => {
@@ -92,6 +94,7 @@ function Page() {
       };
     }
   }, [showAlert]);
+
 
   return (
     <div className="col-md-7">
