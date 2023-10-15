@@ -46,7 +46,7 @@ export default function QuickQuote() {
         }
 
     return (
-        <div className={styles.ourFormStyle}>
+        <div className={styles.ourFormStyle} id={"contact"}>
             <h3>Request a quick quote</h3>
             <p>Please kindly fill in the table below , we will response to your question soon</p>
             <form action="" ref={form} onSubmit={handleSubmit(sendEmail)}>
