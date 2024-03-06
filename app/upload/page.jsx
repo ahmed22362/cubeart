@@ -3,7 +3,7 @@
 import {useEffect, useState} from 'react';
 import styles from './page.module.css';
 import { MainButton } from '@/components';
-import ThreeDPreview from '@/components/File/File'; // Assuming this is your 3D preview component
+import ThreeDPreview from '@/components/File/File';
 import MyVerticallyCenteredModal from '@/components/UploadModal/UploadModal';
 
 function Upload() {

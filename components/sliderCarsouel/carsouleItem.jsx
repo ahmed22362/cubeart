@@ -57,6 +57,7 @@ export default function CarsouleItemSlider({headerText, carsouelText, firstBtn, 
             width: '100%',
             height: 'auto',
             }}
+               loading={"eager"}
             width={400}
             height={300}
             alt={alt}

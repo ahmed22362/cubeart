@@ -3,10 +3,11 @@ import React, { useState, useEffect } from 'react';
 import './personalInfoStyle.css';
 import { MainButton } from '@/components';
 import Cookies from 'universal-cookie';
+import Link from 'next/link';
 
 function Page() {
-  const url = process.env.NEXT_PUBLIC_URL;
-  const token = new Cookies().get('user-access-token');
+  const url = process.env.API_URL;
+  const token = new Cookies().get('token');
 
   const [userData, setUserData] = useState({
     first_name: '',
@@ -195,7 +196,9 @@ function Page() {
             </div>
           </div>
           <div className="form-button mt-5 d-flex">
-            <MainButton className="" text={'Discard'} />
+          <Link style={{textDecoration:'none'}} href={'/'}>
+        <MainButton className='discardButton me-2' text={'Discard'}  />
+          </Link>
             <MainButton text={'Save'} onclick={handleSave} />
           </div>
         </div>

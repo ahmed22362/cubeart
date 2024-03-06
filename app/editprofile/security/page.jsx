@@ -2,15 +2,15 @@
 import React, { useState } from 'react';
 import { Password } from 'primereact/password';
 import { MainButton } from '@/components';
+// import '../personal_info/PersonalInfoStyle.css';
 import './security.css';
-
 import Cookies from 'universal-cookie';
 import { Alert } from 'react-bootstrap';
 import { useEffect } from 'react';
-import {useRouter} from "next/navigation";
+import Link from 'next/link';
+
 
 function Page() {
-
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [newPasswordConfirm, setNewPasswordConfirm] = useState('');
@@ -20,8 +20,11 @@ function Page() {
   const [currentPasswordError, setCurrentPasswordError] = useState('');
   const [newPasswordError, setNewPasswordError] = useState('');
   const [newPasswordConfirmError, setNewPasswordConfirmError] = useState('');
+  const url = process.env.NEXT_PUBLIC_URL
+  
 
-  const cookie = new Cookies();
+  const cookei = new Cookies();
+
   const handleSaveClick = () => {
     // Reset previous error messages
     setCurrentPasswordError('');
@@ -50,11 +53,11 @@ function Page() {
       newPasswordConfirm,
     };
 
-    fetch(`${process.env.NEXT_PUBLIC_URL}/user/auth/updateMyPassword`, {
+    fetch(`${url}/user/auth/updateMyPassword`, {
       method: 'PATCH',
       headers: {
+        Authorization: `Bearer ${cookei.get('token')}`,
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${cookie.get('user-access-token')}`,
       },
       body: JSON.stringify(data),
     })
@@ -68,8 +71,8 @@ function Page() {
           setResMessage(data.message);
           setResStatus(false);
         }
-        console.log(cookie.get('user-access-token'));
-        data.token ? cookie.set('user-access-token', data.token) : '';
+        console.log(cookei.get('token'));
+        data.token ? cookei.set('token', data.token) : '';
         setShowAlert(true); // Show the alert after the API request
         setTimeout(() => {
           setShowAlert(false); // Hide the alert after 3 seconds
@@ -81,7 +84,6 @@ function Page() {
   };
 
   useEffect(() => {
-
     if (showAlert) {
       // Hide the alert after 3 seconds
       const timeoutId = setTimeout(() => {
@@ -95,11 +97,10 @@ function Page() {
     }
   }, [showAlert]);
 
-
   return (
     <div className="col-md-7">
-      <h5>Security Section</h5>
-      <div className='p-5 mb-5 bg-white rounded'>
+      <div className='shadow bg-white  p-5 mb-5 bg-white rounded'>
+      <h5 className='mb-5'>Edit Your Password</h5>
         {showAlert && (
           <Alert variant="danger">
             {currentPasswordError || newPasswordError || newPasswordConfirmError || resMessage}
@@ -147,8 +148,10 @@ function Page() {
           />
         </form>
         <div className="form-button mt-5 d-flex">
-          <MainButton className='discardButton' text={'Discard'} />
-          <MainButton text={'Save'} onclick={handleSaveClick} />
+          <Link style={{textDecoration:'none'}} href={'/'}>
+        <MainButton className='discardButton me-2' text={'Discard'}  />
+          </Link>
+          <MainButton className='ms-3' text={'Save'} onclick={handleSaveClick} />
         </div>
       </div>
     </div>
