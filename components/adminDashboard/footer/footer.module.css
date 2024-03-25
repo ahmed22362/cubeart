@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  color: var(--textSoft);
+  margin: 0px 10px;
+  margin-top: 20px;
+}
+
+.logo {
+  font-weight: bold;
+}
+.text {
+  font-size: 12px;
+}

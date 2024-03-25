@@ -1,0 +1,10 @@
+.layout {
+  min-height: 100vh;
+  min-width: 100vh;
+  background: #151c2c;
+  color: white;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}

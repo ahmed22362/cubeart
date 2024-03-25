@@ -7,10 +7,10 @@ import { useState } from "react";
 import AuthModal from "../Auth/AuthComponent";
 import dynamic from "next/dynamic";
 import Search from "@/components/search/search";
-import Cookies from 'universal-cookie';
-import {useRouter} from "next/navigation";
+import Cookies from "universal-cookie";
+import { usePathname, useRouter } from "next/navigation";
 
-const NoSSR = dynamic(() => import('./dropDown'), { ssr: false })
+const NoSSR = dynamic(() => import("./dropDown"), { ssr: false });
 
 export default function Navbar() {
   const cookie = new Cookies();
@@ -27,71 +27,73 @@ export default function Navbar() {
   };
 
   const printYourDesign = () => {
-    if(cookie.get('user-access-token')) {
-      router.replace('/upload')
+    if (cookie.get("user-access-token")) {
+      router.replace("/upload");
     } else {
-      setShowModal(true)
+      setShowModal(true);
     }
-  }
-
-
-  return (
-    <nav className={"navbar navbar-expand-lg bg-white " + styles.mainNav}>
-      <div className={"container " + styles.containerSm}>
-        <div className="logo-div">
-          <Link className="navbar-brand" href="/">
-            <Image
-              src={"/logo.png"}
-              width={"48"}
-              height={"48"}
-              placeholder='blur'
-              blurDataURL={"/logo.png"}
-              alt={"logo"}
-            />
-          </Link>
-          <h2
-            style={{
-              color: "#292D32",
-              fontFamily: "Poppins",
-              fontSize: "24px",
-              fontStyle: "normal",
-              fontWeight: "600",
-              lineHeight: "normal",
-            }}
-          >
-            <Link
-              className="navbar-brand"
-              style={{ fontSize: "32px" }}
-              href="/"
-            >
-              CuBuild
+  };
+  const pathName = usePathname();
+  const isAdminLogin = pathName.startsWith("/cuAuth");
+  const isAdminDashboard = pathName.startsWith("/dashboard");
+  if (!(isAdminDashboard || isAdminLogin)) {
+    return (
+      <nav className={"navbar navbar-expand-lg bg-white " + styles.mainNav}>
+        <div className={"container " + styles.containerSm}>
+          <div className="logo-div">
+            <Link className="navbar-brand" href="/">
+              <Image
+                src={"/logo.png"}
+                width={"48"}
+                height={"48"}
+                placeholder="blur"
+                blurDataURL={"/logo.png"}
+                alt={"logo"}
+              />
             </Link>
-          </h2>
-        </div>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div
-          className={"collapse navbar-collapse " + styles.collapseStyles}
-          id="navbarSupportedContent"
-        >
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100">
-            <Search />
-          </ul>
-          <ul
-            className={
-              "navbar-nav me-auto mb-2 mb-lg-0 end-of-nav " +
-              styles.rightSection
-            }
+            <h2
+              style={{
+                color: "#292D32",
+                fontFamily: "Poppins",
+                fontSize: "24px",
+                fontStyle: "normal",
+                fontWeight: "600",
+                lineHeight: "normal",
+              }}
+            >
+              <Link
+                className="navbar-brand"
+                style={{ fontSize: "32px" }}
+                href="/"
+              >
+                CuBuild
+              </Link>
+            </h2>
+          </div>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div
+            className={"collapse navbar-collapse " + styles.collapseStyles}
+            id="navbarSupportedContent"
+          >
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 w-100">
+              <Search />
+            </ul>
+            <ul
+              className={
+                "navbar-nav me-auto mb-2 mb-lg-0 end-of-nav " +
+                styles.rightSection
+              }
+            >
               <div className={styles.btnWithIcons}>
                 <div onClick={() => printYourDesign()}>
                   <button className={styles.navBtn}>Print your design</button>
@@ -101,11 +103,12 @@ export default function Navbar() {
                     <NoSSR openModal={handleModalOpen} />
                   </>
                 </div>
-            </div>
-          </ul>
+              </div>
+            </ul>
+          </div>
         </div>
-      </div>
-      <AuthModal show={showModal} closeModal={handleModalClose} />
-    </nav>
-  );
+        <AuthModal show={showModal} closeModal={handleModalClose} />
+      </nav>
+    );
+  }
 }

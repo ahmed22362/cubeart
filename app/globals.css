@@ -1,122 +1,134 @@
-
+:root {
+  --adminBg: #151c2c;
+  --adminBgSoft: #182237;
+  --text: white;
+  --textSoft: #b7bac1;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html {
-    scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+  height: 100%;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  height: 100%;
 }
 .dropdown {
-    background: white !important;
+  background: white !important;
 }
 .logo-div {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 240px;
 }
 .logo-div h2 {
-    margin: auto 11px;
+  margin: auto 11px;
 }
 
 .end-of-nav {
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
 }
 
 i {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 ul .nav-link {
-    color: white;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500; 
+  color: white;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
 }
 ul .nav-link:hover {
-    color: #eee
+  color: #eee;
 }
 .ul-links {
-    justify-content: space-between;
-    width: 45%;
+  justify-content: space-between;
+  width: 45%;
 }
 
 @media (min-width: 320px) and (max-width: 375px) {
-    .container {
-        padding: 7px;
-    }
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 7%;
-    }
-    .section-title h3,
-    .section-title-h3 {
-        font-size: 25px !important;
-    }
+  .container {
+    padding: 7px;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 7%;
+  }
+  .section-title h3,
+  .section-title-h3 {
+    font-size: 25px !important;
+  }
 }
 
-@media(min-width: 320px) {
-    .productSliderSection {
-        padding: 0 20px;
-    }
+@media (min-width: 320px) {
+  .productSliderSection {
+    padding: 0 20px;
+  }
 }
 .card {
-    border: 0;
+  border: 0;
 }
 .section-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
 }
-@media(max-width: 767px) {
-    .section-title{
-        gap: 40px
-    }
-    .ul-links {
-        width: 100%;
-    }
+@media (max-width: 767px) {
+  .section-title {
+    gap: 40px;
+  }
+  .ul-links {
+    width: 100%;
+  }
 }
 
 .section-title h3 {
-    font-size: 36px;
+  font-size: 36px;
 }
 .px10 {
-    padding-right: 1rem!important;
-    padding-left: 1rem!important;
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
 }
 .aboutSection {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-    background: #ECF5FA;
-    padding: 40px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  background: #ecf5fa;
+  padding: 40px;
+  flex-wrap: wrap;
 }
 @media (max-width: 767px) {
-    .aboutSection {
-        gap: 30px
-    }
+  .aboutSection {
+    gap: 30px;
+  }
 }
 .btn-close {
-    position: absolute !important;
-    right: 17px !important;
-    top: 20px !important;
-    z-index: 1000;
+  position: absolute !important;
+  right: 17px !important;
+  top: 20px !important;
+  z-index: 1000;
 }
 .slick-dots {
-    bottom: -40px;
+  bottom: -40px;
 }
 .slick-dots li button:before {
-    color: #2E6F8D;
-    font-size: 10px
+  color: #2e6f8d;
+  font-size: 10px;
 }
 .slick-dots li.slick-active button:before {
-    color: #2E6F8D;
-    font-size: 10px;
+  color: #2e6f8d;
+  font-size: 10px;
 }
 .tagsBox .card .p-listbox {
-    border: 0px !important;
+  border: 0px !important;
 }

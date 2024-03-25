@@ -1,0 +1,60 @@
+.container {
+  background-color: var(--adminBgSoft);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.addButton {
+  border: none;
+  background-color: #5d57c9;
+  color: var(--text);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.table {
+  width: 100%;
+  margin-top: 10px;
+}
+.table td {
+  padding: 10px;
+}
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.userImage {
+  border-radius: 50%;
+  object-fit: cover;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+.button {
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.view {
+  background-color: teal;
+}
+
+.delete {
+  background-color: crimson;
+}
+.noUsersMessage {
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}

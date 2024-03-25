@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  background-color: var(--adminBg);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--adminBgSoft);
+  width: 500px;
+  height: 500px;
+  padding: 40px;
+  gap: 25px;
+  border-radius: 20px;
+}
+.form h1 {
+  color: var(--text);
+}
+.form input {
+  width: 100%;
+  padding: 20px;
+  border: 2px solid #2e374a;
+  border-radius: 5px;
+  background-color: var(--adminBg);
+  color: var(--text);
+}
+
+.form button {
+  width: 100%;
+  padding: 20px;
+  background-color: teal;
+  color: var(--text);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
