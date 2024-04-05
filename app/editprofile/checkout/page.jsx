@@ -1,5 +1,6 @@
 import { MainButton } from "@/components";
 import { FormControlLabel, Radio, RadioGroup } from "@mui/material";
+import Image from "next/image";
 import React from "react";
 import "./checkout.css";
 
@@ -67,7 +68,7 @@ function checkout() {
               style={{ backgroundColor: "#F8FCFD" }}
             >
               <div className="pic d-flex ">
-                <img className="w-100" src="/items/item.png" alt="" />
+                <Image className="w-100" src="/items/item.png" alt="" />
               </div>
               <div className="caption">
                 <h3>Hunting Cat 3D Printable</h3>

@@ -1,24 +1,25 @@
-"use client"
-import React from "react"
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
-import "./styles.css"
+"use client";
+import React from "react";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+import Image from "next/image";
+import "./styles.css";
 
 const carousel = (slider) => {
-  const z = 300
+  const z = 300;
   function rotate() {
-    const deg = 360 * slider.track.details.progress
-    slider.container.style.transform = `translateZ(-${z}px) rotateY(${-deg}deg)`
+    const deg = 360 * slider.track.details.progress;
+    slider.container.style.transform = `translateZ(-${z}px) rotateY(${-deg}deg)`;
   }
   slider.on("created", () => {
-    const deg = 360 / slider.slides.length
+    const deg = 360 / slider.slides.length;
     slider.slides.forEach((element, idx) => {
-      element.style.transform = `rotateY(${deg * idx}deg) translateZ(${z}px)`
-    })
-    rotate()
-  })
-  slider.on("detailsChanged", rotate)
-}
+      element.style.transform = `rotateY(${deg * idx}deg) translateZ(${z}px)`;
+    });
+    rotate();
+  });
+  slider.on("detailsChanged", rotate);
+};
 
 export default function App() {
   const [sliderRef] = useKeenSlider(
@@ -28,33 +29,57 @@ export default function App() {
       renderMode: "custom",
       mode: "free-snap",
     },
-    [carousel]
-  )
+    [carousel],
+  );
 
   return (
     <div className="wrapper mt-5">
       <div className="scene">
         <div className="carousel keen-slider" ref={sliderRef}>
           <div className="carousel__cell number-slide1 ">
-            <img className={`w-100`} src="../images/image16.png" alt="item detailes" />
+            <Image
+              className={`w-100`}
+              src="../images/image16.png"
+              alt="item detailes"
+            />
           </div>
           <div className="carousel__cell number-slide2">
-          <img className={`w-100`} src="../images/image15.png" alt="item detailes" />
+            <Image
+              className={`w-100`}
+              src="../images/image15.png"
+              alt="item detailes"
+            />
           </div>
           <div className="carousel__cell number-slide3">
-          <img className={`w-100`} src="../images/image14.png" alt="item detailes" />
+            <Image
+              className={`w-100`}
+              src="../images/image14.png"
+              alt="item detailes"
+            />
           </div>
           <div className="carousel__cell number-slide4">
-          <img className={`w-100`} src="../images/image13.png" alt="item detailes" />
+            <Image
+              className={`w-100`}
+              src="../images/image13.png"
+              alt="item detailes"
+            />
           </div>
           <div className="carousel__cell number-slide5">
-          <img className={`w-100`} src="../images/image12.png" alt="item detailes" />
+            <Image
+              className={`w-100`}
+              src="../images/image12.png"
+              alt="item detailes"
+            />
           </div>
           <div className="carousel__cell number-slide6">
-          <img className={`w-100`} src="../images/image 9.png" alt="item detailes" />
+            <Image
+              className={`w-100`}
+              src="../images/image 9.png"
+              alt="item detailes"
+            />
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

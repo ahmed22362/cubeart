@@ -97,7 +97,7 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
               {...register("email", {
                 required: "email is required",
                 pattern: {
-                  value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                  value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
                   message: "Please enter a valid email address",
                 },
               })}
@@ -146,7 +146,7 @@ export default function LoginForm({ handleLinkClick, active, closeModal }) {
             </span>
           </div>
           <div className={styles.signupLink}>
-            don't have an account ?
+            {"don't have an account ?"}
             <span
               onClick={() => handleLinkClick("signup")}
               className={active === "signup" ? "active" : ""}

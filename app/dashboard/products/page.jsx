@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import Search from "@/components/adminDashboard/search/search";
 import styles from "@/components/adminDashboard/products/products.module.css";
 import Pagination from "@/components/adminDashboard/pagination/pagination";
+import SearchSuspenseWrapper from "@/components/adminDashboard/search/SearchSuspenseWrapper";
 
 const ProductsPage = async () => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <Search placeholder="Search for a product..." />
+        <SearchSuspenseWrapper placeholder="Search for a product..." />
         <Link href="/dashboard/products/add">
           <button className={styles.addButton}>Add New</button>
         </Link>

@@ -21,7 +21,6 @@ export default function ProductsList() {
   const url = process.env.NEXT_PUBLIC_URL;
   const [selectedValue, setSelectedValue] = useState("");
 
-
   const handleOptionClick = (value) => {
     setSelectedValue(value);
     selectionData(value);
@@ -40,7 +39,9 @@ export default function ProductsList() {
 
   const fetchData = async () => {
     setIsLoading(true);
-    const response = await fetch(`${url}/product?page=${pageNumber}&limit=${size}`);
+    const response = await fetch(
+      `${url}/product?page=${pageNumber}&limit=${size}`,
+    );
     const data = await response.json();
     setIsLoading(false);
     setData(data);
@@ -61,7 +62,7 @@ export default function ProductsList() {
     let toPriceValue = toPrice < 0 ? 0 : toPrice;
     let fromPriceValue = fromPrice < 0 ? 0 : fromPrice;
     fetch(
-      `${url}/product?page=${pageNumber}&limit=${size}&price[lt]=${toPriceValue}&price[gt]=${fromPriceValue}&sort=price`
+      `${url}/product?page=${pageNumber}&limit=${size}&price[lt]=${toPriceValue}&price[gt]=${fromPriceValue}&sort=price`,
     )
       .then((response) => response.json())
       .then((filterData) => {
@@ -70,84 +71,92 @@ export default function ProductsList() {
       .catch((error) => {
         console.error(error);
       });
-      handleClose();
+    handleClose();
   };
 
   const resetAll = () => {
     fetchData();
-  }
+  };
   return (
     <>
-      <button className={styles.offCanvasButton} onClick={handleShow}>open filter</button>
-      <Offcanvas show={show} onHide={handleClose} className={styles.offCanvasSection}>
-          <Offcanvas.Header closeButton>
-            <Offcanvas.Title>
+      <button className={styles.offCanvasButton} onClick={handleShow}>
+        open filter
+      </button>
+      <Offcanvas
+        show={show}
+        onHide={handleClose}
+        className={styles.offCanvasSection}
+      >
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>
             <h3
               className="text-center"
               style={{ color: "#292D32", fontSize: "32px" }}
             >
               Filter
             </h3>
-            </Offcanvas.Title>
-          </Offcanvas.Header>
-          <Offcanvas.Body style={{
+          </Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body
+          style={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "center",
             gap: "70px",
-          }}>
+          }}
+        >
           <div>
-          <h4>Price</h4>
-          <div className={styles.priceRange}>
-            <input
-              type="range"
-              value={fromPrice}
-              onChange={handleFromPriceChange}
-            />
-            <input
-              type="range"
-              value={toPrice}
-              onChange={handleToPriceChange}
-            />
+            <h4>Price</h4>
+            <div className={styles.priceRange}>
+              <input
+                type="range"
+                value={fromPrice}
+                onChange={handleFromPriceChange}
+              />
+              <input
+                type="range"
+                value={toPrice}
+                onChange={handleToPriceChange}
+              />
+            </div>
           </div>
-        </div>
-        <form action="" className={styles.formFilter}>
-          <div className={styles.inputBox}>
-            <label>From</label>
-            <input
-              type="number"
-              min={"0"}
-              onChange={(e) => setfromPrice(e.target.value)}
-              value={fromPrice || 0}
-              className="priceFrom"
-              placeholder={"0"}
-              name="from"
-            />
+          <form action="" className={styles.formFilter}>
+            <div className={styles.inputBox}>
+              <label>From</label>
+              <input
+                type="number"
+                min={"0"}
+                onChange={(e) => setfromPrice(e.target.value)}
+                value={fromPrice || 0}
+                className="priceFrom"
+                placeholder={"0"}
+                name="from"
+              />
+            </div>
+            <div className={styles.inputBox}>
+              <label>To</label>
+              <input
+                type="number"
+                min={"0"}
+                onChange={(e) => setToPrice(e.target.value)}
+                value={toPrice || 0}
+                className="priceTo"
+                placeholder={"0"}
+                name="to"
+              />
+            </div>
+          </form>
+          <div className={styles.btnResult}>
+            <button
+              className={styles.submitButton}
+              onClick={submitThePriceValuesFromInputs}
+            >
+              Show Result
+            </button>
           </div>
-          <div className={styles.inputBox}>
-            <label>To</label>
-            <input
-              type="number"
-              min={"0"}
-              onChange={(e) => setToPrice(e.target.value)}
-              value={toPrice || 0}
-              className="priceTo"
-              placeholder={"0"}
-              name="to"
-            />
-          </div>
-        </form>
-        <div className={styles.btnResult}>
-          <button
-            className={styles.submitButton}
-            onClick={submitThePriceValuesFromInputs}
-          >
-            Show Result
-          </button>
-        </div>
-          </Offcanvas.Body>
-        </Offcanvas>
+        </Offcanvas.Body>
+      </Offcanvas>
       <div className={styles.sideBar}>
         <h3
           className="text-center"
@@ -205,13 +214,18 @@ export default function ProductsList() {
           </button>
         </div>
       </div>
-      <section className="comboBoxAndProducts" style={{ flex: "1", marginTop: "55px" }}>
+      <section
+        className="comboBoxAndProducts"
+        style={{ flex: "1", marginTop: "55px" }}
+      >
         <section className={styles.comboBox + " my-5"}>
           <div className={styles.categories}>
-            <span className={'text-primary'} onClick={() => resetAll()}>Reset All</span>
-                <div className={styles.catBox}>
-                  <Categories setData={setData} resetAll={resetAll}/>
-                </div>
+            <span className={"text-primary"} onClick={() => resetAll()}>
+              Reset All
+            </span>
+            <div className={styles.catBox}>
+              <Categories setData={setData} resetAll={resetAll} />
+            </div>
           </div>
           <div className={styles.sort}>
             <label>sort by : </label>
@@ -220,7 +234,6 @@ export default function ProductsList() {
               className={styles.selectComponent}
               value={selectedValue}
               onChange={(e) => handleOptionClick(e.target.value)}
-
             >
               <option defaultValue>select sorting option</option>
               <option value={"price"}>Price - Low to High</option>

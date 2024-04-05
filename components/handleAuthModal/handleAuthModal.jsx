@@ -1,13 +1,13 @@
-import {useState} from "react";
+import { useState } from "react";
 
 export default function HandleAuthModal() {
-    const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
-    const handleModalOpen = () => {
-        setShowModal(true);
-    };
+  const handleModalOpen = () => {
+    setShowModal(true);
+  };
 
-    const handleModalClose = () => {
-        setShowModal(false);
-    };
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
 }

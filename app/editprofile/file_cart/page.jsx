@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import "./fileCart.css";
-import { Badge } from "primereact/badge";
 
 function page() {
   return (
@@ -42,7 +41,7 @@ function page() {
               completed
             </td>
             <td>
-              <img src="../images/edit.png" alt="" />
+              <Image src="../images/edit.png" alt="" />
             </td>
             <td>
               <i className="ms-3 bi bi-trash"></i>

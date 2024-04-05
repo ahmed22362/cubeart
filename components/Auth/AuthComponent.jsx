@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Modal, Form, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import LoginForm from "../AuthForms/LoginForm";
 import SignUpForm from "../AuthForms/SignUpForm";
 import Image from "next/image";

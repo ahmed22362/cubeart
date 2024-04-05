@@ -1,15 +1,14 @@
-"use client"
+"use client";
 
-import {useEffect, useState} from 'react';
-import styles from './page.module.css';
-import { MainButton } from '@/components';
-import ThreeDPreview from '@/components/File/File'; // Assuming this is your 3D preview component
-import MyVerticallyCenteredModal from '@/components/UploadModal/UploadModal';
+import { useState } from "react";
+import styles from "./page.module.css";
+import { MainButton } from "@/components";
+import ThreeDPreview from "@/components/File/File"; // Assuming this is your 3D preview component
+import MyVerticallyCenteredModal from "@/components/UploadModal/UploadModal";
 
 function Upload() {
-
-    const [isUploadVisible, setIsUploadVisible] = useState(false);
-    const [modalShow, setModalShow] = useState(false);
+  const [isUploadVisible, setIsUploadVisible] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
   const toggleUploadVisibility = () => {
     setIsUploadVisible(true);
@@ -18,18 +17,17 @@ function Upload() {
   return (
     <>
       {isUploadVisible ? (
-        <div  className={` ${styles.upload}`}>
-        {/* <UploadFile /> */}
-        </div>
+        <div className={` ${styles.upload}`}>{/* <UploadFile /> */}</div>
       ) : (
-        <div className={`upload d-flex justify-content-center align-items-center ${styles.upload}`}>
+        <div
+          className={`upload d-flex justify-content-center align-items-center ${styles.upload}`}
+        >
           <div className={`p-5 bg-white ${styles.uploadCard}`}>
             <ThreeDPreview />
-            <div className='mt-3'>
+            <div className="mt-3">
               <div>
-
-              {/* <MainButton onclick={() => setModalShow(true)} text={'Next'} /> */}
-                <MainButton onclick={() => setModalShow(true)} text={'open'} />
+                {/* <MainButton onclick={() => setModalShow(true)} text={'Next'} /> */}
+                <MainButton onclick={() => setModalShow(true)} text={"open"} />
               </div>
             </div>
           </div>

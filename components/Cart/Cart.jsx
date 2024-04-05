@@ -6,6 +6,7 @@ import { MainButton } from "..";
 import { Button } from "primereact/button";
 import Cookies from "universal-cookie";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function PaymentMethods() {
   const [heart, setHeart] = useState(false);
@@ -58,7 +59,7 @@ export default function PaymentMethods() {
         console.error("Error fetching data:", error);
         setLoading(false);
       });
-  }, []);
+  }, [token]);
 
   const incrementQuantity = (itemId) => {
     // Find the item by ID and increase its quantity
@@ -143,7 +144,7 @@ export default function PaymentMethods() {
                 style={{ background: "#F8FCFD" }}
               >
                 <div className="image d-flex gap-4  align-items-center">
-                  <img
+                  <Image
                     className="w-50"
                     src={item.product?.coverImage || ""}
                     alt={item.product?.title || "No Title"}
