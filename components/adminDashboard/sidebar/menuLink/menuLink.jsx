@@ -11,7 +11,9 @@ const MenuLink = ({ item }) => {
     <Link
       href={item.path}
       className={`${styles.container} ${
-        pathname === item.path && styles.active
+        (pathname === item.path ||
+          (pathname.includes(item.path) && item.path !== "/dashboard")) &&
+        styles.active
       }`}
     >
       <i className={item.icon}></i>

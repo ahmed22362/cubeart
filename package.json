@@ -37,6 +37,7 @@
     "react-responsive-carousel": "^3.2.23",
     "react-slick": "^0.29.0",
     "react-sortablejs": "^6.1.4",
+    "react-toastify": "^10.0.5",
     "recharts": "^2.12.3",
     "slick-carousel": "^1.8.1",
     "universal-cookie": "^6.1.1",

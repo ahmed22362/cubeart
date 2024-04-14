@@ -10,6 +10,7 @@ const Search = ({ placeholder }) => {
 
   const handleSearch = useDebouncedCallback((e) => {
     const params = new URLSearchParams(searchParams);
+    params.set("page", 1);
     const value = e.target.value;
     if (value) {
       if (value.startsWith("email")) {
@@ -22,7 +23,7 @@ const Search = ({ placeholder }) => {
       params.delete("email");
     }
     replace(`${pathname}?${params}`);
-  }, 500);
+  }, 300);
 
   return (
     <div className={styles.container}>
